@@ -26,5 +26,4 @@ public class GreetingControllerTest {
                 .andExpect(content().string(equalTo(  "{\"id\":1,\"content\":\"Hello, SPRING!\"}" )));
     }
 
-
 }
