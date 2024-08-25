@@ -7,9 +7,10 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class GreetingControllerITTest {
+public class GreetingControllerITest {
 
     @Autowired
     private TestRestTemplate template;
@@ -17,7 +18,13 @@ public class GreetingControllerITTest {
     @Test
     public void greetingTest() throws Exception {
         ResponseEntity<String> response = template.getForEntity("/greeting?name=SPRING", String.class);
-        assertThat(response.getBody()).isEqualTo( "{\"id\":1,\"content\":\"Hello, SPRING!\"}");
+
+        //id is increment. If we don't know the order of the test methods and classes, id could be 1 or 2,3...
+        //assertThat(response.getBody()).isEqualTo( "{\"id\":1,\"content\":\"Hello, SPRING!\"}");
+
+        assert response.getBody() != null;
+        assertTrue( response.getBody().contains( "Hello, SPRING!"));
+
     }
 
 }

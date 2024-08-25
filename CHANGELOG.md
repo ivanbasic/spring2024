@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.0.4
+### update 
+* integration test analyzed a bit
+* GreetingControllerITest, GreetingControllerAnalyzedAgainITest
+
 ## Version 0.0.3
 ### new
 * [Building an Application with Spring Boot](https://spring.io/guides/gs/spring-boot)
@@ -164,10 +169,10 @@ welcomePageHandlerMapping
 welcomePageNotAcceptableHandlerMapping
 ```
 
+
 ## Version 0.0.2
 ### new
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service)
-
 
 
 ## Version 0.0.1 
@@ -182,6 +187,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
+
 ## Version 0.0.1  2024-08-23
 ### new 
 * [quickstart](https://spring.io/quickstart)
@@ -193,6 +199,3 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
   1. save them somewhere else and remove them
   2. add them to .gitignore
   3. bring them back
-
-
-
