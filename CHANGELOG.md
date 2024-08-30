@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 0.0.6
+### new
+* REST variables according to Ivan Basic
+  1. path
+  2. query
+  3. header
+  4. body
+* [just annoying](https://stackoverflow.com/questions/54205486/how-to-avoid-sharing-is-only-supported-for-boot-loader-classes-because-bootstra )
+```
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+```
+
 ## Version 0.0.5
 ### update
 * unit test (MockMvc) analyzed a bit
