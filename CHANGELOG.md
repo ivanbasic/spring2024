@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 0.0.7
+### new
+* Accessing Data with JPA (h2)
+* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+ 
+
+
 ## Version 0.0.6
 ### new
 * REST API parameters according to Ivan Basic
