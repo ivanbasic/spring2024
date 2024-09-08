@@ -1,0 +1,14 @@
+zapoceo ovu granu, dodao repo, entitet,
+i tap - dobio gresku:
+
+APPLICATION FAILED TO START
+
+ni prvi ni zadnji put, ali zao mi je sto nisam sacuvao log.
+dakle, javi da h2 nije kako treba konfigurisan
+(ja nisam konfigurisao nista (application.properties je prazan) jer se h2 konfigurise sama)
+preverio pom.xml, sve na mestu.
+pogledam listu binova, i stvarno, repo nije tamo.
+
+probao par puta maven/reload project, nece.
+
+ugasio racunar, sutradan pokrenuo aplikaciju ponovo, sve radi.
