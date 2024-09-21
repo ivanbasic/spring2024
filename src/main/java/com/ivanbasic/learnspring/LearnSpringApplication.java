@@ -31,9 +31,9 @@ public class LearnSpringApplication {
             System.out.println("Let's inspect the beans provided by Spring Boot:");
 
             String[] beanNames = ctx.getBeanDefinitionNames();
-            //Arrays.sort(beanNames);
+            // Arrays.sort(beanNames);
             for (String beanName : beanNames) {
-                System.out.println(beanName);
+                // System.out.println(beanName);
             }
             System.out.println("");
         };
@@ -43,7 +43,7 @@ public class LearnSpringApplication {
     public CommandLineRunner customerRepositoryDemoWithH2(CustomerRepository repository) {
         return (args) -> {
             log.info("");
-            log.info("Customer repository demo with h2");
+            log.info("Customer repository demo with h2/postgres/...");
 
             // save a few customers
             repository.save(new Customer("Jack", "Bauer"));

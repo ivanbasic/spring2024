@@ -1,5 +1,22 @@
 # Changelog
 
+## Version 0.0.9
+### update
+* replace h2 with postgres
+  1. configuration properties for postgres 
+  2. dependency for postgres 
+* postgres docker
+* one line command:
+```
+docker run --ulimit memlock=-1:-1 -it --rm=true --memory-swappiness=0     --name ivan -e POSTGRES_USER=ivan     -e POSTGRES_PASSWORD=ivan -e POSTGRES_DB=ivan     -p 5432:5432 postgres:13.1
+```
+* multi line command:
+```
+docker run --ulimit memlock=-1:-1 -it --rm=true --memory-swappiness=0  ^
+  --name ivan -e POSTGRES_USER=ivan -e POSTGRES_PASSWORD=ivan -e POSTGRES_DB=ivan  ^
+  -p 5432:5432 postgres:13.1
+```
+
 ## Version 0.0.8
 ### update
 * CHANGELOG_DETAILS folder added, in order to have more files attached to single change.
