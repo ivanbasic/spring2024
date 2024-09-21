@@ -5,6 +5,8 @@
 * replace h2 with postgres
   1. configuration properties for postgres 
   2. dependency for postgres 
+* [multi line command](https://stackoverflow.com/questions/55847359/multi-line-docker-run-command-on-windows)
+* [postgres example](https://www.javaguides.net/2019/08/spring-boot-spring-data-jpa-postgresql-example.html)
 * postgres docker
 * one line command:
 ```
