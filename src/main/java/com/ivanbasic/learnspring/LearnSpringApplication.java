@@ -39,7 +39,7 @@ public class LearnSpringApplication {
         };
     }
 
-    //@Bean
+    @Bean
     public CommandLineRunner customerRepositoryDemoWithH2OrPostgres(CustomerRepository repository) {
         return (args) -> {
             log.info("");
