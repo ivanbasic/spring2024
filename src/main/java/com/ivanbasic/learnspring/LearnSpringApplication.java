@@ -39,8 +39,8 @@ public class LearnSpringApplication {
         };
     }
 
-    @Bean
-    public CommandLineRunner customerRepositoryDemoWithH2(CustomerRepository repository) {
+    //@Bean
+    public CommandLineRunner customerRepositoryDemoWithH2OrPostgres(CustomerRepository repository) {
         return (args) -> {
             log.info("");
             log.info("Customer repository demo with h2/postgres/...");
