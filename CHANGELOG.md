@@ -2,18 +2,20 @@
 
 ## Version 0.0.10
 ### new
-* integration (controller) test for postgres database using h2
+#### 1. Controller - Service - Impl - Repo for postgres db
+*  Controller - Service - Impl - Repo created
+*  Run, and tested with pgAdmin and postman
+
+#### 2. integration (controller) test for postgres database using h2
 * https://www.baeldung.com/spring-testing-separate-data-source
 * https://medium.com/@akshatakanaje08/setting-up-h2-for-testing-in-spring-boot-application-7f016220a475
 
-* more:
+#### 3. Appendix, SQL queries against postgres db:
 ```
 -- insert into postgres db. or shut it down.
 INSERT INTO customer (id,first_name,last_name)  VALUES (1, 'first', 'last');
 SELECT COUNT(*) from customer;
 ```
-
-
 
 
 ## Version 0.0.9
