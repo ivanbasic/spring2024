@@ -2,17 +2,29 @@
 
 ## Version 0.0.10
 ### new
-#### 1. Controller - Service - Impl - Repo for postgres db
-*  Controller - Service - Impl - Repo created
-*  Run, and tested with pgAdmin and postman
+#### 1. Controller - Service - Impl - Repo. Postgres database
+* Run application with postgres database 
+* Tested using pgAdmin and postman.
+* Controller - Service - Impl - Repo created for Customer entity
 
-#### 2. integration (controller) test for postgres database using h2
+#### 2. integration/controller test. H2 database
 * https://www.baeldung.com/spring-testing-separate-data-source
 * https://medium.com/@akshatakanaje08/setting-up-h2-for-testing-in-spring-boot-application-7f016220a475
+*
+* starting from first repo, without new configuration, all old tests expect that postgres database is available. 
+* Related to that, see errors in CHANGELOG_DETAILS.
+* h2 which will be used for database test, must be available for all other tests too 
+*
+* application-test.properties with h2 properties created and added to all tests
+* data.sql (default sql script) added and will be executed by all tests.
+* data-custom.sql script added and will be executed by one test.
 
-#### 3. Appendix, SQL queries against postgres db:
+#### 3. customerRepositoryDemo excluded
+* customerRepositoryDemo bean, which insert in the table on start up, excluded. At least for a while.
+* I want simpler situation when postgres database is used for run and h2 database for tests.
+
+#### 4. Appendix, SQL queries against postgres db:
 ```
--- insert into postgres db. or shut it down.
 INSERT INTO customer (id,first_name,last_name)  VALUES (1, 'first', 'last');
 SELECT COUNT(*) from customer;
 ```

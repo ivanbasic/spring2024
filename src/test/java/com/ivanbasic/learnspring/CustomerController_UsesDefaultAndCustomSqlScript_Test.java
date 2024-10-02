@@ -6,11 +6,11 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -18,18 +18,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestPropertySource("classpath:application-test.properties")
-public class GreetingControllerTest {
-
+@Sql("/data-custom.sql")
+public class CustomerController_UsesDefaultAndCustomSqlScript_Test {
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void greetingTest() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/greeting?name=SPRING").accept(MediaType.APPLICATION_JSON))
+    public void countTest() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/customer/count").accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string( containsString(  "Hello, SPRING!" )));
-                //.andExpect(content().string(equalTo(  "{\"id\":1,\"content\":\"Hello, SPRING!\"}" )));
+                .andExpect(content().string( containsString(  "2" )));
     }
-
 }
+
+
+
+

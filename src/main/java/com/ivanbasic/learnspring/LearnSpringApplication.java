@@ -12,8 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-import java.util.Arrays;
-
 @SpringBootApplication
 public class LearnSpringApplication {
 
@@ -39,8 +37,10 @@ public class LearnSpringApplication {
         };
     }
 
-    @Bean
-    public CommandLineRunner customerRepositoryDemoWithH2OrPostgres(CustomerRepository repository) {
+    // I will skip this bean for a while.
+    // I want simpler situation when postgres database is used for run and h2 database for tests.
+    //@Bean
+    public CommandLineRunner customerRepositoryDemo(CustomerRepository repository) {
         return (args) -> {
             log.info("");
             log.info("Customer repository demo with h2/postgres/...");

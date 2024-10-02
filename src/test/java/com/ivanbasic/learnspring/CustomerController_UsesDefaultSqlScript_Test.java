@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestPropertySource("classpath:application-test.properties")
-public class CustomerControllerTest {
+public class CustomerController_UsesDefaultSqlScript_Test {
     @Autowired
     private MockMvc mvc;
 
@@ -26,7 +26,7 @@ public class CustomerControllerTest {
         mvc.perform(MockMvcRequestBuilders.get("/customer/count").accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string( containsString(  "2" )));
+                .andExpect(content().string( containsString(  "1" )));
     }
 }
 
