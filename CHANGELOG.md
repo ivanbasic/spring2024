@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 0.0.11
+### update
+* BeanReader and RepoDemo removed from spring main class
+* BeanReader separate 
+  * existing spring boot beans 
+  * newly created
+* clean up  
+
 ## Version 0.0.10
 ### new
 #### 1. Controller - Service - Impl - Repo. Postgres database

@@ -1,4 +1,4 @@
-package com.ivanbasic.learnspring.controler;
+package com.ivanbasic.learnspring.controller;
 
 import com.ivanbasic.learnspring.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;

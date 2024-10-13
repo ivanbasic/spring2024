@@ -1,4 +1,4 @@
-package com.ivanbasic.learnspring.controler;
+package com.ivanbasic.learnspring.controller;
 
 import com.ivanbasic.learnspring.dto.Greeting;
 import org.springframework.web.bind.annotation.GetMapping;
