@@ -1,0 +1,5 @@
+
+2024-10-18T21:39:53.359+02:00 DEBUG 10464 --- [learnSpring] [           main] org.hibernate.SQL                        : create table customer (id bigint not null, first_name varchar(255), last_name varchar(255), primary key (id))
+2024-10-18T21:39:53.379+02:00 DEBUG 10464 --- [learnSpring] [           main] org.hibernate.SQL                        : create sequence customer_seq start with 1 increment by 50
+
+2024-10-18T21:40:49.928+02:00 DEBUG 10464 --- [learnSpring] [nio-8080-exec-2] org.hibernate.SQL                        : select count(*) from customer c1_0

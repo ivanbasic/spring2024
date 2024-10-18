@@ -12,7 +12,7 @@ import java.util.List;
 @Component
 public class BeanReader {
 
-    @Bean
+    //@Bean
     public CommandLineRunner listOfSpringBootBeans(ApplicationContext ctx) {
         return args -> {
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 0.0.14
+### update
+* using yaml format for the properties
+* [yml for the tests](https://stackoverflow.com/questions/21271468/spring-propertysource-using-yaml)
+  * @TestPropertySource doesn't work without password and username 
+* log sql commands 
+* clean up
+
 ## Version 0.0.11
 ### update
 * BeanReader and RepoDemo removed from spring main class

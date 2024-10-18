@@ -1,0 +1,27 @@
+
+spring:
+  #aplication name
+  application.name: learnSpring
+
+  # postgres configuration
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+
+  # postgres database configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ivan
+    username: ivan
+    password: ivan
+    initialization-mode: always
+    initialize: true
+    continue-on-error: true
+
+
+# log all sql commands
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql: trace
