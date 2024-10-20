@@ -1,3 +1,3 @@
 SELECT 1;
-DELETE FROM customer;
-INSERT INTO customer (id,first_name,last_name)  VALUES (1002, 'first', 'last');
+DELETE FROM schema1.customer;
+INSERT INTO schema1.customer (id,first_name,last_name)  VALUES (1002, 'first', 'last');

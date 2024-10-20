@@ -1,24 +1,15 @@
 
 spring:
-  #aplication name
   application.name: learnSpring
-
-  # postgres configuration
-  jpa:
-    generate-ddl: true
-    hibernate:
-      ddl-auto: update
-      show-sql: true
 
   # postgres database configuration
   datasource:
     url: jdbc:postgresql://localhost:5432/ivan
     username: ivan
     password: ivan
-    initialization-mode: always
-    initialize: true
-    continue-on-error: true
 
+  # this one executed schema.sql
+  sql.init.mode: always
 
 # log all sql commands
 logging:

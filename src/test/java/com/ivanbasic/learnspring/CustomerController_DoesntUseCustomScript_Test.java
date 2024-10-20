@@ -6,8 +6,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -19,8 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles( "test" )
-@Sql("/data-custom.sql")
-public class CustomerController_UsesDefaultAndCustomSqlScript_Test {
+public class CustomerController_DoesntUseCustomScript_Test {
     @Autowired
     private MockMvc mvc;
 
@@ -29,7 +26,7 @@ public class CustomerController_UsesDefaultAndCustomSqlScript_Test {
         mvc.perform(MockMvcRequestBuilders.get("/customer/count").accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string( containsString(  "1" )));
+                .andExpect(content().string( containsString(  "0" )));
     }
 }
 

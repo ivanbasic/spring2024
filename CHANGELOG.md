@@ -1,5 +1,27 @@
 # Changelog
 
+## Version 0.0.15
+### new and update
+* MAIN. on startup, create schema schema1 in postgres database (call schema.sql) 
+  * [just plain wrong: make sure to disable... ddl-auto if you use schema.sql](https://docs.spring.io/spring-boot/docs/2.1.x/reference/html/howto-database-initialization.html)
+  * [right one: As of Spring Boot Version 2.7 ... spring.sql.init.mode ](https://stackoverflow.com/questions/49438517/why-spring-boot-2-0-application-does-not-run-schema-sql)
+
+* MAIN. docker command for postgres simplified
+  ```
+  docker run --name ivan -e POSTGRES_USER=ivan -e POSTGRES_PASSWORD=ivan -e POSTGRES_DB=ivan -p 5432:5432 postgres:13.1
+  ```
+  
+* TEST. on startup, create schema schema1 in H2 database
+  * test will call schema.sql from main resources 
+
+* TEST philosophy changed and looks a little bit complicated
+  * application-test.yml with h2 properties is still used
+  * schema.sql from main resources will be called
+  * schema.sql from test resources will be called
+  * data.sql from test resources will be called 
+  * data-custom.sql script for one test is now part of transaction (it will be rolled back after test)
+
+
 ## Version 0.0.14
 ### update
 * using yaml format for the properties
