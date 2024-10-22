@@ -1,8 +1,8 @@
 package com.ivanbasic.learnspring.util;
 
 import com.ivanbasic.learnspring.LearnSpringApplication;
-import com.ivanbasic.learnspring.model.Customer;
-import com.ivanbasic.learnspring.repo.CustomerRepository;
+import com.ivanbasic.learnspring.db1.model.Customer;
+import com.ivanbasic.learnspring.db1.repo.CustomerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

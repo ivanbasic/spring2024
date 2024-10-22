@@ -1,4 +1,4 @@
-package com.ivanbasic.learnspring.model;
+package com.ivanbasic.learnspring.db1.model;
 
 import jakarta.persistence.*;
 

@@ -1,5 +1,32 @@
 # Changelog
 
+
+## Version 0.0.16
+### new
+* multiple datasource's
+* tutorials, didn't like them
+  * [link 1](https://www.baeldung.com/spring-boot-configure-multiple-datasources)
+  * [link 2](https://stackoverflow.com/questions/30337582/spring-boot-configure-and-use-two-data-sources)
+  * [link 3](https://www.baeldung.com/spring-data-jpa-multiple-databases)
+  * [link 4](https://dev.to/javafullstackdev/a-comprehensive-guide-to-multiple-database-configuration-for-microservices-in-spring-boot-1la4)
+  * [link 5](https://stackoverflow.com/questions/28275448/multiple-data-source-and-schema-creation-in-spring-boot)
+  * [link 6](https://howtodoinjava.com/spring-boot/configure-multiple-datasources/)
+  * [link 7](https://pasquale-favella.github.io/blog/15)
+  * [link 8](https://www.dineshonjava.com/configure-multiple-databases-spring-jpa-spring-boot/)
+* tutorial, didn't like it but finally good namings
+  * [multi db](https://www.youtube.com/watch?v=mIFIb_JE47U&ab_channel=AshokIT)
+* dialect error when db is not accessible
+  * [link](https://stackoverflow.com/questions/78036592/why-cant-spring-boot-deduce-hibernate-dialect)
+* url or jdbcUrl
+  * [link](https://stackoverflow.com/questions/49088847/after-spring-boot-2-0-migration-jdbcurl-is-required-with-driverclassname) 
+* all tests are still working
+* database's number 2 and 3, ready for using.
+  ```
+  docker run --name pg2 -e POSTGRES_USER=pg2 -e POSTGRES_PASSWORD=pg2 -e POSTGRES_DB=pg2 -e PGPORT=5002 -p 5002:5002  postgres:13.1
+  docker run --name pg3 -e POSTGRES_USER=pg3 -e POSTGRES_PASSWORD=pg3 -e POSTGRES_DB=pg3 -e PGPORT=5003 -p 5003:5003  postgres:13.1
+  ```
+
+
 ## Version 0.0.15
 ### new and update
 * MAIN. on startup, create schema schema1 in postgres database (call schema.sql) 
