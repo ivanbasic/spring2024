@@ -1,8 +1,9 @@
 # Changelog
 
 ## Version 0.0.16.1
-### new
-* all tests are actually not working. somehow, h2 replaced with postgres
+### update
+* all tests are actually not working. somehow, h2 is replaced with postgres. hm?
+* just wrong setup in application-test.yml
 
 
 ## Version 0.0.16
