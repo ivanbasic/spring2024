@@ -2,12 +2,16 @@
 spring:
   application.name: learnSpring
 
-  # postgres database configuration
+  # database configuration
   datasource:
     db1:
       jdbc-url: jdbc:postgresql://localhost:5432/ivan
       username: ivan
       password: ivan
+    db2:
+      jdbc-url: jdbc:postgresql://localhost:5002/db2
+      username: db2
+      password: db2
 
   # this one executed schema.sql
   sql.init.mode: always

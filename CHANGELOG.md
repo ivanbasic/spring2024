@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.0.17
+### new
+* multiple datasource's. db2
+* db2 works, db2 controller/service/repo/table works
+* old tests work, but only when db2 is up
+* todo: fix tests
 
 ## Version 0.0.16
 ### new
@@ -22,8 +28,8 @@
 * all tests are still working
 * database's number 2 and 3, ready for using.
   ```
-  docker run --name pg2 -e POSTGRES_USER=pg2 -e POSTGRES_PASSWORD=pg2 -e POSTGRES_DB=pg2 -e PGPORT=5002 -p 5002:5002  postgres:13.1
-  docker run --name pg3 -e POSTGRES_USER=pg3 -e POSTGRES_PASSWORD=pg3 -e POSTGRES_DB=pg3 -e PGPORT=5003 -p 5003:5003  postgres:13.1
+  docker run --name db2 -e POSTGRES_USER=db2 -e POSTGRES_PASSWORD=db2 -e POSTGRES_DB=db2 -e PGPORT=5002 -p 5002:5002  postgres:13.1
+  docker run --name db3 -e POSTGRES_USER=db3 -e POSTGRES_PASSWORD=db3 -e POSTGRES_DB=db3 -e PGPORT=5003 -p 5003:5003  postgres:13.1
   ```
 
 
