@@ -8,6 +8,7 @@
 * todo: fix tests
 * fixed. just wrong setup in application-test.yml for db2
   * can't use the same name for two h2 databases 
+* todo: execute schema-db2.sql on startup 
 
 ## Version 0.0.16.1
 ### update
@@ -36,8 +37,8 @@
 * all tests are still working
 * database's number 2 and 3, ready for using.
   ```
-  docker run --name pg2 -e POSTGRES_USER=pg2 -e POSTGRES_PASSWORD=pg2 -e POSTGRES_DB=pg2 -e PGPORT=5002 -p 5002:5002  postgres:13.1
-  docker run --name pg3 -e POSTGRES_USER=pg3 -e POSTGRES_PASSWORD=pg3 -e POSTGRES_DB=pg3 -e PGPORT=5003 -p 5003:5003  postgres:13.1
+  docker run --name db2 -e POSTGRES_USER=db2 -e POSTGRES_PASSWORD=db2 -e POSTGRES_DB=db2 -e PGPORT=5002 -p 5002:5002  postgres:13.1
+  docker run --name db3 -e POSTGRES_USER=db3 -e POSTGRES_PASSWORD=db3 -e POSTGRES_DB=db3 -e PGPORT=5003 -p 5003:5003  postgres:13.1
   ```
 
 
