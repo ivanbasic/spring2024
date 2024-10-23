@@ -6,12 +6,14 @@
 * db2 works, db2 controller/service/repo/table works
 * old tests work, but only when postgres db2 is up
 * todo: fix tests
-* fixed. just wrong setup in application-test.yml
+* fixed. just wrong setup in application-test.yml for db2
+  * can't use the same name for two h2 databases 
 
 ## Version 0.0.16.1
 ### update
 * all tests are actually not working. somehow, h2 is replaced with postgres. hm?
-* just wrong setup in application-test.yml
+* fixed. just wrong setup in application-test.yml for db1
+  * db1 and jdbcUrl instead of url
 
 ## Version 0.0.16
 ### new
