@@ -1,15 +1,21 @@
 # Changelog
 
 ## Version 0.0.17
-### new
-* multiple datasource's. db2
+### update
+* multiple datasource's. databases db1 and db2 
 * db2 works, db2 controller/service/repo/table works
-* old tests work, but only when db2 is up
+* old tests work, but only when postgres db2 is up
 * todo: fix tests
+* fixed. just wrong setup in application-test.yml
+
+## Version 0.0.16.1
+### update
+* all tests are actually not working. somehow, h2 is replaced with postgres. hm?
+* just wrong setup in application-test.yml
 
 ## Version 0.0.16
 ### new
-* multiple datasource's
+* multiple datasource's, for start just database db1
 * tutorials, didn't like them
   * [link 1](https://www.baeldung.com/spring-boot-configure-multiple-datasources)
   * [link 2](https://stackoverflow.com/questions/30337582/spring-boot-configure-and-use-two-data-sources)
@@ -28,8 +34,8 @@
 * all tests are still working
 * database's number 2 and 3, ready for using.
   ```
-  docker run --name db2 -e POSTGRES_USER=db2 -e POSTGRES_PASSWORD=db2 -e POSTGRES_DB=db2 -e PGPORT=5002 -p 5002:5002  postgres:13.1
-  docker run --name db3 -e POSTGRES_USER=db3 -e POSTGRES_PASSWORD=db3 -e POSTGRES_DB=db3 -e PGPORT=5003 -p 5003:5003  postgres:13.1
+  docker run --name pg2 -e POSTGRES_USER=pg2 -e POSTGRES_PASSWORD=pg2 -e POSTGRES_DB=pg2 -e PGPORT=5002 -p 5002:5002  postgres:13.1
+  docker run --name pg3 -e POSTGRES_USER=pg3 -e POSTGRES_PASSWORD=pg3 -e POSTGRES_DB=pg3 -e PGPORT=5003 -p 5003:5003  postgres:13.1
   ```
 
 
