@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class Db2Controller {
 
     @Autowired
-    Db2Service pg2Service;
+    Db2Service db2Service;
 
-    @GetMapping("/pg2/test")
+    @GetMapping("/db2/test")
     public long test() {
-        return pg2Service.test();
+        return db2Service.test();
     }
 
 }

@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.0.18
+### new
+* execute schema-db2.sql for database db2 on startup
+* [using DataSourceInitializer](https://stackoverflow.com/questions/39280340/how-to-run-sql-scripts-and-get-data-on-application-startup)
+* controller test for db2
+
 ## Version 0.0.17
 ### update
 * multiple datasource's. databases db1 and db2 
