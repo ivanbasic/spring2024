@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 0.0.19
+### new
+* repositories. Derived Query, JPQL, Native.
+* [1 baeldung Derived Query Methods](https://www.baeldung.com/spring-data-derived-queries)
+* [2 baeldung JPQL and Native](https://www.baeldung.com/spring-data-jpa-query)
+* [3 spring.io query keywords](https://docs.spring.io/spring-data/jpa/reference/repositories/query-keywords-reference.html)
+* [4 oracle HR schema](https://download.oracle.com/oll/tutorials/DBXETutorial/html/module2/les02_load_data_sql.htm)
+* [5 error Not a Managed Type](https://www.baeldung.com/spring-data-jpa-not-managed-type-exception)
+
 ## Version 0.0.18
 ### new
 * execute schema-db2.sql for database db2 on startup
