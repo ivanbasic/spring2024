@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(schema = "schema2", name = "employees")
-public class Employees {
+public class Employee {
     @Id
     @Column(name = "employee_id")
     private int employeeId;
@@ -20,17 +20,17 @@ public class Employees {
 
     @ManyToOne()
     @JoinColumn(name = "department_id")
-    Departments departments;
+    Department department;
 
 
-    public Employees() {}
+    public Employee() {}
 
-    public Employees(int employeeId, String firstName, LocalDateTime hireDate, Departments departments) {
+    public Employee(int employeeId, String firstName, LocalDateTime hireDate, Department department) {
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.hireDate = hireDate;
 
-        this.departments = departments;
+        this.department = department;
     }
 
 }

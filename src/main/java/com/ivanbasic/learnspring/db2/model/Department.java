@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table( schema = "schema2", name="departments")
-public class Departments {
+public class Department {
 
     @Id
     @Column(name = "department_id" )
@@ -16,8 +16,8 @@ public class Departments {
     @Column(name = "department_name" )
     private String departmentName;
 
-    public Departments() {}
-    public Departments(int departmentId, String departmentName) {
+    public Department() {}
+    public Department(int departmentId, String departmentName) {
         this.departmentId = departmentId;
         this.departmentName = departmentName;
     }

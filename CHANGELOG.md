@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.0.20
+### new
+* repositories. names of entities
+
+
 ## Version 0.0.19
 ### new
 * repositories. Derived Query, JPQL, Native.

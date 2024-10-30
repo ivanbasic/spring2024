@@ -1,13 +1,13 @@
 package com.ivanbasic.learnspring.db2.repo;
 
-import com.ivanbasic.learnspring.db2.model.Employees;
+import com.ivanbasic.learnspring.db2.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-public interface EmployeesRepo  extends JpaRepository<Employees, Integer> {
+public interface EmployeeRepo extends JpaRepository<Employee, Integer> {
 
     //by int field
     int countByEmployeeId(int id);
@@ -22,13 +22,13 @@ public interface EmployeesRepo  extends JpaRepository<Employees, Integer> {
     int countByHireDateBetween(LocalDateTime ldt1, LocalDateTime ldt2);
 
     //by child-entity-field (@ManyToOne)
-    int countByDepartmentsDepartmentIdIn(List<Integer> listInt);
+    int countByDepartmentDepartmentIdIn(List<Integer> listInt);
 
     //by 2 fields
     int countByEmployeeIdAndFirstName( int id1, String name);
 
     //by JPQL query
-    @Query("SELECT COUNT(e) FROM Employees e WHERE e.employeeId = :id")
+    @Query("SELECT COUNT(e) FROM Employee e WHERE e.employeeId = :id")
     int customJPQLCountByEmployeeId(int id);
 
     //by native query
