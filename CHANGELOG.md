@@ -1,8 +1,13 @@
 # Changelog
 
+## Version 0.0.22
+### new
+* README.md
+* clean up
+
 
 ## Version 0.0.21
-### new
+### update
 * repositories. returning...
   * int (countXYX)
   * entity (findXYZ)

@@ -1,0 +1,38 @@
+14.08.2024
+
+OLD SETUP
+- java version "11.0.16" 2022-07-19 LTS
+- maven 3.8.2
+- docker
+- intellij 2022
+
+
+TARGET SETUP
+- java 21
+- intellij 2024
+- new maven
+
+
+INSTALLATION DIARY
+-java 21 installed
+C:\Users\ivan>java -version
+java version "21.0.3" 2024-04-16 LTS
+Java(TM) SE Runtime Environment (build 21.0.3+7-LTS-152)
+Java HotSpot(TM) 64-Bit Server VM (build 21.0.3+7-LTS-152, mixed mode, sharing)
+- maven.
+
+Environment variables.
+for java:
+    JAVA_HOME
+java and maven:
+Path:
+	%JAVA_HOME%\bin
+	C:\apache-maven-3.9.8\bin
+
+intellij 2024
+new look and fill. Hm...
+File > Setting > Plugins > find "Classic UI" by JetBrains
+
+
+still 14.08.2024.
+enough for today.
