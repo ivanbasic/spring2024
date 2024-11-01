@@ -1,4 +1,4 @@
-package com.ivanbasic.learnspring;
+package com.ivanbasic.learnspring.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,17 +17,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles( "test" )
-public class Db2ControllerTest {
+public class GreetingControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void testTest() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/db2/test").accept(MediaType.APPLICATION_JSON))
+    public void greetingTest() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/greeting?name=SPRING").accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string( containsString(  "3" )));
+                .andExpect(content().string( containsString(  "Hello, SPRING!" )));
+                //.andExpect(content().string(equalTo(  "{\"id\":1,\"content\":\"Hello, SPRING!\"}" )));
     }
 
 }

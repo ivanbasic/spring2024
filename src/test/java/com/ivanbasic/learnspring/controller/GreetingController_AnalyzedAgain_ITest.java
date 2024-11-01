@@ -1,4 +1,4 @@
-package com.ivanbasic.learnspring;
+package com.ivanbasic.learnspring.controller;
 
 import com.ivanbasic.learnspring.dto.Greeting;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.TestPropertySource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

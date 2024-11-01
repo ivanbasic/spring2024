@@ -1,4 +1,4 @@
-package com.ivanbasic.learnspring;
+package com.ivanbasic.learnspring.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class Db2HrControllerTest {
         mvc.perform(MockMvcRequestBuilders.get("/db2/hr").accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string( containsString(  "name,Ada=1" )));
+                .andExpect(content().string( containsString(  "Number of employees=3" )));
     }
 
 }

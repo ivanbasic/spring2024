@@ -1,9 +1,19 @@
 # Changelog
 
+
+## Version 0.0.21
+### new
+* repositories. returning...
+  * int (countXYX)
+  * entity (findXYZ)
+  * dto/record (custom queries)
+* repo tests 
+* 
+* [beeldung jpa java records](https://www.baeldung.com/spring-jpa-java-records)
+
 ## Version 0.0.20
 ### new
 * repositories. names of entities
-
 
 ## Version 0.0.19
 ### new

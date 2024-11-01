@@ -54,6 +54,7 @@ public class Db2AutoConfiguration {
     public DataSourceInitializer dataSourceInitializer(@Qualifier("db2DataSource") final DataSource dataSource) {
         ResourceDatabasePopulator resourceDatabasePopulator = new ResourceDatabasePopulator();
         resourceDatabasePopulator.addScript(new ClassPathResource("/schema-db2.sql"));
+        resourceDatabasePopulator.addScript(new ClassPathResource("/data-db2.sql"));
         DataSourceInitializer dataSourceInitializer = new DataSourceInitializer();
         dataSourceInitializer.setDataSource(dataSource);
         dataSourceInitializer.setDatabasePopulator(resourceDatabasePopulator);
