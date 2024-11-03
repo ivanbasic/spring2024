@@ -12,7 +12,7 @@
 
 	<groupId>com.ivanbasic</groupId>
 	<artifactId>learnSpring</artifactId>
-	<version>0.0.21</version>
+	<version>0.0.23</version>
 	<name>learnSpring</name>
 	<description>Demo project for Spring Boot</description>
 

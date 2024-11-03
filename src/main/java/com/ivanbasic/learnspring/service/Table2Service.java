@@ -1,5 +1,5 @@
 package com.ivanbasic.learnspring.service;
 
-public interface Db2Service {
+public interface Table2Service {
     long test();
 }

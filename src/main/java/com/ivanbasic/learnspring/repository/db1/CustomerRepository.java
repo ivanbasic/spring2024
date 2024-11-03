@@ -1,6 +1,6 @@
-package com.ivanbasic.learnspring.db1.repo;
+package com.ivanbasic.learnspring.repository.db1;
 
-import com.ivanbasic.learnspring.db1.model.Customer;
+import com.ivanbasic.learnspring.model.db1.Customer;
 import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 

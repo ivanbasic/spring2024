@@ -2,11 +2,11 @@ package com.ivanbasic.learnspring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.ivanbasic.learnspring.db2.model.Table2;
-import com.ivanbasic.learnspring.db2.repo.Table2Repo;
+import com.ivanbasic.learnspring.model.db2.Table2;
+import com.ivanbasic.learnspring.repository.db2.Table2Repo;
 
 @Service
-public class Db2ServiceImpl implements Db2Service {
+public class Table2ServiceImpl implements Table2Service {
 
     @Autowired
     Table2Repo  table2Repo;

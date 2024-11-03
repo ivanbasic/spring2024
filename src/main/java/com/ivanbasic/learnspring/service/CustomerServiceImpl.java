@@ -1,6 +1,6 @@
 package com.ivanbasic.learnspring.service;
 
-import com.ivanbasic.learnspring.db1.repo.CustomerRepository;
+import com.ivanbasic.learnspring.repository.db1.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

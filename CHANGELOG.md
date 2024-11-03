@@ -1,14 +1,18 @@
 # Changelog
 
+## Version 0.0.23
+### update
+* refactoring, clean up
+* documentation
+
 ## Version 0.0.22
 ### new
 * README.md
 * clean up
 
-
 ## Version 0.0.21
 ### update
-* repositories. returning...
+* repositories. returning... (EmployeeRepo)
   * int (countXYX)
   * entity (findXYZ)
   * dto/record (custom queries)
@@ -22,7 +26,7 @@
 
 ## Version 0.0.19
 ### new
-* repositories. Derived Query, JPQL, Native.
+* repositories. Derived Query, JPQL, Native (EmployeeRepo).
 * [1 baeldung Derived Query Methods](https://www.baeldung.com/spring-data-derived-queries)
 * [2 baeldung JPQL and Native](https://www.baeldung.com/spring-data-jpa-query)
 * [3 spring.io query keywords](https://docs.spring.io/spring-data/jpa/reference/repositories/query-keywords-reference.html)

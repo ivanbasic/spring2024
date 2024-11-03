@@ -16,10 +16,10 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableJpaRepositories(
-        basePackages = "com.ivanbasic.learnspring.db1.repo",
+        basePackages = "com.ivanbasic.learnspring.repository.db1",
         entityManagerFactoryRef = "db1EntityManager",
         transactionManagerRef = "db1TransactionManager")
-@ComponentScan("com.ivanbasic.learnspring.db1.model")
+@ComponentScan("com.ivanbasic.learnspring.model.db1")
 public class Db1AutoConfiguration {
 
     @Primary
@@ -34,7 +34,7 @@ public class Db1AutoConfiguration {
     public LocalContainerEntityManagerFactoryBean db1EntityManager() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(db1DataSource());
-        em.setPackagesToScan(new String[]{"com.ivanbasic.learnspring.db1.model"});
+        em.setPackagesToScan(new String[]{"com.ivanbasic.learnspring.model.db1"});
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         return em;

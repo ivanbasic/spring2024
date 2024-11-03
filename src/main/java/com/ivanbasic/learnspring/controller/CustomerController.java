@@ -11,7 +11,7 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-    @GetMapping("/customer/count")
+    @GetMapping("/db1/customer/count")
     public long count() {
         return customerService.count();
     }

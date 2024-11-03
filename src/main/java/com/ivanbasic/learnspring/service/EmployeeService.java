@@ -1,5 +1,5 @@
 package com.ivanbasic.learnspring.service;
 
-public interface Db2HrService {
+public interface EmployeeService {
     String test();
 }

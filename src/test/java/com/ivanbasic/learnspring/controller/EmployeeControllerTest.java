@@ -17,14 +17,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles( "test" )
-public class Db2HrControllerTest {
+public class EmployeeControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
     public void testTest() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/db2/hr").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/db2/employee/count").accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string( containsString(  "Number of employees=3" )));

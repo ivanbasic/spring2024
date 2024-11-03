@@ -1,4 +1,4 @@
-missing @Entity for Empoyees.java
+missing @Entity above Empoyees.java
 ==========================
 Error creating bean with name 'db2HrController':
 Unsatisfied dependency expressed through field 'db2HrService': Error creating bean with name 'db2HrServiceImpl':

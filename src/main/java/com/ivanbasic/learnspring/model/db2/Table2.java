@@ -1,4 +1,4 @@
-package com.ivanbasic.learnspring.db2.model;
+package com.ivanbasic.learnspring.model.db2;
 import jakarta.persistence.*;
 
 @Entity

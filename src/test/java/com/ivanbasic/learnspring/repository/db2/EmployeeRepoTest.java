@@ -1,6 +1,6 @@
-package com.ivanbasic.learnspring.db2.repo;
+package com.ivanbasic.learnspring.repository.db2;
 
-import com.ivanbasic.learnspring.db2.model.Employee;
+import com.ivanbasic.learnspring.model.db2.Employee;
 import com.ivanbasic.learnspring.dto.EmployeeDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,19 +19,15 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles( "test" )
-public class Db2RepoTest {
+public class EmployeeRepoTest {
     @Autowired
     EmployeeRepo employeeRepo;
-
-    @Autowired
-    DepartmentRepo departmentRepo;
 
     final LocalDateTime dateTime1 = LocalDateTime.of(2015, Month.NOVEMBER, 21, 14, 30, 15);
 
     @Test
     public void countTest() {
 
-        long c01 = departmentRepo.count();
         long c02 = employeeRepo.count();
         long c03 = employeeRepo.countByEmployeeId(1);
         long c04 = employeeRepo.countByEmployeeIdBetween(1, 3);
@@ -44,7 +40,6 @@ public class Db2RepoTest {
         long c11 = employeeRepo.customJPQLCountByEmployeeId(1);
         long c12 = employeeRepo.customNativeCountByEmployeeId(1);
 
-        assertEquals(2,c01);
         assertEquals(3,c02);
         assertEquals(1,c03);
         assertEquals(3,c04);

@@ -1,19 +1,19 @@
 package com.ivanbasic.learnspring.controller;
 
-import com.ivanbasic.learnspring.service.Db2HrService;
+import com.ivanbasic.learnspring.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Db2HrController {
+public class EmployeeController {
 
     @Autowired
-    Db2HrService db2HrService;
+    EmployeeService employeeService;
 
-    @GetMapping("/db2/hr")
+    @GetMapping("/db2/employee/count")
     public  String test() {
-        return db2HrService.test();
+        return employeeService.test();
     }
 
 }

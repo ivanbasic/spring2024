@@ -1,6 +1,6 @@
-package com.ivanbasic.learnspring.db2.repo;
+package com.ivanbasic.learnspring.repository.db2;
 
-import com.ivanbasic.learnspring.db2.model.Employee;
+import com.ivanbasic.learnspring.model.db2.Employee;
 import com.ivanbasic.learnspring.dto.EmployeeDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

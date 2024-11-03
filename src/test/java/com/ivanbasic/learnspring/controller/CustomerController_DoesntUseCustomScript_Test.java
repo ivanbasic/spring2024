@@ -18,14 +18,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 
 @ActiveProfiles( "test" )
-//@TestPropertySource("classpath:application-test.properties-BACKUP")
 public class CustomerController_DoesntUseCustomScript_Test {
     @Autowired
     private MockMvc mvc;
 
     @Test
     public void countTest() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/customer/count").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/db1/customer/count").accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string( containsString(  "0" )));
