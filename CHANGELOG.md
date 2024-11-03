@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 0.0.25
+### new
+* transactional tests
+  * Transactional() for primary ds db1
+  * Transactional("DB2") for db2
+* [pg sequence 1](https://webkul.com/blog/fix-missing-sequence-table-postgresql/)
+* [pg sequence 2](https://stackoverflow.com/questions/60687826/the-increment-size-of-the-sequence-is-set-to-50-in-the-entity-mapping-while-th)
+
+
 ## Version 0.0.23
 ### update
 * refactoring, clean up

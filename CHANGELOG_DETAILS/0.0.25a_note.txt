@@ -1,0 +1,18 @@
+about transactional tests note by IB
+
+main.configuration:
+@Configuration
+@EnableTransactionManagement(mode=AdviceMode.PROXY) ???
+class...
+@Qualifier("DB2-SOURCE") public DataSource ???
+@Qualifier("DB2")    public PlatformTransactionManager
+
+Test:
+@ActiveProfiles("test")
+@SpringBootTest(classes = DB2Configuration.class) ???
+@Sql(scripts = {"classpath:database/schema-XYZ.sql", "classpath:database/data-XYZ.sql"})
+@Transactional("DB2") <======
+public class someTest {4
+    @Test
+    transaction1Test()
+    ....

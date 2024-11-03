@@ -28,6 +28,7 @@ public class Db2AutoConfiguration {
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.db2")
+    @Qualifier("DB2-SOURCE")
     public DataSource db2DataSource() {
         return DataSourceBuilder.create().build();
     }
@@ -43,6 +44,7 @@ public class Db2AutoConfiguration {
     }
 
     @Bean
+    @Qualifier("DB2")
     public PlatformTransactionManager db2TransactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(db2EntityManager().getObject());
