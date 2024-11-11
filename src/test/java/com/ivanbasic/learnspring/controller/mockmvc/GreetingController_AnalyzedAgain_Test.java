@@ -1,4 +1,4 @@
-package com.ivanbasic.learnspring.controller;
+package com.ivanbasic.learnspring.controller.mockmvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ivanbasic.learnspring.dto.Greeting;

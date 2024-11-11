@@ -1,13 +1,11 @@
-package com.ivanbasic.learnspring.controller;
+package com.ivanbasic.learnspring.controller.mockmvc;
 
-import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -19,22 +17,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles( "test" )
-@Sql("/data-custom.sql")
-@Transactional
-public class CustomerController_UsesDataCustomScript_Test {
+public class EmployeeControllerTest {
+
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void
-    countTest() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/db1/customer/count").accept(MediaType.APPLICATION_JSON))
+    public void testTest() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/db2/employee/count").accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string( containsString(  "1" )));
+                .andExpect(content().string( containsString(  "Number of employees=3" )));
     }
+
 }
-
-
-
-

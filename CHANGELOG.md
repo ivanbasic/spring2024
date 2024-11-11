@@ -1,5 +1,18 @@
 # Changelog
 
+
+## Version 0.0.26
+### new
+* security part 1. https
+* [baeldung create https](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
+* [baeldung invoke with](https://www.baeldung.com/spring-resttemplate-secure-https-service)
+
+* [MockMvc vs RestTemplate](https://stackoverflow.com/questions/25901985/difference-between-mockmvc-and-resttemplate-in-integration-tests)
+* [MockMvc vs TestRestTemplate](https://www.javaguides.net/2023/12/mockmvc-vs-testresttemplate.html)
+* [testresttemplate-to-use-a-keystore](https://stackoverflow.com/questions/56378142/how-to-configure-testresttemplate-to-use-a-keystore)
+* [nikola stankovic 1/3 https for java dev](https://medium.com/viascom/practical-ssl-tls-walkthrough-for-java-kotlin-developers-spring-boot-edition-75970a004164)
+* [nikola stankovic 2/3 enabling https](https://medium.com/viascom/enabling-https-in-spring-boot-3-c94095389842)
+
 ## Version 0.0.25
 ### new
 * transactional tests
@@ -7,7 +20,6 @@
   * Transactional("DB2") for db2
 * [pg sequence 1](https://webkul.com/blog/fix-missing-sequence-table-postgresql/)
 * [pg sequence 2](https://stackoverflow.com/questions/60687826/the-increment-size-of-the-sequence-is-set-to-50-in-the-entity-mapping-while-th)
-
 
 ## Version 0.0.23
 ### update

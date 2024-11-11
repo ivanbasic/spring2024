@@ -1,4 +1,4 @@
-package com.ivanbasic.learnspring.controller;
+package com.ivanbasic.learnspring.controller.mockmvc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,18 +16,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@ActiveProfiles( "test" )
-public class EmployeeControllerTest {
 
+@ActiveProfiles( "test" )
+public class CustomerController_DoesntUseCustomScript_Test {
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void testTest() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/db2/employee/count").accept(MediaType.APPLICATION_JSON))
+    public void countTest() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/db1/customer/count").accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string( containsString(  "Number of employees=3" )));
+                .andExpect(content().string( containsString(  "0" )));
     }
-
 }
+
+
+
+

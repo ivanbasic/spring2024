@@ -21,3 +21,12 @@ logging:
   level:
     org.hibernate.SQL: debug
     org.hibernate.type.descriptor.sql: trace
+
+
+server:
+  ssl:
+    key-store-type: PKCS12
+    key-store: classpath:keystore/learnSpring.p12
+    key-store-password: notsosecret
+    key-alias: learnSpring
+    enabled: true
