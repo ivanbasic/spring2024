@@ -3,9 +3,10 @@
 
 ## Version 0.0.26
 ### new
-tasks:
-* Enable https in server app
-* Consume it using client app and rest template
+steps:
+* 1 Enable https in server app 
+* 2 Consume it using client app and rest template
+* 3 TestRestTemplate tests were down after step 1, fixed again after step 2.  
 
 links:
 * [baeldung create https](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
@@ -23,6 +24,8 @@ links:
 
 * [how to connect to https](https://stackoverflow.com/questions/75794674/java-spring-boot-how-to-connect-with-server-using-https)
   * baeldung trap for 2K developers 
+
+* [this step is missing, how to get .crt from brouzer](TODO)
 
 * [certificate error](https://stackoverflow.com/questions/3093112/certificateexception-no-name-matching-ssl-someurl-de-found)
   * very useful, localhost trick:
