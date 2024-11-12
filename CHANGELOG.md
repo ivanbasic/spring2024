@@ -4,28 +4,28 @@
 ## Version 0.0.26
 ### new
 steps:
-* 1 Enable https in server app 
+* 1 Enable HTTPS in server app 
 * 2 Consume it using client app and rest template
-* 3 TestRestTemplate tests were down after step 1, fixed again after step 2.  
+* 3 TestRestTemplate tests were down after step 1, fixed again after step 2 (invoking an HTTPS url) .  
 
 links:
 * [baeldung create https](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
-  * useful: but only the half 
+  * useful: but only the steps 1-3, skip step 4.
 * [baeldung invoke with](https://www.baeldung.com/spring-resttemplate-secure-https-service)
   * NOT useful
 
 * [MockMvc vs RestTemplate](https://stackoverflow.com/questions/25901985/difference-between-mockmvc-and-resttemplate-in-integration-tests)
 * [MockMvc vs TestRestTemplate](https://www.javaguides.net/2023/12/mockmvc-vs-testresttemplate.html)
-*[testresttemplate-to-use-a-keystore](https://stackoverflow.com/questions/56378142/how-to-configure-testresttemplate-to-use-a-keystore)
+* [testresttemplate-to-use-a-keystore](https://stackoverflow.com/questions/56378142/how-to-configure-testresttemplate-to-use-a-keystore)
 
 * [nikola stankovic 1/3 https for java dev](https://medium.com/viascom/practical-ssl-tls-walkthrough-for-java-kotlin-developers-spring-boot-edition-75970a004164)
   *  useful: three possibilities to get public and private key kombo
 * [nikola stankovic 2/3 enabling https](https://medium.com/viascom/enabling-https-in-spring-boot-3-c94095389842)
 
 * [how to connect to https](https://stackoverflow.com/questions/75794674/java-spring-boot-how-to-connect-with-server-using-https)
-  * baeldung trap for 2K developers 
+  * baeldung trap for 2K+ developers 
 
-* [this step is missing, how to get .crt from brouzer](TODO)
+* [this step is missing: how to get .crt from browser](TODO)
 
 * [certificate error](https://stackoverflow.com/questions/3093112/certificateexception-no-name-matching-ssl-someurl-de-found)
   * very useful, localhost trick:

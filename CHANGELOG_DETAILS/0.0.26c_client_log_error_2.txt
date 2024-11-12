@@ -2,7 +2,11 @@ greska nakon sto se dodao kljuc, ali onaj pogresan, ivanbasic.crt
 =============================================================
 
 
-2024-11-11T23:00:03.111+01:00 ERROR 12996 --- [learnSpringClient] [nio-8081-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "https://localhost:8443/greeting": No name matching localhost found] with root cause
+2024-11-11T23:00:03.111+01:00 ERROR 12996 --- [learnSpringClient] [nio-8081-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    :
+Servlet.service() for servlet [dispatcherServlet] in context with path []
+threw exception [Request processing failed: org.springframework.web.client.ResourceAccessException:
+I/O error on GET request for "https://localhost:8443/greeting":
+No name matching localhost found] with root cause
 
 java.security.cert.CertificateException: No name matching localhost found
 	at java.base/sun.security.util.HostnameChecker.matchDNS(HostnameChecker.java:229) ~[na:na]
