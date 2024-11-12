@@ -1,0 +1,13 @@
+kad je stavljen odgovarajaci kljuc u javino skladiste:
+===========================
+
+http://localhost:8081/test
+200 ok
+{"id":2,"content":"Hello, You!"}
+==============================
+
+2024-11-11T23:17:38.546+01:00  INFO 10664 --- [learnSpringClient] [nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-11T23:17:38.547+01:00  INFO 10664 --- [learnSpringClient] [nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-11T23:17:38.549+01:00  INFO 10664 --- [learnSpringClient] [nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+
+

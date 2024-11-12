@@ -24,9 +24,10 @@ logging:
 
 
 server:
+  port: 8443 # added
   ssl:
     key-store-type: PKCS12
-    key-store: classpath:keystore/learnSpring.p12
+    key-store: classpath:keystore/learnSpring2.p12
     key-store-password: notsosecret
-    key-alias: learnSpring
+    key-alias: learnSpring2
     enabled: true

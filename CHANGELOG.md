@@ -3,15 +3,31 @@
 
 ## Version 0.0.26
 ### new
-* security part 1. https
+tasks:
+* Enable https in server app
+* Consume it using client app and rest template
+
+links:
 * [baeldung create https](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
+  * useful: but only the half 
 * [baeldung invoke with](https://www.baeldung.com/spring-resttemplate-secure-https-service)
+  * NOT useful
 
 * [MockMvc vs RestTemplate](https://stackoverflow.com/questions/25901985/difference-between-mockmvc-and-resttemplate-in-integration-tests)
 * [MockMvc vs TestRestTemplate](https://www.javaguides.net/2023/12/mockmvc-vs-testresttemplate.html)
-* [testresttemplate-to-use-a-keystore](https://stackoverflow.com/questions/56378142/how-to-configure-testresttemplate-to-use-a-keystore)
+*[testresttemplate-to-use-a-keystore](https://stackoverflow.com/questions/56378142/how-to-configure-testresttemplate-to-use-a-keystore)
+
 * [nikola stankovic 1/3 https for java dev](https://medium.com/viascom/practical-ssl-tls-walkthrough-for-java-kotlin-developers-spring-boot-edition-75970a004164)
+  *  useful: three possibilities to get public and private key kombo
 * [nikola stankovic 2/3 enabling https](https://medium.com/viascom/enabling-https-in-spring-boot-3-c94095389842)
+
+* [how to connect to https](https://stackoverflow.com/questions/75794674/java-spring-boot-how-to-connect-with-server-using-https)
+  * baeldung trap for 2K developers 
+
+* [certificate error](https://stackoverflow.com/questions/3093112/certificateexception-no-name-matching-ssl-someurl-de-found)
+  * very useful, localhost trick:
+  * When you generate certificate, on question "What is your first and last name?" answer : localhost
+
 
 ## Version 0.0.25
 ### new
