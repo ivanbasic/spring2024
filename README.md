@@ -1,4 +1,4 @@
-# spring2024
+# learnSpring app
 * the lessons about spring boot
 
 
