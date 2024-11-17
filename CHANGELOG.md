@@ -9,7 +9,7 @@
 * 2 Consume it using client app and rest template
 * 3 TestRestTemplate tests were down after step 1, fixed again after step 2
 
-### Tutorial links, most of them of poor quality:
+### Tutorial links, most of them not perfect
 * [baeldung create https](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
   * useful: but only the steps 1-3, skip step 4.
 * [baeldung invoke with](https://www.baeldung.com/spring-resttemplate-secure-https-service)
