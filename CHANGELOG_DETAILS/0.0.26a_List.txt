@@ -1,0 +1,13 @@
+Keystore type: PKCS12
+Keystore provider: SUN
+
+Your keystore contains 109 entries
+
+...
+...
+letsencryptisrgx2 [jdk], 17. 11. 2024., trustedCertEntry,
+Certificate fingerprint (SHA-256): 69:72:9B:8E:15:A8:6E:FC:17:7A:57:AF:B7:17:1D:FC:64:AD:D2:8C:2F:CA:8C:F1:50:7E:34:45:3C:CB:14:70
+
+localhost, 17. 11. 2024., trustedCertEntry,
+Certificate fingerprint (SHA-256): B9:69:87:49:BE:45:42:67:92:99:B3:9E:F8:3F:33:72:21:B9:94:3C:48:74:D4:3F:7E:97:8C:E5:50:2A:D7:50
+

@@ -27,7 +27,7 @@ server:
   port: 8443 # added
   ssl:
     key-store-type: PKCS12
-    key-store: classpath:keystore/learnSpring2.p12
+    key-store: classpath:keystore/LOCALHOST.p12
     key-store-password: notsosecret
-    key-alias: learnSpring2
+    key-alias: LOCALHOST
     enabled: true

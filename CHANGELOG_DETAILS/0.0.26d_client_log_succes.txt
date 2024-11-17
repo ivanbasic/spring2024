@@ -1,4 +1,4 @@
-kad je stavljen odgovarajaci kljuc u javino skladiste:
+from learnSpringClient app
 ===========================
 
 http://localhost:8081/test

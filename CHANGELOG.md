@@ -3,12 +3,13 @@
 
 ## Version 0.0.26
 ### new
-steps:
+### Steps:
+* 0 Public-key cryptography and Keystore tool. See 0.0.26a_Keystore_Tutorial.md
 * 1 Enable HTTPS in server app 
 * 2 Consume it using client app and rest template
-* 3 TestRestTemplate tests were down after step 1, fixed again after step 2 (invoking an HTTPS url) .  
+* 3 TestRestTemplate tests were down after step 1, fixed again after step 2
 
-links:
+### Tutorial links, most of them of poor quality:
 * [baeldung create https](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
   * useful: but only the steps 1-3, skip step 4.
 * [baeldung invoke with](https://www.baeldung.com/spring-resttemplate-secure-https-service)
