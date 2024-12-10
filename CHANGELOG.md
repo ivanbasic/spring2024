@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.0.27
+### new
+* Spring security enabled
+* [Amigoscode](https://www.youtube.com/watch?v=b9O9NI-RJ3o&ab_channel=Amigoscode)
 
 ## Version 0.0.26
 ### new
