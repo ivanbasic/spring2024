@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.0.28
+### new
+* Fix tests when Spring security is enabled
+
+
 ## Version 0.0.27
 ### new
 * Spring security enabled
