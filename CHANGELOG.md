@@ -2,9 +2,13 @@
 
 ## Version 0.0.28
 ### new
-* Fix tests when Spring security is enabled
+* Fix the tests when Spring security is enabled
 * google test @autoconfiguremockmvc 401 unauthorized
 * https://stackoverflow.com/questions/78358519/401-unauthorized-junit-test
+* Works:
+  * @MockBean(SecurityFilterChain.class)
+  * @WithMockUser
+  * @AutoConfigureMockMvc(addFilters=false)
 
 ## Version 0.0.27
 ### new
