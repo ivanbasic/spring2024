@@ -1,28 +1,32 @@
 # Changelog
 
-## Version 0.0.28
+## Version 0.0.29 
 ### new
-* Fix the tests when Spring security is enabled
+* BASIC AUTHORIZATION AND POSTMAN
+
+## Version 0.0.28 
+### new
+* FIXED TESTS WHEN SPRING SECURITY IS ENABLED
 * google test @autoconfiguremockmvc 401 unauthorized
 * https://stackoverflow.com/questions/78358519/401-unauthorized-junit-test
-* Works:
+* Works any of these:
   * @MockBean(SecurityFilterChain.class)
   * @WithMockUser
   * @AutoConfigureMockMvc(addFilters=false)
 
-## Version 0.0.27
+## Version 0.0.27 
 ### new
-* Spring security enabled
+* SPRING SECURITY ENABLED
 * [Amigoscode](https://www.youtube.com/watch?v=b9O9NI-RJ3o&ab_channel=Amigoscode)
 
-## Version 0.0.26
+## Version 0.0.26 
 ### new
+* HTTPS ENABLED
 ### Steps:
 * 0 Public-key cryptography and Keystore tool. See 0.0.26a_Keystore_Tutorial.md
 * 1 Enable HTTPS in server app 
 * 2 Consume it using client app and rest template
 * 3 TestRestTemplate tests were down after step 1, fixed again after step 2
-
 ### Tutorial links, most of them not perfect
 * [baeldung create https](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
   * useful: but only the steps 1-3, skip step 4.
