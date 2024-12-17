@@ -6,7 +6,7 @@
 * 
 * SecurityFilterChain, DefaultSecurityFilterChain, SpringBootWebSecurityConfiguration
 * [Amigoscode](https://www.youtube.com/watch?v=b9O9NI-RJ3o&ab_channel=Amigoscode)
-  * 15:05 gutter icon "navigate to the spring bean declarations"  
+  * TODO: 15:05 gutter icon "navigate to the spring bean declarations"  
 
 
 ## Version 0.0.29 
