@@ -1,4 +1,17 @@
 
+
+2024-12-17T21:07:21.574+01:00  INFO 10892 --- [learnSpring] [           main] c.i.learnspring.LearnSpringApplication   : Starting LearnSpringApplication using Java 21.0.3 with PID 10892 (C:\Users\ivan\jspring2024\spring2024\target\classes started by ivan in C:\Users\ivan\jspring2024\spring2024)
+...
+Using generated security password: 2b4b7df0-59c9-42f7-bc66-0092c1bece70
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+...
+2024-12-17T21:07:27.666+01:00  INFO 10892 --- [learnSpring] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-12-17T21:07:27.973+01:00  INFO 10892 --- [learnSpring] [           main] c.i.l.configuration.SecurityConfig       : inside mySecurityFilterChain
+2024-12-17T21:07:28.598+01:00  INFO 10892 --- [learnSpring] [           main] o.a.t.util.net.NioEndpoint.certificate   : Connector [https-jsse-nio-8443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\ivan\.keystore] using alias [LOCALHOST] with trust store [null]
+2024-12-17T21:07:28.618+01:00  INFO 10892 --- [learnSpring] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8443 (https) with context path '/'
+2024-12-17T21:07:28.627+01:00  INFO 10892 --- [learnSpring] [           main] c.i.learnspring.LearnSpringApplication   : Started LearnSpringApplication in 7.661 seconds (process running for 8.195)
+
 Let's inspect the beans provided by Spring Boot:
 
 com.ivanbasic beans:
@@ -11,7 +24,7 @@ employeeController com.ivanbasic.learnspring.controller.EmployeeController
 employeeServiceImpl com.ivanbasic.learnspring.service.EmployeeServiceImpl
 greetingController com.ivanbasic.learnspring.controller.GreetingController
 learnSpringApplication com.ivanbasic.learnspring.LearnSpringApplication$$SpringCGLIB$$0
-listOfSpringBootBeans com.ivanbasic.learnspring.util.BeanReader$$Lambda/0x000001c3879b11d0
+listOfSpringBootBeans com.ivanbasic.learnspring.util.BeanReader$$Lambda/0x000001744d9af7f0
 repoDemo com.ivanbasic.learnspring.util.RepoDemo
 restApiParametersController com.ivanbasic.learnspring.controller.RestApiParametersController
 securityConfig com.ivanbasic.learnspring.configuration.SecurityConfig$$SpringCGLIB$$0
@@ -19,8 +32,7 @@ table2Controller com.ivanbasic.learnspring.controller.Table2Controller
 table2ServiceImpl com.ivanbasic.learnspring.service.Table2ServiceImpl
 
 spring beans:
-  (including: mySecurityFilterChain,springSecurityFilterChain)
-
+  (including: mySecurityFilterChain, springSecurityFilterChain)
 applicationAvailability org.springframework.boot.availability.ApplicationAvailabilityBean
 applicationTaskExecutor org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor
 authenticationEventPublisher org.springframework.security.authentication.DefaultAuthenticationEventPublisher
@@ -61,7 +73,7 @@ flashMapManager org.springframework.web.servlet.support.SessionFlashMapManager
 formContentFilter org.springframework.boot.web.servlet.filter.OrderedFormContentFilter
 handlerExceptionResolver org.springframework.web.servlet.handler.HandlerExceptionResolverComposite
 handlerFunctionAdapter org.springframework.web.servlet.function.support.HandlerFunctionAdapter
-hikariPoolDataSourceMetadataProvider org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration$$Lambda/0x000001c3879d1058
+hikariPoolDataSourceMetadataProvider org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration$$Lambda/0x000001744d9ce918
 httpMessageConvertersRestClientCustomizer org.springframework.boot.autoconfigure.web.client.HttpMessageConvertersRestClientCustomizer
 httpRequestHandlerAdapter org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter
 inMemoryUserDetailsManager org.springframework.security.provisioning.InMemoryUserDetailsManager
@@ -195,7 +207,7 @@ org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoCon
 org.springframework.boot.context.internalConfigurationPropertiesBinder org.springframework.boot.context.properties.ConfigurationPropertiesBinder
 org.springframework.boot.context.properties.BoundConfigurationProperties org.springframework.boot.context.properties.BoundConfigurationProperties
 org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor
-org.springframework.boot.context.properties.EnableConfigurationPropertiesRegistrar.methodValidationExcludeFilter org.springframework.boot.validation.beanvalidation.MethodValidationExcludeFilter$$Lambda/0x000001c3879b13f0
+org.springframework.boot.context.properties.EnableConfigurationPropertiesRegistrar.methodValidationExcludeFilter org.springframework.boot.validation.beanvalidation.MethodValidationExcludeFilter$$Lambda/0x000001744d9afa10
 org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor
 org.springframework.context.annotation.internalAutowiredAnnotationProcessor org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor
 org.springframework.context.annotation.internalCommonAnnotationProcessor org.springframework.context.annotation.CommonAnnotationBeanPostProcessor
@@ -219,7 +231,7 @@ org.springframework.transaction.annotation.ProxyTransactionManagementConfigurati
 org.springframework.transaction.config.internalTransactionAdvisor org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor
 org.springframework.transaction.config.internalTransactionalEventListenerFactory org.springframework.transaction.annotation.RestrictedTransactionalEventListenerFactory
 pageModule org.springframework.data.web.config.SpringDataJacksonConfiguration$PageModule
-pageableCustomizer org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration$$Lambda/0x000001c3879bf158
+pageableCustomizer org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration$$Lambda/0x000001744d9b97b8
 pageableResolver org.springframework.data.web.PageableHandlerMethodArgumentResolver
 parameterNamesModule com.fasterxml.jackson.module.paramnames.ParameterNamesModule
 persistenceExceptionTranslationPostProcessor org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor
@@ -245,7 +257,7 @@ servletWebServerFactoryCustomizer org.springframework.boot.autoconfigure.web.ser
 simpleAsyncTaskExecutorBuilder org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder
 simpleAsyncTaskSchedulerBuilder org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder
 simpleControllerHandlerAdapter org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter
-sortCustomizer org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration$$Lambda/0x000001c3879be3f8
+sortCustomizer org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration$$Lambda/0x000001744d9b8a58
 sortResolver org.springframework.data.web.SortHandlerMethodArgumentResolver
 spring.data.web-org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties
 spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties org.springframework.boot.autoconfigure.jdbc.DataSourceProperties
@@ -264,9 +276,7 @@ spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionP
 spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties org.springframework.boot.autoconfigure.task.TaskSchedulingProperties
 spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties org.springframework.boot.autoconfigure.transaction.TransactionProperties
 spring.web-org.springframework.boot.autoconfigure.web.WebProperties org.springframework.boot.autoconfigure.web.WebProperties
-
 springSecurityFilterChain org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy
-
 springSecurityHandlerMappingIntrospectorBeanDefinitionRegistryPostProcessor org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$1
 sslBundleRegistry org.springframework.boot.ssl.DefaultSslBundleRegistry
 sslPropertiesSslBundleRegistrar org.springframework.boot.autoconfigure.ssl.SslPropertiesBundleRegistrar
