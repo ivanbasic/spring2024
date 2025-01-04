@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 0.0.31
+### new
+* JWT AUTHENTICATION
+*
+* [dan vega JWT](https://www.danvega.dev/blog/spring-security-jwt)
+* [openssl for win](https://stackoverflow.com/questions/50625283/how-to-install-openssl-in-windows-10)
+* Postman Steps:
+  * call /token request using basic auth, using user which is set in InMemoryUserDetailsManager bean. Get token
+  * root of the collection has authorization "Bearer Token". Copy token 
+  * all other requests inherit auth (jwt token) from parent/root
+
+
 ## Version 0.0.30
 ### new
 * IMPLEMENT BASIC AUTHENTICATION
@@ -7,11 +19,13 @@
 * SecurityFilterChain, DefaultSecurityFilterChain, SpringBootWebSecurityConfiguration
 * [Amigoscode](https://www.youtube.com/watch?v=b9O9NI-RJ3o&ab_channel=Amigoscode)
   * TODO: 15:05 gutter icon "navigate to the spring bean declarations"  
-
+* Postman Steps: 
+  * root of the collection has authorization "Basic Auth", user is user and password is generated on every startup 
+  * all request inherit auth (basic, user/pass) from parent/root
 
 ## Version 0.0.29 
 ### new
-* BASIC AUTHORIZATION AND POSTMAN
+* BASIC AUTHENTICATION AND POSTMAN
 
 ## Version 0.0.28 
 ### new

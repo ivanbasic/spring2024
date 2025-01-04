@@ -31,3 +31,7 @@ server:
     key-store-password: notsosecret
     key-alias: LOCALHOST
     enabled: true
+
+rsa:
+  private-key: classpath:keystore/JWT-PRIVATE.pem
+  public-key: classpath:keystore/JWT-PUBLIC.pem
