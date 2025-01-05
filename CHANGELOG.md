@@ -3,39 +3,54 @@
 ## Version 0.0.31
 ### new
 * JWT AUTHENTICATION
-*
+### Source code steps:
+* 0 pom.xml: `spring-boot-starter-oauth2-resource-server` & `spring-boot-configuration-processor`
+* 1 SecurityConfig class:
+  * SecurityFilterChain, jwt added
+  * InMemoryUserDetailsManager bean. user ivan
+  * JWT decoder and encoder bean
+* 2 RSA Public & Private Keys
+* 3 Token service and controller
+### Postman Steps:
+* 0 call new /token request using basic auth, using user which is set in InMemoryUserDetailsManager bean
+* 1 Copy token
+* 2 root of the collection should have authorization `Bearer Token` (jwt token). Past token.
+* 3 all other requests should inherit auth  from parent/root
+### Tutorial
 * [dan vega JWT](https://www.danvega.dev/blog/spring-security-jwt)
 * [openssl for win](https://stackoverflow.com/questions/50625283/how-to-install-openssl-in-windows-10)
-* Postman Steps:
-  * call /token request using basic auth, using user which is set in InMemoryUserDetailsManager bean. Get token
-  * root of the collection has authorization "Bearer Token". Copy token 
-  * all other requests inherit auth (jwt token) from parent/root
+
 
 
 ## Version 0.0.30
 ### new
 * IMPLEMENT BASIC AUTHENTICATION
-* 
+* Short story about...
 * SecurityFilterChain, DefaultSecurityFilterChain, SpringBootWebSecurityConfiguration
-* [Amigoscode](https://www.youtube.com/watch?v=b9O9NI-RJ3o&ab_channel=Amigoscode)
-  * TODO: 15:05 gutter icon "navigate to the spring bean declarations"  
-* Postman Steps: 
-  * root of the collection has authorization "Basic Auth", user is user and password is generated on every startup 
-  * all request inherit auth (basic, user/pass) from parent/root
+
 
 ## Version 0.0.29 
 ### new
 * BASIC AUTHENTICATION AND POSTMAN
+### Steps
+* In the root of postman collection, set Authorization  to `Basic`
+  * User should be `user`
+  * Password should be copied from `generated security password` from app log
+* For all endpoints, set Authorization `inherit auth from parent`
+
 
 ## Version 0.0.28 
 ### new
 * FIXED TESTS WHEN SPRING SECURITY IS ENABLED
+### Any of these works:
+* 1 @MockBean(SecurityFilterChain.class)
+* 2 @WithMockUser
+* 3 @AutoConfigureMockMvc(addFilters=false)
+### Tutorials
 * google test @autoconfiguremockmvc 401 unauthorized
 * https://stackoverflow.com/questions/78358519/401-unauthorized-junit-test
-* Any of these works:
-  * 1 @MockBean(SecurityFilterChain.class)
-  * 2 @WithMockUser
-  * 3 @AutoConfigureMockMvc(addFilters=false)
+
+
 
 ## Version 0.0.27 
 ### new
@@ -47,14 +62,10 @@
 * 3 `/login` and `/logout` endpoints added when using browser
 * 4 `Basic auth` with user `user` and password ...
 * 5 `Using generated security password: ...` from app startup log
+### Tutorials
+* [architecture](https://docs.spring.io/spring-security/reference/servlet/architecture.html)
+* No other simple tutorial
 
-* Tutorials
-  * [arhitecture](https://docs.spring.io/spring-security/reference/servlet/architecture.html)
-  * No other simple tutorial
-
-
-### 
-* 
 
 ## Version 0.0.26 
 ### new
