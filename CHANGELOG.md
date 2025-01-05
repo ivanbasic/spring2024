@@ -32,15 +32,29 @@
 * FIXED TESTS WHEN SPRING SECURITY IS ENABLED
 * google test @autoconfiguremockmvc 401 unauthorized
 * https://stackoverflow.com/questions/78358519/401-unauthorized-junit-test
-* Works any of these:
-  * @MockBean(SecurityFilterChain.class)
-  * @WithMockUser
-  * @AutoConfigureMockMvc(addFilters=false)
+* Any of these works:
+  * 1 @MockBean(SecurityFilterChain.class)
+  * 2 @WithMockUser
+  * 3 @AutoConfigureMockMvc(addFilters=false)
 
 ## Version 0.0.27 
 ### new
 * SPRING SECURITY ENABLED
-* [Amigoscode](https://www.youtube.com/watch?v=b9O9NI-RJ3o&ab_channel=Amigoscode)
+### Steps:
+* 0 dependency `spring-boot-starter-security` added in pom.xml
+* 1 no single change in the source code
+* 2 all endpoints secured with error `401 Unauthorized`
+* 3 `/login` and `/logout` endpoints added when using browser
+* 4 `Basic auth` with user `user` and password ...
+* 5 `Using generated security password: ...` from app startup log
+
+* Tutorials
+  * [arhitecture](https://docs.spring.io/spring-security/reference/servlet/architecture.html)
+  * No other simple tutorial
+
+
+### 
+* 
 
 ## Version 0.0.26 
 ### new
@@ -50,6 +64,8 @@
 * 1 Enable HTTPS in server app 
 * 2 Consume it using client app and rest template
 * 3 TestRestTemplate tests were down after step 1, fixed again after step 2
+
+
 ### Tutorial links, most of them not perfect
 * [baeldung create https](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
   * useful: but only the steps 1-3, skip step 4.
