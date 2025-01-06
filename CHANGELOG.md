@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 0.0.35
+### update for 0.0.30
+
 ## Version 0.0.34
 ### new
 * SPRING BOOT SECURITY. AUTOMATED TESTING
@@ -47,9 +50,18 @@
 
 ## Version 0.0.30
 ### new
-* IMPLEMENT BASIC AUTHENTICATION
-* Short story about...
-* SecurityFilterChain, DefaultSecurityFilterChain, SpringBootWebSecurityConfiguration
+* ORIGIN OF (NAVIGATE TO SPRING BEAN DECLARATION) of SecurityFilterChain:
+  * SecurityFilterChain 
+  * @Bean DefaultSecurityFilterChain defaultSecurityFilterChain in...
+  * SpringBootWebSecurityConfiguration
+### Tutorial
+* [amigoscode](https://youtu.be/b9O9NI-RJ3o?t=908)
+### Question:
+* How to `navigate to spring bean declarations` in intellij?
+### Best answer until now:
+* Ctrl+Shift+N > (SecurityFilterChain)
+* Classes >
+* SecurityFilterChainConfiguration in SpringBootWebSecurityConfiguration
 
 
 ## Version 0.0.29 
