@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.0.32
+### update
+* SPRING BOOT SECURITY. DOCUMENTATION UPDATED
+
+
 ## Version 0.0.31
 ### new
 * JWT AUTHENTICATION
