@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 0.0.33
+### update
+* SPRING BOOT SECURITY. DEPRECATED JWT FILTER
+### Tutorial
+* [Spring Security deprecated issue with JWT](https://stackoverflow.com/questions/76339307/spring-security-deprecated-issue)
+* [the documentation](https://docs.spring.io/spring-security/reference/migration-7/configuration.html#_use_the_lambda_dsl)
+
 ## Version 0.0.32
 ### update
 * SPRING BOOT SECURITY. DOCUMENTATION UPDATED
@@ -54,7 +61,6 @@
 ### Tutorials
 * google test @autoconfiguremockmvc 401 unauthorized
 * https://stackoverflow.com/questions/78358519/401-unauthorized-junit-test
-
 
 
 ## Version 0.0.27 
