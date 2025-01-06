@@ -1,5 +1,16 @@
 # Changelog
 
+## Version 0.0.34
+### new
+* SPRING BOOT SECURITY. AUTOMATED TESTING
+### Tutorials
+* [dan vega JWT](https://www.danvega.dev/blog/spring-security-jwt)
+* [diff SpringBootTest vs WebMvcTest ](https://stackoverflow.com/questions/39865596/difference-between-using-mockmvc-with-springboottest-and-using-webmvctest)
+* [doc](https://docs.spring.io/spring-boot/reference/testing/spring-boot-applications.html#testing.spring-boot-applications)
+### TODO
+* [restrict basic auth only to /token](https://github.com/danvega/jwt/blob/master/src/main/java/dev/danvega/jwt/config/SecurityConfig.java#L69)
+
+
 ## Version 0.0.33
 ### update
 * SPRING BOOT SECURITY. DEPRECATED JWT FILTER

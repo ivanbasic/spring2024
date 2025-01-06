@@ -11,7 +11,7 @@
 
 	<groupId>com.ivanbasic</groupId>
 	<artifactId>learnSpring</artifactId>
-	<version>0.0.33</version>
+	<version>0.0.34</version>
 	<name>learnSpring</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -52,7 +52,10 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+		</dependency>
 
 
 
