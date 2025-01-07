@@ -18,7 +18,11 @@ table2Controller com.ivanbasic.learnspring.controller.Table2Controller
 table2ServiceImpl com.ivanbasic.learnspring.service.Table2ServiceImpl
 
 spring beans:
-  (including: defaultSecurityFilterChain,springSecurityFilterChain)
+    (including:
+        defaultSecurityFilterChain / springSecurityFilterChain
+        SpringBootWebSecurityConfiguration$SecurityFilterChainConfiguration
+    )
+
 applicationAvailability org.springframework.boot.availability.ApplicationAvailabilityBean
 applicationTaskExecutor org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor
 authenticationEventPublisher org.springframework.security.authentication.DefaultAuthenticationEventPublisher
@@ -152,7 +156,9 @@ org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfig
 org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
 org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration
 org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration
+
 org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration$SecurityFilterChainConfiguration org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration$SecurityFilterChainConfiguration
+
 org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration$WebSecurityEnablerConfiguration org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration$WebSecurityEnablerConfiguration
 org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
 org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration

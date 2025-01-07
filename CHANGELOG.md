@@ -62,6 +62,9 @@
 * Ctrl+Shift+N > (SecurityFilterChain)
 * Classes >
 * SecurityFilterChainConfiguration in SpringBootWebSecurityConfiguration
+### Second best answer
+* List all beans on startup, see 0.0.30a_spring_boot_bean_list.txt
+
 
 
 ## Version 0.0.29 
