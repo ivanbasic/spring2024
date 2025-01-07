@@ -1,0 +1,1517 @@
+{
+	"info": {
+		"_postman_id": "7a86554a-e85c-4ba8-92ba-98be12a56c85",
+		"name": "spring2024",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "000-token",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "i",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ivan",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8443/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8443/token",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "466"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:23:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiaXZhbiIsImV4cCI6MTczNjI1OTc5OSwiaWF0IjoxNzM2MjU2MTk5LCJzY29wZSI6InJlYWQifQ.Hb5_uuy80xZD6nIDGbD2qXr5i_aNWa_Alq4P9jET3dItfo6HjuWXcpOqexdvCRtdUm9AAFYCoJYSmvDW9IUIR1FFUzc02FlJ0YclhOyhJldont7qCGeso-Ibg4RH1B3dwIcH7pBRFYZfJG51ClDLdgKqEziEpBoxUtGQH6ORQzzZvJw7NAV1HWTejHYM4NH_jRGMbESZjcy2EPyleKBy5eslxtbeWGInG9qpPdQL3Nls1d7HlTJry9LihhPdTbXgng6Ia9-U3565VgvBwRk_nS5LFEyA-cbCaaw5-5FASj1EgJvffX0ZdFN_mz7N2DHW3BBq2cu5BtaA6l_krwSWzQ"
+				}
+			]
+		},
+		{
+			"name": "005-old-http-greeting",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/greeting?name=You",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"greeting"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "You"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "005-greeting - Basic Auth",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "i",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ivan",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8443/greeting?name=You",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"greeting"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "You"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8443/greeting?name=You",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"greeting"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "You"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:25:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"content\": \"Hello, You!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "005-greeting - Token",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8443/greeting?name=You",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"greeting"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "You"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example 401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8443/greeting?name=You",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"greeting"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "You"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "WWW-Authenticate",
+							"value": "Bearer error=\"invalid_token\", error_description=\"An error occurred while attempting to decode the Jwt: Jwt expired at 2025-01-06T21:27:16Z\", error_uri=\"https://tools.ietf.org/html/rfc6750#section-3.1\""
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:25:43 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "example 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8443/greeting?name=You",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"greeting"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "You"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:26:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"content\": \"Hello, You!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "006-parameters",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "head1",
+						"value": "100",
+						"type": "default"
+					},
+					{
+						"key": "head2",
+						"value": "101",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\": 1111, \"content\":\"John Smith\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/rest-api-parameters/1?page=2&size=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"rest-api-parameters",
+						"1"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "size",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "head1",
+								"value": "100",
+								"type": "default"
+							},
+							{
+								"key": "head2",
+								"value": "101",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"id\": 1111, \"content\":\"John Smith\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8443/rest-api-parameters/1?page=2&size=3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"rest-api-parameters",
+								"1"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "227"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:26:47 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "REST API PARAMETERS:\npath @PathVariable pathId=1\nquery @RequestParam page=2\nquery @RequestParam size=3\nhead @RequestHeader head1=100\nhead @RequestHeader head2=101\nbody @RequestBody greeting=Greeting[id=1111, content=John Smith]"
+				}
+			]
+		},
+		{
+			"name": "010-postgres-CSR",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "head1",
+						"value": "100",
+						"type": "default"
+					},
+					{
+						"key": "head2",
+						"value": "101",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\": 1111, \"content\":\"John Smith\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/db1/customer/count",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"db1",
+						"customer",
+						"count"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "head1",
+								"value": "100",
+								"type": "default"
+							},
+							{
+								"key": "head2",
+								"value": "101",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"id\": 1111, \"content\":\"John Smith\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8443/db1/customer/count",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"db1",
+								"customer",
+								"count"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:27:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "0"
+				}
+			]
+		},
+		{
+			"name": "016-db2-table2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "head1",
+						"value": "100",
+						"type": "default"
+					},
+					{
+						"key": "head2",
+						"value": "101",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\": 1111, \"content\":\"John Smith\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/db2/table2/count",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"db2",
+						"table2",
+						"count"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "head1",
+								"value": "100",
+								"type": "default"
+							},
+							{
+								"key": "head2",
+								"value": "101",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"id\": 1111, \"content\":\"John Smith\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8443/db2/table2/count",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"db2",
+								"table2",
+								"count"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:27:14 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "3"
+				}
+			]
+		},
+		{
+			"name": "016-db2-employee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "head1",
+						"value": "100",
+						"type": "default"
+					},
+					{
+						"key": "head2",
+						"value": "101",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\": 1111, \"content\":\"John Smith\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8443/db2/employee/count",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"db2",
+						"employee",
+						"count"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "head1",
+								"value": "100",
+								"type": "default"
+							},
+							{
+								"key": "head2",
+								"value": "101",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"id\": 1111, \"content\":\"John Smith\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8443/db2/employee/count",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"db2",
+								"employee",
+								"count"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:27:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Number of employees=3"
+				}
+			]
+		},
+		{
+			"name": "034-hello",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8443/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8443/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:27:57 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Hello, ivan"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "wrong",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "wrong",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8443/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8443/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1550"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:34:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n        <meta name=\"description\" content=\"\">\n        <meta name=\"author\" content=\"\">\n        <title>Please sign in</title>\n        <link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">\n        <link href=\"https://getbootstrap.com/docs/4.0/examples/signin/signin.css\" rel=\"stylesheet\" integrity=\"sha384-oOE/3m0LUMPub4kaC09mrdEhIc+e3exm4xOGxAmuFXhBNF4hcg/6MiAXAf5p0P56\" crossorigin=\"anonymous\"/>\n    </head>\n    <body>\n        <div class=\"container\">\n            <form class=\"form-signin\" method=\"post\" action=\"/login\">\n                <h2 class=\"form-signin-heading\">Please sign in</h2>\n                <p>\n                    <label for=\"username\" class=\"sr-only\">Username</label>\n                    <input type=\"text\" id=\"username\" name=\"username\" class=\"form-control\" placeholder=\"Username\" required autofocus>\n        \n                </p>\n                <p>\n                    <label for=\"password\" class=\"sr-only\">Password</label>\n                    <input type=\"password\" id=\"password\" name=\"password\" class=\"form-control\" placeholder=\"Password\" required>\n        \n                </p>\n                <input name=\"_csrf\" type=\"hidden\" value=\"Tc89MmrwBoTJOE5YWZV8J3aKMUCBindETIuQbaFDc0Lmsp8DfvgFAAvEYrfkWi1rbbhIHhe6HHi3uxRpLbz0WJB0SieC0ac2\" />\n                <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button>\n            </form>\n        </div>\n    </body>\n</html>"
+				},
+				{
+					"name": "example 401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8443/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "WWW-Authenticate",
+							"value": "Basic realm=\"Realm\""
+						},
+						{
+							"key": "WWW-Authenticate",
+							"value": "Bearer"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:29:08 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "x",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8443/logout",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8443/logout",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1159"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:35:32 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n        <meta name=\"description\" content=\"\">\n        <meta name=\"author\" content=\"\">\n        <title>Confirm Log Out?</title>\n        <link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">\n        <link href=\"https://getbootstrap.com/docs/4.0/examples/signin/signin.css\" rel=\"stylesheet\" integrity=\"sha384-oOE/3m0LUMPub4kaC09mrdEhIc+e3exm4xOGxAmuFXhBNF4hcg/6MiAXAf5p0P56\" crossorigin=\"anonymous\"/>\n    </head>\n    <body>\n        <div class=\"container\">\n            <form class=\"form-signin\" method=\"post\" action=\"/logout\">\n                <h2 class=\"form-signin-heading\">Are you sure you want to log out?</h2>\n                <input name=\"_csrf\" type=\"hidden\" value=\"jBXRYMZ9NucYcr79lv6dDqi-XclaoEZitH6RUMhRQlYt4OnivyLpUqdJUtQ1EN3OotOpN8mOcPFskSVP1Un1ZflmezNJg9HX\" />\n                <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Log Out</button>\n            </form>\n        </div>\n    </body>\n</html>"
+				},
+				{
+					"name": "example 204",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8443/logout",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jan 2025 13:30:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiaXZhbiIsImV4cCI6MTczNjI1OTk2MiwiaWF0IjoxNzM2MjU2MzYyLCJzY29wZSI6InJlYWQifQ.MCN5jLUn2_e7BonxvZvrHAbpmJX_iSePCycn_ahrT8k_pBOcUeh0pbdAhSFrSIExS9qBHnW6Xj7HHfc7j_XjSEpug-0iLQmVmC91NVbNq1U_2q8BNvCExpiOYJONY01j7RpiZMKQmQhmFPCStG6ur5dyhaBLPBj2gQSdxSF-FIC-jg2zKNFSRPQHmXHmHsEnDrbyB5IUaTA4VxLc4HJZT9Vhh1d3THvakj9eqAu87FcGqJjQi8qdInLRtxkIxu7cxqykj2OGoD08TxakuwphKqpSCK9tJYnHNqRx76uMO3ZQhskhWDee6YqXL9lGGDrv8KNtFRkpHjKQIIf0kecOOA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
