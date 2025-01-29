@@ -1,7 +1,7 @@
 # Changelog
 
 ## Version 0.0.35
-### update for 0.0.30
+### update for 0.0.30 and 29
 
 ## Version 0.0.34
 ### new
@@ -75,6 +75,10 @@
   * User should be `user`
   * Password should be copied from `generated security password` from app log
 * For all endpoints, set Authorization `inherit auth from parent`
+
+### Way difference?  302 from browser, 401 from postman?
+* https://github.com/spring-projects/spring-boot/issues/30155
+  * You have to set the header `Accept` to `text/html` instead of `*/*`
 
 
 ## Version 0.0.28 
