@@ -1,17 +1,18 @@
 # Changelog
 
 ## Version 0.0.36
-### update
-* update all comments in this file
+### Update
+* Update this file for lessons 0.0.1 until now
 
 
 ## Version 0.0.35
-### update 
-* comments in this changelog related to lessons 0.0.30 and 0.0.29
+### Update 
+* Update this changelog related to lessons 0.0.30 and 0.0.29
+
 
 ## Version 0.0.34
-### new
-* SPRING BOOT SECURITY. AUTOMATED TESTING
+### New
+* Spring Boot Security: Automated Testing.
 ### Resources
 * [Dan Vega - JWT](https://www.danvega.dev/blog/spring-security-jwt)
 * [@SpringBootTest vs @WebMvcTest](https://stackoverflow.com/questions/39865596/difference-between-using-mockmvc-with-springboottest-and-using-webmvctest)
@@ -21,20 +22,22 @@
 
 
 ## Version 0.0.33
-### update
-* SPRING BOOT SECURITY. DEPRECATED JWT FILTER
-### Tutorial
+### Update
+* Deprecated JWT filter removed and replaced
+### Resources
 * [Spring Security deprecated issue with JWT](https://stackoverflow.com/questions/76339307/spring-security-deprecated-issue)
-* [the documentation](https://docs.spring.io/spring-security/reference/migration-7/configuration.html#_use_the_lambda_dsl)
+* [Spring Security Docs](https://docs.spring.io/spring-security/reference/migration-7/configuration.html#_use_the_lambda_dsl)
+
 
 ## Version 0.0.32
-### update
-* SPRING BOOT SECURITY. DOCUMENTATION UPDATED
+### Update
+* Updated documentation for Spring Boot Security.
 
 
 ## Version 0.0.31
-### new
-* JWT AUTHENTICATION
+### New
+* Implemented JWT Authentication with RSA Keys
+
 ### Source code steps:
 * 0 pom.xml: `spring-boot-starter-oauth2-resource-server` & `spring-boot-configuration-processor`
 * 1 SecurityConfig class:
@@ -43,26 +46,27 @@
   * JWT decoder and encoder bean
 * 2 RSA Public & Private Keys
 * 3 Token service and controller
+
 ### Postman Steps:
 * 0 call new /token request using basic auth, using user which is set in InMemoryUserDetailsManager bean
 * 1 Copy token
 * 2 root of the collection should have authorization `Bearer Token` (jwt token). Past token.
 * 3 all other requests should inherit auth  from parent/root
-### Tutorial
-* [dan vega JWT](https://www.danvega.dev/blog/spring-security-jwt)
-* [openssl for win](https://stackoverflow.com/questions/50625283/how-to-install-openssl-in-windows-10)
 
+### Resources
+* [Dan Vega JWT](https://www.danvega.dev/blog/spring-security-jwt)
+* [OpenSSL for Windows](https://stackoverflow.com/questions/50625283/how-to-install-openssl-in-windows-10)
 
 
 ## Version 0.0.30
-### new
+### New
 * ORIGIN OF (NAVIGATE TO SPRING BEAN DECLARATION) of SecurityFilterChain:
   * SecurityFilterChain 
   * @Bean DefaultSecurityFilterChain defaultSecurityFilterChain in...
   * SpringBootWebSecurityConfiguration
-### Tutorial
+### Resources 
 * [amigoscode](https://youtu.be/b9O9NI-RJ3o?t=908)
-### Question:
+### Questions & Answers
 * How to `navigate to spring bean declarations` in intellij?
 ### Best answer until now:
 * Ctrl+Shift+N > (SecurityFilterChain)
@@ -72,30 +76,30 @@
 * List all beans on startup, see 0.0.30a_spring_boot_bean_list.txt
 
 
-
 ## Version 0.0.29 
-### new
-* BASIC AUTHENTICATION AND POSTMAN
+### New
+* Basic Authentication and Postman
 ### Steps
 * In the root of postman collection, set Authorization  to `Basic`
   * User should be `user`
   * Password should be copied from `generated security password` from app log
 * For all endpoints, set Authorization `inherit auth from parent`
 
-### Way difference?  302 from browser, 401 from postman?
-* https://github.com/spring-projects/spring-boot/issues/30155
-  * You have to set the header `Accept` to `text/html` instead of `*/*`
+### Troubleshooting
+* 302 from browser, 401 from postman?
+  * https://github.com/spring-projects/spring-boot/issues/30155
+    * You have to set the header `Accept` to `text/html` instead of `*/*`
 
 
 ## Version 0.0.28 
-### new
-* FIXED TESTS WHEN SPRING SECURITY IS ENABLED
-### Any of these works:
+### New
+* Fixed tests when spring security is enabled
+### Solutions
 * 1 @MockBean(SecurityFilterChain.class)
 * 2 @WithMockUser
 * 3 @AutoConfigureMockMvc(addFilters=false)
-### Tutorials
-* google test @autoconfiguremockmvc 401 unauthorized
+### Resources 
+* google it:  test @autoconfiguremockmvc 401 unauthorized
 * https://stackoverflow.com/questions/78358519/401-unauthorized-junit-test
 
 
