@@ -1,12 +1,12 @@
 # Changelog
 
 ## Version 0.0.36
-### Update
+### Updated
 * Update this file for lessons 0.0.1 until now
 
 
 ## Version 0.0.35
-### Update 
+### Updated 
 * Update this changelog related to lessons 0.0.30 and 0.0.29
 
 
@@ -22,15 +22,15 @@
 
 
 ## Version 0.0.33
-### Update
-* Deprecated JWT filter removed and replaced
+### Updated
+* Removed deprecated JWT filter and replaced it with the recommended   Lambda configuration  
 ### Resources
 * [Spring Security deprecated issue with JWT](https://stackoverflow.com/questions/76339307/spring-security-deprecated-issue)
 * [Spring Security Docs](https://docs.spring.io/spring-security/reference/migration-7/configuration.html#_use_the_lambda_dsl)
 
 
 ## Version 0.0.32
-### Update
+### Updated
 * Updated documentation for Spring Boot Security.
 
 
@@ -60,33 +60,27 @@
 
 ## Version 0.0.30
 ### New
-* ORIGIN OF (NAVIGATE TO SPRING BEAN DECLARATION) of SecurityFilterChain:
+* Explored IntelliJ navigation techniques for locating Spring bean declarations `SecurityFilterChain`
   * SecurityFilterChain 
   * @Bean DefaultSecurityFilterChain defaultSecurityFilterChain in...
   * SpringBootWebSecurityConfiguration
 ### Resources 
-* [amigoscode](https://youtu.be/b9O9NI-RJ3o?t=908)
-### Questions & Answers
-* How to `navigate to spring bean declarations` in intellij?
-### Best answer until now:
-* Ctrl+Shift+N > (SecurityFilterChain)
-* Classes >
-* SecurityFilterChainConfiguration in SpringBootWebSecurityConfiguration
-### Second best answer
-* List all beans on startup, see 0.0.30a_spring_boot_bean_list.txt
-
+* [Amigoscode - Spring Security Tutorial](https://youtu.be/b9O9NI-RJ3o?t=908)
+### IntelliJ navigation methods (best practices):
+* Quick navigation: `Ctrl+Shift+N` → type `SecurityFilterChain`.
+* Direct class inspection: `SecurityFilterChainConfiguration` in `SpringBootWebSecurityConfiguration`.
 
 ## Version 0.0.29 
 ### New
 * Basic Authentication and Postman
-### Steps
+### Postman Configuration:
 * In the root of postman collection, set Authorization  to `Basic`
   * User should be `user`
   * Password should be copied from `generated security password` from app log
 * For all endpoints, set Authorization `inherit auth from parent`
 
 ### Troubleshooting
-* 302 from browser, 401 from postman?
+* Endpoint returns `302` in browser, but `401` in Postman.
   * https://github.com/spring-projects/spring-boot/issues/30155
     * You have to set the header `Accept` to `text/html` instead of `*/*`
 
@@ -98,14 +92,14 @@
 * 1 @MockBean(SecurityFilterChain.class)
 * 2 @WithMockUser
 * 3 @AutoConfigureMockMvc(addFilters=false)
-### Resources 
-* google it:  test @autoconfiguremockmvc 401 unauthorized
-* https://stackoverflow.com/questions/78358519/401-unauthorized-junit-test
+### Resources
+* General search: `test @autoconfiguremockmvc 401 unauthorized`
+* [StackOverflow: 401 Unauthorized in JUnit Test](https://stackoverflow.com/questions/78358519/401-unauthorized-junit-test)
 
 
 ## Version 0.0.27 
 ### new
-* SPRING SECURITY ENABLED
+* Enabled Spring Security in the application for the first time.
 ### Steps:
 * 0 dependency `spring-boot-starter-security` added in pom.xml
 * 1 no single change in the source code
@@ -113,22 +107,20 @@
 * 3 `/login` and `/logout` endpoints added when using browser
 * 4 `Basic auth` with user `user` and password ...
 * 5 `Using generated security password: ...` from app startup log
-### Tutorials
-* [architecture](https://docs.spring.io/spring-security/reference/servlet/architecture.html)
-* No other simple tutorial
-
+### Resources
+* [Spring Security Architecture Overview](https://docs.spring.io/spring-security/reference/servlet/architecture.html)
 
 ## Version 0.0.26 
-### new
-* HTTPS ENABLED
+### New
+* HTTPS support enabled for the application using a self-signed certificate.
 ### Steps:
-* 0 Public-key cryptography and Keystore tool. See 0.0.26a_Keystore_Tutorial.md
+* 0 Public-key cryptography and Keystore tool. See `0.0.26a_Keystore_Tutorial.md`
 * 1 Enable HTTPS in server app 
 * 2 Consume it using client app and rest template
 * 3 TestRestTemplate tests were down after step 1, fixed again after step 2
 
 
-### Tutorial links, most of them not perfect
+### Resources, most of them not perfect
 * [baeldung create https](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
   * useful: but only the steps 1-3, skip step 4.
 * [baeldung invoke with](https://www.baeldung.com/spring-resttemplate-secure-https-service)
@@ -143,7 +135,7 @@
 * [nikola stankovic 2/3 enabling https](https://medium.com/viascom/enabling-https-in-spring-boot-3-c94095389842)
 
 * [how to connect to https](https://stackoverflow.com/questions/75794674/java-spring-boot-how-to-connect-with-server-using-https)
-  * baeldung trap for 2K+ developers 
+  * ⚠️ Warning: misleading advice in top answers. Baeldung trap for 2K+ developers 
 
 * [this step is missing: how to get .crt from browser](TODO)
 
@@ -153,54 +145,63 @@
 
 
 ## Version 0.0.25
-### new
-* transactional tests
-  * Transactional() for primary ds db1
-  * Transactional("DB2") for db2
+### New
+* Added support for transactional tests for both primary and secondary data sources.
+  * `@Transactional` used for `db1` (default datasource).
+  * `@Transactional("DB2")` configured for `db2`.
+### Resources
 * [pg sequence 1](https://webkul.com/blog/fix-missing-sequence-table-postgresql/)
 * [pg sequence 2](https://stackoverflow.com/questions/60687826/the-increment-size-of-the-sequence-is-set-to-50-in-the-entity-mapping-while-th)
 
+
 ## Version 0.0.23
-### update
-* refactoring, clean up
-* documentation
+### Updated
+* refactoring database structure (model and repo folders)
+* documentation, clean up
 
 ## Version 0.0.22
-### new
-* README.md
+### New
+* `README.md` with project overview and setup instructions.
+### Updated
 * clean up
 
+
 ## Version 0.0.21
-### update
-* repositories. returning... (EmployeeRepo)
-  * int (countXYX)
-  * entity (findXYZ)
-  * dto/record (custom queries)
-* repo tests 
-* 
-* [beeldung jpa java records](https://www.baeldung.com/spring-jpa-java-records)
+### Updated
+* Extended `EmployeeRepo` with various return types:
+  * `int` for count queries (e.g., `countXYZ`),
+  * entity objects for standard `findXYZ` methods,
+  * DTOs/records for custom projections and queries.
+* Added repository tests to verify each query type.
+
+### Resources
+* [Baeldung – JPA with Java Records](https://www.baeldung.com/spring-jpa-java-records)
+
 
 ## Version 0.0.20
-### new
-* repositories. names of entities
+### Updated
+* Repositories. Names of entities changed
+
 
 ## Version 0.0.19
-### new
-* repositories. Derived Query, JPQL, Native (EmployeeRepo).
+### New
+* Repositories. Derived Query, JPQL, and Native for EmployeeRepo.
+### Resources
 * [1 baeldung Derived Query Methods](https://www.baeldung.com/spring-data-derived-queries)
 * [2 baeldung JPQL and Native](https://www.baeldung.com/spring-data-jpa-query)
 * [3 spring.io query keywords](https://docs.spring.io/spring-data/jpa/reference/repositories/query-keywords-reference.html)
 * [4 oracle HR schema](https://download.oracle.com/oll/tutorials/DBXETutorial/html/module2/les02_load_data_sql.htm)
 * [5 error Not a Managed Type](https://www.baeldung.com/spring-data-jpa-not-managed-type-exception)
 
+
 ## Version 0.0.18
-### new
-* execute schema-db2.sql for database db2 on startup
-* [using DataSourceInitializer](https://stackoverflow.com/questions/39280340/how-to-run-sql-scripts-and-get-data-on-application-startup)
+### New
+* Execute schema-db2.sql for database db2 on startup
+  * [using DataSourceInitializer](https://stackoverflow.com/questions/39280340/how-to-run-sql-scripts-and-get-data-on-application-startup)
 * controller test for db2
 
 ## Version 0.0.17
-### update
+### Updated
 * multiple datasource's. databases db1 and db2 
 * db2 works, db2 controller/service/repo/table works
 * old tests work, but only when postgres db2 is up
@@ -210,7 +211,7 @@
 * todo: execute schema-db2.sql on startup 
 
 ## Version 0.0.16.1
-### update
+### Updated
 * all tests are actually not working. somehow, h2 is replaced with postgres. hm?
 * fixed. just wrong setup in application-test.yml for db1
   * db1 and jdbcUrl instead of url
@@ -264,7 +265,7 @@
 
 
 ## Version 0.0.14
-### update
+### Updated
 * using yaml format for the properties
 * [yml for the tests](https://stackoverflow.com/questions/21271468/spring-propertysource-using-yaml)
   * @TestPropertySource doesn't work without password and username 
@@ -272,7 +273,7 @@
 * clean up
 
 ## Version 0.0.11
-### update
+### Updated
 * BeanReader and RepoDemo removed from spring main class
 * BeanReader separate 
   * existing spring boot beans 
@@ -310,7 +311,7 @@ SELECT COUNT(*) from customer;
 
 
 ## Version 0.0.9
-### update
+### Updated
 * replace h2 with postgres
   1. configuration properties for postgres 
   2. dependency for postgres 
@@ -329,7 +330,7 @@ docker run --ulimit memlock=-1:-1 -it --rm=true --memory-swappiness=0  ^
 ```
 
 ## Version 0.0.8
-### update
+### Updated
 * CHANGELOG_DETAILS folder added, in order to have more files attached to single change.
 
 
@@ -355,13 +356,13 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 
 
 ## Version 0.0.5
-### update
+### Updated
 * unit test (MockMvc) analyzed a bit
 * GreetingControllerAnalyzedAgainTest, GreetingControllerTest 
 
 
 ## Version 0.0.4
-### update 
+### Updated 
 * integration test analyzed a bit
 * GreetingControllerITest, GreetingControllerAnalyzedAgainITest
 
@@ -380,7 +381,7 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 
 
 ## Version 0.0.1 
-### update
+### Updated
 * test error fixed 
 * [stackoverflow](https://stackoverflow.com/questions/77951485/getting-a-java-agent-has-been-loaded-warning-in-intellij-after-upgrading-jdk-17)
 ```
