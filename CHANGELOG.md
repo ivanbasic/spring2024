@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.0.37
+### New
+* Spring Boot Actuator
+
+
+
 ## Version 0.0.36
 ### Updated
 * Update this file for lessons 0.0.1 until now
