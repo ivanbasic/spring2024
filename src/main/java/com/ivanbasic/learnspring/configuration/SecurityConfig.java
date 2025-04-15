@@ -52,7 +52,11 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .csrf(csrf -> csrf.disable())
-                .authorizeRequests( auth -> auth.anyRequest().authenticated())
+                .authorizeRequests( auth -> auth
+                        .requestMatchers("/manage/health", "/manage/info").permitAll()
+                        .requestMatchers("/manage/metrics/**").authenticated()
+                        .anyRequest().authenticated()
+                )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()))
                 .httpBasic(Customizer.withDefaults())
