@@ -3,7 +3,9 @@
 ## Version 0.0.37
 ### New
 * Spring Boot Actuator
-
+  * Added Spring Boot Actuator with /manage base path
+  * health, info:  public
+  * metrics: need authorization
 
 
 ## Version 0.0.36
