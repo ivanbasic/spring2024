@@ -1,0 +1,50 @@
+"C:\Program Files\Java\jdk-21\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.0.1\lib\idea_rt.jar=...
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-04-22T00:32:17.940+02:00  INFO 1188 --- [learnSpring] [           main] c.i.learnspring.LearnSpringApplication   : Starting LearnSpringApplication using Java 21.0.3 with PID 1188 (C:\Users\ivan\jspring2024\spring2024\target\classes started by ivan in C:\Users\ivan\jspring2024\spring2024)
+2025-04-22T00:32:17.944+02:00  INFO 1188 --- [learnSpring] [           main] c.i.learnspring.LearnSpringApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-22T00:32:19.007+02:00  INFO 1188 --- [learnSpring] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-22T00:32:19.079+02:00  INFO 1188 --- [learnSpring] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interface.
+2025-04-22T00:32:19.081+02:00  INFO 1188 --- [learnSpring] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-22T00:32:19.097+02:00  INFO 1188 --- [learnSpring] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 3 JPA repository interfaces.
+2025-04-22T00:32:20.977+02:00  INFO 1188 --- [learnSpring] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8443 (https)
+2025-04-22T00:32:21.003+02:00  INFO 1188 --- [learnSpring] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-22T00:32:21.004+02:00  INFO 1188 --- [learnSpring] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-04-22T00:32:21.103+02:00  INFO 1188 --- [learnSpring] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-22T00:32:21.104+02:00  INFO 1188 --- [learnSpring] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3077 ms
+2025-04-22T00:32:21.538+02:00  INFO 1188 --- [learnSpring] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-22T00:32:21.712+02:00  INFO 1188 --- [learnSpring] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@34fcd292
+2025-04-22T00:32:21.715+02:00  INFO 1188 --- [learnSpring] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-22T00:32:21.838+02:00  INFO 1188 --- [learnSpring] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-22T00:32:21.941+02:00  INFO 1188 --- [learnSpring] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-22T00:32:22.001+02:00  INFO 1188 --- [learnSpring] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-22T00:32:22.645+02:00  INFO 1188 --- [learnSpring] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-22T00:32:22.783+02:00 DEBUG 1188 --- [learnSpring] [           main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@4a0c512b) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@28bc9749)
+2025-04-22T00:32:22.783+02:00 DEBUG 1188 --- [learnSpring] [           main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@54a5496f) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@3a116ca6)
+2025-04-22T00:32:23.899+02:00  INFO 1188 --- [learnSpring] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-22T00:32:23.902+02:00  INFO 1188 --- [learnSpring] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-22T00:32:23.928+02:00  INFO 1188 --- [learnSpring] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-22T00:32:23.932+02:00  INFO 1188 --- [learnSpring] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-22T00:32:23.965+02:00  INFO 1188 --- [learnSpring] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-22T00:32:23.966+02:00  INFO 1188 --- [learnSpring] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-04-22T00:32:23.981+02:00  INFO 1188 --- [learnSpring] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@5b3c2a9f
+2025-04-22T00:32:23.981+02:00  INFO 1188 --- [learnSpring] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-04-22T00:32:23.994+02:00 DEBUG 1188 --- [learnSpring] [           main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@3f919230) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@48d14ea0)
+2025-04-22T00:32:23.994+02:00 DEBUG 1188 --- [learnSpring] [           main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@21251e43) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@677274e7)
+2025-04-22T00:32:24.120+02:00  INFO 1188 --- [learnSpring] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-22T00:32:24.121+02:00  INFO 1188 --- [learnSpring] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-22T00:32:25.030+02:00  INFO 1188 --- [learnSpring] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-22T00:32:25.928+02:00  WARN 1188 --- [learnSpring] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-22T00:32:25.997+02:00  INFO 1188 --- [learnSpring] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name users
+2025-04-22T00:32:26.544+02:00  INFO 1188 --- [learnSpring] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/manage'
+2025-04-22T00:32:27.812+02:00  INFO 1188 --- [learnSpring] [           main] o.a.t.util.net.NioEndpoint.certificate   : Connector [https-jsse-nio-8443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\ivan\.keystore] using alias [LOCALHOST] with trust store [null]
+2025-04-22T00:32:27.833+02:00  INFO 1188 --- [learnSpring] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8443 (https) with context path '/'
+2025-04-22T00:32:27.849+02:00  INFO 1188 --- [learnSpring] [           main] c.i.learnspring.LearnSpringApplication   : Started LearnSpringApplication in 10.534 seconds (process running for 11.113)

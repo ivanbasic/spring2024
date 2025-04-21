@@ -1,0 +1,68 @@
+{
+    "name": "http.server.requests",
+    "baseUnit": "seconds",
+    "measurements": [
+        {
+            "statistic": "COUNT",
+            "value": 30
+        },
+        {
+            "statistic": "TOTAL_TIME",
+            "value": 1.8313820000000003
+        },
+        {
+            "statistic": "MAX",
+            "value": 0.1516679
+        }
+    ],
+    "availableTags": [
+        {
+            "tag": "exception",
+            "values": [
+                "none"
+            ]
+        },
+        {
+            "tag": "method",
+            "values": [
+                "POST",
+                "GET"
+            ]
+        },
+        {
+            "tag": "error",
+            "values": [
+                "none"
+            ]
+        },
+        {
+            "tag": "uri",
+            "values": [
+                "/token",
+                "/manage/metrics/{requiredMetricName}",
+                "/rest-api-parameters/{pathId}",
+                "/manage/health",
+                "/greeting",
+                "/db2/table2/count",
+                "UNKNOWN",
+                "/db1/customer/count",
+                "/db2/employee/count",
+                "/"
+            ]
+        },
+        {
+            "tag": "outcome",
+            "values": [
+                "CLIENT_ERROR",
+                "SUCCESS"
+            ]
+        },
+        {
+            "tag": "status",
+            "values": [
+                "401",
+                "200"
+            ]
+        }
+    ]
+}

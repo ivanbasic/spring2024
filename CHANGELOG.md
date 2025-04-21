@@ -1,5 +1,15 @@
 # Changelog
 
+## Version 0.0.38
+### Updated
+* Spring Boot Actuator part 2
+  * a) list of beans
+  * b) metrics: requests statistics
+
+
+
+
+
 ## Version 0.0.37
 ### New
 * Spring Boot Actuator
