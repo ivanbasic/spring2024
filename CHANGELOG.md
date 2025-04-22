@@ -1,13 +1,16 @@
 # Changelog
 
+## Version 0.0.39
+### Updated
+* Spring Boot Actuator part 3: Tests
+  * ActuatorResponseTest: tests content + behavior
+  * ActuatorSecurityTest: confirms access rules and protection 
+
 ## Version 0.0.38
 ### Updated
 * Spring Boot Actuator part 2
   * a) list of beans
   * b) metrics: requests statistics
-
-
-
 
 
 ## Version 0.0.37
