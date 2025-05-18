@@ -60,11 +60,16 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()))
                 .httpBasic(Customizer.withDefaults())
+
+                // user is done locally inside the bean method creating the SecurityFilterChain
+                .userDetailsService(users() )
+
+
                 .build();
     }
 
-    @Bean
-    public InMemoryUserDetailsManager users() {
+    //degraded from bean to local method
+    private InMemoryUserDetailsManager users() {
         return new InMemoryUserDetailsManager(
                 User.withUsername("ivan")
                         .password("{noop}i")

@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 0.0.40
+### New
+* Spring Boot Security: user, Configuring in different ways
+### Resources
+* Spring security in action: 2.3.3 Configuring in different ways
+  * [ssia-ch2-ex3](https://github.com/ivanbasic/spring-security-in-action-2nd-Ed/blob/master/ssia-ch11-ex3/src/main/java/com/laurentiuspilca/ssia/config/ProjectConfig.java)
+### Not merged in main
+
+
 ## Version 0.0.39
 ### Updated
 * Spring Boot Actuator part 3: Tests
