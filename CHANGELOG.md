@@ -6,6 +6,21 @@
 ### Resources
 * Spring security in action: 2.3.3 Configuring in different ways
   * [ssia-ch2-ex3](https://github.com/ivanbasic/spring-security-in-action-2nd-Ed/blob/master/ssia-ch11-ex3/src/main/java/com/laurentiuspilca/ssia/config/ProjectConfig.java)
+### Notes:
+Location of UserDetails could be:
+* Local to SecurityFilterChain. The problems:
+  * No Spring bean — so you can’t inject or autowire it elsewhere.
+  * No access from tests to inspect or override the users.
+  * Harder to debug — can’t retrieve it from ApplicationContext.
+* Defined as a separate Spring bean: The benefits:
+  * You can inject it anywhere with @Autowired
+  * In tests: var uds = context.getBean(UserDetailsService.class);
+  * In logs, debug tools, and even actuator endpoints — it's visible.
+### Final Thought about Notes:
+* When it is a bean, it seems easier to get info about users. 
+* Because then Spring manages it, and you get all the goodies of injection, testing, and observability. 
+* The inline SecurityFilterChain version is great for demos or self-contained examples...
+* but for real-world work, making UserDetailsService a bean is better practice.
 ### Not merged in main
 
 
