@@ -54,7 +54,6 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeRequests( auth -> auth
                         .requestMatchers("/manage/health", "/manage/info").permitAll()
-                        .requestMatchers("/manage/metrics/**").authenticated()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

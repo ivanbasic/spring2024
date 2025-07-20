@@ -28,8 +28,32 @@ public class ActuatorSecurityTest {
         mvc.perform(get("/manage/health"))
                 .andExpect(status().isOk());
     }
+    @Test
+    @DisplayName("Accessing /manage/info without authentication should return 200 OK")
+    public void whenAccessingInfoWithoutAuth_thenReturns200() throws Exception {
+        mvc.perform(get("/manage/info"))
+                .andExpect(status().isOk());
+    }
+
+
 
     @Test
+    @DisplayName("Accessing anything other as ../db  without authentication should return 401")
+    public void menageHealthDb_should_return_401_without_auth() throws Exception {
+        mvc.perform(get("/manage/health/db"))
+                .andExpect(status().isUnauthorized());
+    }
+
+    @Test
+    @DisplayName("Accessing anything other as ../system  without authentication should return 401")
+    public void menageHealthSystem_should_return_401_without_auth() throws Exception {
+        mvc.perform(get("/manage/health/system"))
+                .andExpect(status().isUnauthorized());
+    }
+
+
+    @Test
+    @DisplayName("Accessing anything other as ../metrics  without authentication should return 401")
     public void metrics_should_return_401_without_auth() throws Exception {
         mvc.perform(get("/manage/metrics/jvm.memory.used"))
                 .andExpect(status().isUnauthorized());

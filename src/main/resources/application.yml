@@ -47,3 +47,8 @@ management:
   endpoint:
     health:
       show-details: when_authorized
+      group:
+        db:
+          include: db
+        system:
+          include: diskSpace, ping
