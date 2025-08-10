@@ -1,5 +1,15 @@
 # Changelog
 
+## Version 0.0.42
+### Updated
+* Spring Boot upgraded from 3.3.6 to 3.5.4
+* Security configuration migrated from `authorizeRequests` to `authorizeHttpRequests` (Spring Security 6.3+)
+* Disabled `spring.jpa.open-in-view` to close the JPA EntityManager after the service layer
+* Simplified header check in `GreetingController_AnalyzedAgain_ITest` to avoid brittle header count assertions
+### Removed
+* Custom `maven-surefire-plugin` configuration (now using Spring Boot's managed version)
+
+
 ## Version 0.0.41
 ### Updated
 * Spring Boot Actuator part 4:

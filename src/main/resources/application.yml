@@ -1,6 +1,7 @@
-
 spring:
   application.name: learnSpring
+  jpa:
+    open-in-view: false
 
   # database configuration
   datasource:
