@@ -1,2 +1,3 @@
 start cmd /k docker run --name ivan -e POSTGRES_USER=ivan -e POSTGRES_PASSWORD=ivan -e POSTGRES_DB=ivan -p 5432:5432 postgres:13.1
 start cmd /k docker run --name db2 -e POSTGRES_USER=db2 -e POSTGRES_PASSWORD=db2 -e POSTGRES_DB=db2 -e PGPORT=5002 -p 5002:5002  postgres:13.1
+start cmd /k docker run --name db3 -e MYSQL_DATABASE=db3 -e MYSQL_USER=db3 -e MYSQL_PASSWORD=db3 -e MYSQL_ROOT_PASSWORD=root -p 3308:3306 mysql:8.0

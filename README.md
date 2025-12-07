@@ -19,7 +19,7 @@
 
 ## RUN
 * start docker
-* ./startup-DB.bat (it will start 2 postgres databases)
+* ./startup-DB.bat (it will start the databases)
 * ./startup-LS.bat (it will compile and start app up)
   * if you use IJ, this is the same: Run>Edit Configuration>Application>add new conf, without any special parameter
 

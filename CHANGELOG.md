@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 0.0.43
+### Added
+* Added third MySQL database (DB3) as a standalone Docker container
+* Extended `startup-DB.bat` with DB3 startup command
+* Added manual DB3 verification via MySQL command-line client
+
+
+
 ## Version 0.0.42
 ### Updated
 * Spring Boot upgraded from 3.3.6 to 3.5.4

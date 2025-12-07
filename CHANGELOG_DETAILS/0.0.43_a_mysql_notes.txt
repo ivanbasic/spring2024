@@ -1,0 +1,13 @@
+-- docker command to start mysql
+start cmd /k docker run --name db3 -e MYSQL_DATABASE=db3 -e MYSQL_USER=db3 -e MYSQL_PASSWORD=db3 -e MYSQL_ROOT_PASSWORD=root -p 3308:3306 mysql:8.0
+
+
+
+-- mysql client/ command line tool
+docker exec -it db3 mysql -u db3 -pdb3 db3
+docker exec -it db3 mysql -u root -proot
+
+
+-- test queries
+mysql>  SHOW DATABASES;
+mysql>  use db3; SHOW TABLES;
