@@ -13,6 +13,11 @@ spring:
       jdbc-url: jdbc:postgresql://localhost:5002/db2
       username: db2
       password: db2
+    db3:
+      jdbc-url: jdbc:mysql://localhost:3308/db3
+      username: db3
+      password: db3
+
 
   # this one executed schema.sql
   sql.init.mode: always

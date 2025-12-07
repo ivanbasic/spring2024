@@ -1,11 +1,18 @@
 # Changelog
 
+## Version 0.0.44
+### Added
+* Added third datasource (DB3) with full JPA configuration
+* Introduced `Db3AutoConfiguration` mirroring DB1 and DB2 setup
+* Extended `application.yml` with `spring.datasource.db3` configuration
+* Added MySQL JDBC driver (`mysql-connector-j`) to `pom.xml`
+
+
 ## Version 0.0.43
 ### Added
 * Added third MySQL database (DB3) as a standalone Docker container
 * Extended `startup-DB.bat` with DB3 startup command
 * Added manual DB3 verification via MySQL command-line client
-
 
 
 ## Version 0.0.42
