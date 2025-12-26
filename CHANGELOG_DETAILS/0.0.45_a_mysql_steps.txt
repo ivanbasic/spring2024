@@ -1,0 +1,47 @@
+Step 1 – Current state
+Read and analyze:
+    SecurityConfig
+    Current InMemoryUserDetailsManager
+Identify:
+    Current user(s)
+    Password encoder
+    Roles
+
+Step 2 – Prepare DB3 for users
+Add Spring Security default tables in DB3:
+    users
+    authorities
+Add
+    schema-db3.sql
+    DataSourceInitializer (DB3 only)
+
+Step 3 – Insert existing user into DB3
+    Same username
+    Same encoded password
+    Same roles
+    DB3 contains users, but app still uses in-memory auth
+
+Step 4 – Switch authentication source
+Replace:
+    InMemoryUserDetailsManager
+With:
+    JdbcUserDetailsManager
+    Explicitly wired to db3DataSource
+
+Keep:
+    Same PasswordEncoder
+    Same HTTP security rules
+
+Step 5 – Verify
+    Login works with same credentials
+    DB3 tables are queried
+    In-memory auth no longer used
+
+Step 6 – Cleanup
+    Clean up Db1AutoConfiguration, Db2, Db3, use of qualifiers
+    Clean up SecurityConfig. i didn't remove old beans, just commented them out:
+        mySecurityFilterChain
+        InMemoryUserDetailsManager
+    Write Changelog, commit.
+
+Step7 : some tests
