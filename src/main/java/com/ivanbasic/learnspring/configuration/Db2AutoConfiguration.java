@@ -28,7 +28,6 @@ public class Db2AutoConfiguration {
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.db2")
-    @Qualifier("DB2-SOURCE")
     public DataSource db2DataSource() {
         return DataSourceBuilder.create().build();
     }

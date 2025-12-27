@@ -1,5 +1,21 @@
 # Changelog
 
+## Version 0.0.45
+### Added
+* DB-backed user management using DB3 (`JdbcUserDetailsManager`)
+* DB3 user schema/data initialization scripts (`schema-db3.sql`, `data-db3.sql`)
+### Updated
+* Security configuration switched from in-memory users to DB3-backed users
+* Adjusted security test for HomeController
+### Removed
+* Removed commented legacy security beans (`mySecurityFilterChain`, in-memory user bean)
+* Removed unused qualifiers from DB2 configuration
+### Summary
+* InMemoryUserDetailsManager is replaced with...
+* JdbcUserDetailsManager 
+* It works because both implement UserDetailsService 
+
+
 ## Version 0.0.44
 ### Added
 * Added third datasource (DB3) with full JPA configuration

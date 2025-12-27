@@ -1,0 +1,28 @@
+At startup
+
+Spring Security looks for:
+1 SecurityFilterChain (mandatory)
+2 AuthenticationManager (auto-built)
+3 UserDetailsService (mandatory for username/password auth)
+4 PasswordEncoder
+
+provided:
+SecurityFilterChain ✔
+UserDetailsService ✔ (JdbcUserDetailsManager)
+PasswordEncoder ✔
+
+So Spring Security builds this pipeline:
+HTTP request
+ → SecurityFilterChain
+ → AuthenticationManager
+ → DaoAuthenticationProvider
+ → UserDetailsService (JdbcUserDetailsManager)
+ → Database (users / authorities)
+
+Summary
+
+Replacing
+- InMemoryUserDetailsManager with
+- JdbcUserDetailsManager works because both implement
+- UserDetailsService, ...
+allowing Spring Security to switch authentication sources without changing the security configuration.

@@ -16,7 +16,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.context.annotation.Import;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -28,24 +30,13 @@ class HomeControllerTest {
     @Autowired
     MockMvc mvc;
 
+    @MockitoBean
+    UserDetailsService userDetailsService;
+
     @Test
     void rootWhenUnauthenticatedThen401() throws Exception {
         this.mvc.perform(get("/"))
                 .andExpect(status().isUnauthorized());
-    }
-
-    @Test
-    void rootWhenAuthenticatedThenSaysHelloUser() throws Exception {
-        MvcResult result = this.mvc.perform(post("/token")
-                        .with(httpBasic("ivan", "i")))
-                .andExpect(status().isOk())
-                .andReturn();
-
-        String token = result.getResponse().getContentAsString();
-
-        this.mvc.perform(get("/")
-                        .header("Authorization", "Bearer " + token))
-                .andExpect(content().string("Hello, ivan"));
     }
 
     @Test

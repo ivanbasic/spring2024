@@ -4,3 +4,5 @@ spring:
       jdbcUrl: jdbc:h2:mem:DB1
     db2:
       jdbcUrl: jdbc:h2:mem:DB2
+    db3:
+      jdbcUrl: jdbc:h2:mem:DB3

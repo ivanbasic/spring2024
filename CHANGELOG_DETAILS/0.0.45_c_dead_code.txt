@@ -1,0 +1,25 @@
+package com.ivanbasic.learnspring.configuration;
+
+public class SecurityConfig {
+
+    //old, basic auth
+    //@Bean
+    public SecurityFilterChain mySecurityFilterChain(HttpSecurity http) throws Exception {
+        log.info("inside mySecurityFilterChain");
+
+        http.authorizeHttpRequests((requests) -> requests.anyRequest().authenticated());
+        http.formLogin(withDefaults());
+        http.httpBasic(withDefaults());
+        return http.build();
+    }
+
+
+    //@Bean
+    public InMemoryUserDetailsManager users() {
+        return new InMemoryUserDetailsManager(
+                User.withUsername("ivan")
+                        .password("{noop}i")
+                        .authorities("read")
+                        .build()
+        );
+    }
