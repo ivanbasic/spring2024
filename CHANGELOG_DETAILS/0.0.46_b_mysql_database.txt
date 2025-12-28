@@ -1,0 +1,34 @@
+mysql>
+mysql> use db3;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++---------------+
+| Tables_in_db3 |
++---------------+
+| authorities   |
+| users         |
++---------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from users;
++------------+----------------------------------------------------------------------+---------+
+| username   | password                                                             | enabled |
++------------+----------------------------------------------------------------------+---------+
+| bcryptuser | {bcrypt}$2a$10$/Z/Wdduj6hzFm1.CQ8Tb1uF5N.GR6yzj9ApkLkKtO8WjsZqDLJYuO |       1 |
+| ivan       | {noop}i                                                              |       1 |
++------------+----------------------------------------------------------------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from authorities;
++------------+-----------+
+| username   | authority |
++------------+-----------+
+| bcryptuser | read      |
+| ivan       | read      |
++------------+-----------+
+2 rows in set (0.00 sec)
+
+mysql>

@@ -1,5 +1,19 @@
 # Changelog
 
+
+
+## Version 0.0.46
+### Added
+* BCrypt password support for JDBC-backed users
+* New DB3 user (`bcryptuser`) with `{bcrypt}`-encoded password
+* Unit test demonstrating BCrypt behavior (random salt, non-repeatable hashes, `matches()` verification)
+* Documentation for password hashing workflow
+* updated postman collection version 46 
+### Updated
+* DB3 initialization scripts to include BCrypt-based user
+* Security documentation to explain password encoding and verification flow
+
+
 ## Version 0.0.45
 ### Added
 * DB-backed user management using DB3 (`JdbcUserDetailsManager`)

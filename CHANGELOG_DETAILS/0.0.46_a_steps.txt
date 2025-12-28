@@ -1,0 +1,61 @@
+Task 46 – Managing Passwords (BCrypt)
+
+Goal
+Learn how BCrypt works by:
+    starting from a raw password
+    generating multiple BCrypt hashes
+    proving why hashes differ
+    verifying password matching
+
+Step 1 – Raw password
+    username: bcryptuser
+    raw password: Before1t1sCrypted
+    The raw password is never stored in the database.
+
+Step 2 – Unit test to generate BCrypt hashes
+    class BCryptPasswordTest {
+Before1t1sCrypted
+{bcrypt}$2a$10$/Z/Wdduj6hzFm1.CQ8Tb1uF5N.GR6yzj9ApkLkKtO8WjsZqDLJYuO
+{bcrypt}$2a$10$RjLJgz1Xdq0zIECTpdHFk.svYfQzSnoFlRrk0vKQxja.eb575rO6W
+{bcrypt}$2a$10$KbGclUqIlAAkSeRlwVqpyO9CTUW7CW56564.x7pi/KOF9Hzb0L2g.
+
+Step 3 – What we observe
+    All hashes are different
+    All hashes start with {bcrypt}
+    All hashes are ~60 characters long
+    Same raw password ≠ same stored hash
+    This is expected and correct behavior.
+
+Step 4 – Why hashes differ
+    BCrypt:
+        generates a random salt every time
+        embeds the salt inside the hash
+        uses a configurable cost factor (default: 10)
+    Result:
+        The same password will never produce the same hash twice.
+
+Step 5 – Store one BCrypt hash in DB
+    Pick one generated value and store it:
+INSERT INTO users (username, password, enabled) VALUES (  'bcryptuser',...
+INSERT INTO authorities (username, authority) VALUES ('bcryptuser', 'read');
+
+Only the hash is stored — never the raw password.
+
+
+Step 6 – Authentication behavior
+    At login:
+        User enters raw password
+        Spring Security detects {bcrypt}
+        Raw password is hashed
+        matches(raw, hash) is executed
+
+        Authentication succeeds or fails
+        No password decryption ever happens.
+
+Key takeaways
+
+BCrypt is one-way
+Hashes change every time
+Verification uses matches(), not equality
+{bcrypt} prefix selects the encoder
+This works seamlessly with JdbcUserDetailsManager
