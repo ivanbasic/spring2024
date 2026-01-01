@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 0.0.47
+### Added
+* Support for multiple password encoders using `DelegatingPasswordEncoder`
+* Users authenticated with `{bcrypt}`, `{argon2}`, `{pbkdf2}`, `{sha256}`, `{ldap}`, and `{noop}`
+* Integration test validating authentication for all supported encoders
+* Bouncy Castle cryptography libraries (bcprov, bcpkix) to support Argon2.
+### Updated
+* Database seed data extended with users using different password encoders
+* Authentication tests refactored to verify encoder compatibility
+### Summary
+* Demonstrates how Spring Security selects a `PasswordEncoder` based on password prefix
+* Confirms that legacy and modern encoders can coexist safely
 
 
 ## Version 0.0.46

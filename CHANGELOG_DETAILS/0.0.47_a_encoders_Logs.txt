@@ -1,0 +1,34 @@
+PasswordEncoderComparisonTest OUTPUT:
+
+hash={argon2}$argon2id$v=19$m=16384,t=2,p=1$mDSm610T5WJxX8YLhHONrQ$L0SOj1Pb1+LYwWQHMZrQsHHiekRNNuGC3xtJ2lRMOLk
+hash={pbkdf2}6d8f9d6bf7e5a4feeb8f3afd5f34c4ebf1c3ad398846cb07433cc58c71fb894c17c5e2866bc49c8b
+hash={sha256}8cc2159578e32cb31f69a8d1e60b27315d43b526d7904a02c1c1995847167342933083a57cfd6465
+hash={ldap}{SSHA}ydE1nZjR9H51TubBwOYmbH/jhi+twyHvZKHUbg==
+
+MYSQL:
+mysql> select * from users;
++------------+-----------------------------------------------------------------------------------------------------------+---------+
+| username   | password                                                                                                  | enabled |
++------------+-----------------------------------------------------------------------------------------------------------+---------+
+| argon2user | {argon2}$argon2id$v=19$m=16384,t=2,p=1$mDSm610T5WJxX8YLhHONrQ$L0SOj1Pb1+LYwWQHMZrQsHHiekRNNuGC3xtJ2lRMOLk |       1 |
+| bcryptuser | {bcrypt}$2a$10$/Z/Wdduj6hzFm1.CQ8Tb1uF5N.GR6yzj9ApkLkKtO8WjsZqDLJYuO                                      |       1 |
+| ivan       | {noop}i                                                                                                   |       1 |
+| ldapuser   | {ldap}{SSHA}ydE1nZjR9H51TubBwOYmbH/jhi+twyHvZKHUbg==                                                      |       1 |
+| pbkdf2user | {pbkdf2}6d8f9d6bf7e5a4feeb8f3afd5f34c4ebf1c3ad398846cb07433cc58c71fb894c17c5e2866bc49c8b                  |       1 |
+| sha256user | {sha256}8cc2159578e32cb31f69a8d1e60b27315d43b526d7904a02c1c1995847167342933083a57cfd6465                  |       1 |
++------------+-----------------------------------------------------------------------------------------------------------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select * from authorities;
++------------+-----------+
+| username   | authority |
++------------+-----------+
+| argon2user | read      |
+| bcryptuser | read      |
+| ivan       | read      |
+| ldapuser   | read      |
+| pbkdf2user | read      |
+| sha256user | read      |
++------------+-----------+
+6 rows in set (0.00 sec)
+
