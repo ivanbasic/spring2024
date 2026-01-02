@@ -1,12 +1,13 @@
 package com.ivanbasic.learnspring.configuration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.init.DataSourceInitializer;
@@ -25,10 +26,13 @@ import javax.sql.DataSource;
         transactionManagerRef = "db2TransactionManager")
 @ComponentScan("com.ivanbasic.learnspring.model.db2")
 public class Db2AutoConfiguration {
+    private static final Logger LOG = LoggerFactory.getLogger(Db2AutoConfiguration.class);
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.db2")
     public DataSource db2DataSource() {
+        LOG.info("Creating DB2 DataSource");
+
         return DataSourceBuilder.create().build();
     }
 

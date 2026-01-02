@@ -1,5 +1,7 @@
 package com.ivanbasic.learnspring.configuration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -25,10 +27,14 @@ import javax.sql.DataSource;
         transactionManagerRef = "db3TransactionManager"
 )
 public class Db3AutoConfiguration {
+    private static final Logger LOG = LoggerFactory.getLogger(Db3AutoConfiguration.class);
+
 
     @Bean(name = "db3DataSource")
     @ConfigurationProperties(prefix = "spring.datasource.db3")
     public DataSource db3DataSource() {
+        LOG.info("Creating DB3 DataSource");
+
         return DataSourceBuilder.create().build();
     }
 

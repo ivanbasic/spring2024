@@ -1,0 +1,88 @@
+# logs
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: ERROR
+    org.hibernate.type.descriptor.sql: ERROR
+
+
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2026-01-02T20:57:56.873+01:00  INFO 10004 --- [learnSpring] [           main] c.i.learnspring.LearnSpringApplication   : Starting LearnSpringApplication using Java 21.0.3 with PID 10004 (C:\Users\ivan\jspring2024\spring2024\target\classes started by ivan in C:\Users\ivan\jspring2024\spring2024)
+2026-01-02T20:57:56.876+01:00  INFO 10004 --- [learnSpring] [           main] c.i.learnspring.LearnSpringApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-01-02T20:57:57.883+01:00  INFO 10004 --- [learnSpring] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-02T20:57:57.946+01:00  INFO 10004 --- [learnSpring] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interface.
+2026-01-02T20:57:57.948+01:00  INFO 10004 --- [learnSpring] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-02T20:57:57.967+01:00  INFO 10004 --- [learnSpring] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 3 JPA repository interfaces.
+2026-01-02T20:57:57.968+01:00  INFO 10004 --- [learnSpring] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-02T20:57:57.971+01:00  INFO 10004 --- [learnSpring] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2026-01-02T20:57:59.635+01:00  INFO 10004 --- [learnSpring] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8443 (https)
+2026-01-02T20:57:59.660+01:00  INFO 10004 --- [learnSpring] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-02T20:57:59.661+01:00  INFO 10004 --- [learnSpring] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-01-02T20:57:59.767+01:00  INFO 10004 --- [learnSpring] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-02T20:57:59.769+01:00  INFO 10004 --- [learnSpring] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2822 ms
+2026-01-02T20:58:00.362+01:00  INFO 10004 --- [learnSpring] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-02T20:58:00.666+01:00  INFO 10004 --- [learnSpring] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3bc20984
+2026-01-02T20:58:00.668+01:00  INFO 10004 --- [learnSpring] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-02T20:58:00.797+01:00  INFO 10004 --- [learnSpring] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-02T20:58:00.923+01:00  INFO 10004 --- [learnSpring] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2026-01-02T20:58:00.999+01:00  INFO 10004 --- [learnSpring] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-02T20:58:01.681+01:00  INFO 10004 --- [learnSpring] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-02T20:58:01.825+01:00  INFO 10004 --- [learnSpring] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 13.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-02T20:58:02.940+01:00  INFO 10004 --- [learnSpring] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-02T20:58:02.944+01:00  INFO 10004 --- [learnSpring] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-02T20:58:02.957+01:00  INFO 10004 --- [learnSpring] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-02T20:58:02.960+01:00  INFO 10004 --- [learnSpring] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-02T20:58:02.996+01:00  INFO 10004 --- [learnSpring] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-02T20:58:02.997+01:00  INFO 10004 --- [learnSpring] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-01-02T20:58:03.012+01:00  INFO 10004 --- [learnSpring] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@1f7b1d6a
+2026-01-02T20:58:03.013+01:00  INFO 10004 --- [learnSpring] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-01-02T20:58:03.026+01:00  INFO 10004 --- [learnSpring] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 13.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-02T20:58:03.211+01:00  INFO 10004 --- [learnSpring] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-02T20:58:03.212+01:00  INFO 10004 --- [learnSpring] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-02T20:58:03.233+01:00  INFO 10004 --- [learnSpring] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-02T20:58:03.242+01:00  INFO 10004 --- [learnSpring] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-02T20:58:03.295+01:00  INFO 10004 --- [learnSpring] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-02T20:58:03.296+01:00  INFO 10004 --- [learnSpring] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-01-02T20:58:03.773+01:00  INFO 10004 --- [learnSpring] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5352bc0e
+2026-01-02T20:58:03.773+01:00  INFO 10004 --- [learnSpring] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-01-02T20:58:03.815+01:00  INFO 10004 --- [learnSpring] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 8.0.44
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-02T20:58:03.850+01:00  INFO 10004 --- [learnSpring] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-02T20:58:03.850+01:00  INFO 10004 --- [learnSpring] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-02T20:58:04.557+01:00  INFO 10004 --- [learnSpring] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-02T20:58:06.760+01:00  INFO 10004 --- [learnSpring] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/manage'
+2026-01-02T20:58:06.813+01:00  INFO 10004 --- [learnSpring] [           main] o.s.s.p.JdbcUserDetailsManager           : No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2026-01-02T20:58:06.833+01:00  INFO 10004 --- [learnSpring] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-01-02T20:58:07.663+01:00  INFO 10004 --- [learnSpring] [           main] o.a.t.util.net.NioEndpoint.certificate   : Connector [https-jsse-nio-8443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\ivan\.keystore] using alias [LOCALHOST] with trust store [null]
+2026-01-02T20:58:07.688+01:00  INFO 10004 --- [learnSpring] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8443 (https) with context path '/'
+2026-01-02T20:58:07.708+01:00  INFO 10004 --- [learnSpring] [           main] c.i.learnspring.LearnSpringApplication   : Started LearnSpringApplication in 11.622 seconds (process running for 12.378)

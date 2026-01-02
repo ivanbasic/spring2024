@@ -1,0 +1,42 @@
+# logs
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
+  level:
+    root: ERROR
+    com.ivanbasic.learnspring: INFO
+    org.hibernate.SQL: ERROR
+    org.hibernate.type.descriptor.sql: ERROR
+
+
+22:51:19.235 [main] INFO com.ivanbasic.learnspring.LearnSpringApplication -- LearnSpringApplication.main() started
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+22:51:20.139 INFO  [main] c.i.l.LearnSpringApplication - Starting LearnSpringApplication using Java 21.0.3 with PID 11080 (C:\Users\ivan\jspring2024\spring2024\target\classes started by ivan in C:\Users\ivan\jspring2024\spring2024)
+22:51:20.141 INFO  [main] c.i.l.LearnSpringApplication - No active profile set, falling back to 1 default profile: "default"
+22:51:23.115 INFO  [main] c.i.l.c.Db1AutoConfiguration - Creating DB1 DataSource
+22:51:25.236 INFO  [main] c.i.l.c.Db2AutoConfiguration - Creating DB2 DataSource
+22:51:25.460 INFO  [main] c.i.l.c.Db3AutoConfiguration - Creating DB3 DataSource
+22:51:26.077 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig initialized
+22:51:26.081 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.JwtEncoder created
+22:51:28.710 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.UserDetailsService created with DB3 datasource
+22:51:28.721 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.PasswordEncoder created (default=bcrypt)
+22:51:28.807 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.SecurityFilterChain created (JWT + HTTP Basic)
+22:51:28.854 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.JwtDecoder created
+22:51:29.505 INFO  [main] c.i.l.LearnSpringApplication - Started LearnSpringApplication in 10.097 seconds (process running for 10.65)
+22:51:54.370 INFO  [https-jsse-nio-8443-exec-5] c.i.l.controller.AuthController - Controller Auth.token() started, token requested for user: 'ivan'
+22:51:54.447 INFO  [https-jsse-nio-8443-exec-5] c.i.l.controller.AuthController - Controller Auth.token() finished, token granted
+22:52:21.972 INFO  [https-jsse-nio-8443-exec-7] c.i.l.controller.GreetingController - Controller Greeting.greeting() started, for name You
+22:52:27.148 INFO  [https-jsse-nio-8443-exec-8] c.i.l.c.RestApiParametersController - Controller RestApiParameters.showParameters() started
+22:52:32.292 INFO  [https-jsse-nio-8443-exec-9] c.i.l.controller.CustomerController - Controller Customer.count() started
+22:52:39.598 INFO  [https-jsse-nio-8443-exec-10] c.i.l.controller.Table2Controller - Controller Table2Controller.test() started
+22:52:43.884 INFO  [https-jsse-nio-8443-exec-1] c.i.l.controller.EmployeeController - Controller Employee.test() started
+22:52:54.265 INFO  [https-jsse-nio-8443-exec-4] c.i.l.controller.HomeController - Controller Home.home() started

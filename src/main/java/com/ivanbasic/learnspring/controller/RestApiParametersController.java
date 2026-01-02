@@ -1,10 +1,14 @@
 package com.ivanbasic.learnspring.controller;
 
 import com.ivanbasic.learnspring.dto.Greeting;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class RestApiParametersController {
+    private static final Logger LOG = LoggerFactory.getLogger(RestApiParametersController.class);
+
 
     @GetMapping("/rest-api-parameters/{pathId}")
     String showParameters(
@@ -15,6 +19,7 @@ public class RestApiParametersController {
             @RequestHeader("head2") int head2,
             @RequestBody Greeting greeting
     ) {
+        LOG.info("Controller RestApiParameters.showParameters() started");
 
         return
                 "REST API PARAMETERS:" +

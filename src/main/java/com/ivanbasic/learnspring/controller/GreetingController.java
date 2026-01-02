@@ -18,7 +18,7 @@ public class GreetingController {
 
     @GetMapping("/greeting")
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-        LOG.info("greeting called");
+        LOG.info("Controller Greeting.greeting() started, for name {}", name);
 
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }

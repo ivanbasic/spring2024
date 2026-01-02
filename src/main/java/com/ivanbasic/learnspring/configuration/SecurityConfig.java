@@ -6,6 +6,8 @@ import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
 import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,15 +32,20 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+    private static final Logger LOG = LoggerFactory.getLogger(SecurityConfig.class);
 
     private final RsaKeyProperties rsaKeys;
     public SecurityConfig(RsaKeyProperties rsaKeys) {
+        LOG.info("SecurityConfig initialized");
+
         this.rsaKeys = rsaKeys;
     }
 
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        LOG.info("SecurityConfig.SecurityFilterChain created (JWT + HTTP Basic)");
+
         return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests( auth -> auth
@@ -54,22 +61,31 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService(
             @Qualifier("db3DataSource") DataSource dataSource) {
+
+        LOG.info("SecurityConfig.UserDetailsService created with DB3 datasource");
+
         return new JdbcUserDetailsManager(dataSource);
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
+        LOG.info("SecurityConfig.PasswordEncoder created (default=bcrypt)");
+
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
 
     @Bean
     JwtDecoder jwtDecoder() {
+        LOG.info("SecurityConfig.JwtDecoder created");
+
         return NimbusJwtDecoder.withPublicKey(rsaKeys.publicKey()).build();
     }
 
     @Bean
     JwtEncoder jwtEncoder() {
+        LOG.info("SecurityConfig.JwtEncoder created");
+
         JWK jwk = new RSAKey.Builder(rsaKeys.publicKey()).privateKey(rsaKeys.privateKey()).build();
         JWKSource<SecurityContext> jwks = new ImmutableJWKSet<>(new JWKSet(jwk));
         return new NimbusJwtEncoder(jwks);

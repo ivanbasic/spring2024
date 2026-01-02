@@ -1,5 +1,13 @@
 # Changelog
 
+
+## Version 0.0.48
+### Added
+* INFO logs (configuration and controllers) 
+### Updated
+* log configuration
+
+ 
 ## Version 0.0.47
 ### Added
 * Support for multiple password encoders using `DelegatingPasswordEncoder`

@@ -22,11 +22,15 @@ spring:
   # this one executed schema.sql
   sql.init.mode: always
 
-# log all sql commands
+# logs
 logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
   level:
-    org.hibernate.SQL: debug
-    org.hibernate.type.descriptor.sql: trace
+    root: ERROR
+    com.ivanbasic.learnspring: INFO
+    org.hibernate.SQL: ERROR
+    org.hibernate.type.descriptor.sql: ERROR
 
 # HTTPS enabled on port 8443 with SSL using a local PKCS12 keystore
 server:
