@@ -27,8 +27,15 @@ logging:
   pattern:
     console: "%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
   level:
+    # noise to minimum
     root: ERROR
     com.ivanbasic.learnspring: INFO
+    # security and filters ON
+    org.springframework.security: DEBUG
+    org.springframework.security.authentication: DEBUG
+    org.springframework.security.web.FilterChainProxy: DEBUG
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+    # sql OFF
     org.hibernate.SQL: ERROR
     org.hibernate.type.descriptor.sql: ERROR
 

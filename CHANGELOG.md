@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 0.0.49
+### Added
+* Custom security filters demonstrating insertion before, after, and at a specific position in the Spring Security filter chain
+* DEBUG logging for Spring Security filters
+### Updated
+* Security configuration updated to register and order custom filters
+
 
 ## Version 0.0.48
 ### Added

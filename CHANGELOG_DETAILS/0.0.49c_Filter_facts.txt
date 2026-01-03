@@ -1,0 +1,23 @@
+FILTER FACTS
+
+By adjusting logging levels the execution flow became visible:
+- DefaultSecurityFilterChain will show [the list of filters]
+- FilterChainProxy logs show when a request enters and leaves the security chain
+- DispatcherServlet logs show when a request reaches MVC
+
+Adding custom filters:
+- Before an existing filter
+- After an existing filter
+- At the position of an existing filter
+
+Old vs New Spring Boot:
+- extends Filter vs extends OncePerRequestFilter
+- doFilter() vs doFilterInternal()
+
+
+Spring Security as a filter chain:
+- Authentication
+- Authorization
+- Exception handling
+- Request caching
+- JWT / Basic auth

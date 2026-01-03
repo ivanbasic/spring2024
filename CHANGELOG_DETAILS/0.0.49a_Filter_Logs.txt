@@ -1,0 +1,79 @@
+20:12:04.250 [main] INFO com.ivanbasic.learnspring.LearnSpringApplication -- LearnSpringApplication.main() started
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+20:12:05.153 INFO  [main] c.i.l.LearnSpringApplication - Starting LearnSpringApplication using Java 21.0.3 with PID 1972 (C:\Users\ivan\jspring2024\spring2024\target\classes started by ivan in C:\Users\ivan\jspring2024\spring2024)
+20:12:05.154 INFO  [main] c.i.l.LearnSpringApplication - No active profile set, falling back to 1 default profile: "default"
+20:12:08.292 INFO  [main] c.i.l.c.Db1AutoConfiguration - Creating DB1 DataSource
+20:12:10.505 INFO  [main] c.i.l.c.Db2AutoConfiguration - Creating DB2 DataSource
+20:12:10.795 INFO  [main] c.i.l.c.Db3AutoConfiguration - Creating DB3 DataSource
+20:12:11.423 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig initialized
+20:12:11.427 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.JwtEncoder created
+20:12:13.866 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.UserDetailsService created with DB3 datasource
+20:12:13.879 INFO  [main] o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+20:12:13.881 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.PasswordEncoder created (default=bcrypt)
+20:12:13.900 INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+20:12:13.974 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.SecurityFilterChain created (JWT + HTTP Basic)
+20:12:14.016 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.JwtDecoder created
+
+
+COMMENT ADDED: THE FILTER LIST
+*************************************************************
+
+20:12:14.109 DEBUG [main] o.s.s.web.DefaultSecurityFilterChain -
+    Will secure any request with filters:
+        DisableEncodeUrlFilter,
+        WebAsyncManagerIntegrationFilter,
+        SecurityContextHolderFilter,
+        HeaderWriterFilter,
+        LogoutFilter,
+        BearerTokenAuthenticationFilter,
+        BasicAuthenticationFilter,
+        AuthenticationFilter,
+        RequestCacheAwareFilter,
+        SecurityContextHolderAwareRequestFilter,
+        AnonymousAuthenticationFilter,
+        SessionManagementFilter,
+        ExceptionTranslationFilter,
+        AuthorizationFilter
+20:12:14.712 INFO  [main] c.i.l.LearnSpringApplication - Started LearnSpringApplication in 10.263 seconds (process running for 10.851)
+
+
+
+COMMENT ADDED: GET/greeting hit using BASIC AUTH:
+************************************************
+
+20:12:57.046 INFO  [https-jsse-nio-8443-exec-6] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+20:12:57.046 DEBUG [https-jsse-nio-8443-exec-6] o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+20:12:57.047 DEBUG [https-jsse-nio-8443-exec-6] o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+20:12:57.047 DEBUG [https-jsse-nio-8443-exec-6] o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+20:12:57.048 DEBUG [https-jsse-nio-8443-exec-6] o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1b256636
+20:12:57.048 DEBUG [https-jsse-nio-8443-exec-6] o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@29957fe0
+20:12:57.048 DEBUG [https-jsse-nio-8443-exec-6] o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+20:12:57.049 INFO  [https-jsse-nio-8443-exec-6] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+20:12:57.084 DEBUG [https-jsse-nio-8443-exec-6] o.s.security.web.FilterChainProxy - Securing GET /greeting?name=You
+20:12:57.215 DEBUG [https-jsse-nio-8443-exec-6] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+20:12:57.217 DEBUG [https-jsse-nio-8443-exec-6] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=ivan, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[read]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[read]]
+20:12:57.227 DEBUG [https-jsse-nio-8443-exec-6] o.s.security.web.FilterChainProxy - Secured GET /greeting?name=You
+20:12:57.230 DEBUG [https-jsse-nio-8443-exec-6] o.s.web.servlet.DispatcherServlet - GET "/greeting?name=You", parameters={masked}
+20:12:57.261 INFO  [https-jsse-nio-8443-exec-6] c.i.l.controller.GreetingController - Controller Greeting.greeting() started, for name You
+20:12:57.328 DEBUG [https-jsse-nio-8443-exec-6] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+
+
+
+COMMENT ADDED: GET/greeting hit using BEARER TOKEN:
+************************************************
+20:13:20.426 DEBUG [https-jsse-nio-8443-exec-7] o.s.security.web.FilterChainProxy - Securing GET /greeting?name=You
+20:13:20.500 DEBUG [https-jsse-nio-8443-exec-7] o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+20:13:20.501 DEBUG [https-jsse-nio-8443-exec-7] o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter - Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@55d5f749, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[SCOPE_read]]
+20:13:20.503 DEBUG [https-jsse-nio-8443-exec-7] o.s.security.web.FilterChainProxy - Secured GET /greeting?name=You
+20:13:20.503 DEBUG [https-jsse-nio-8443-exec-7] o.s.web.servlet.DispatcherServlet - GET "/greeting?name=You", parameters={masked}
+20:13:20.504 INFO  [https-jsse-nio-8443-exec-7] c.i.l.controller.GreetingController - Controller Greeting.greeting() started, for name You
+20:13:20.506 DEBUG [https-jsse-nio-8443-exec-7] o.s.web.servlet.DispatcherServlet - Completed 200 OK
