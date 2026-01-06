@@ -1,5 +1,22 @@
 # Changelog
 
+
+## Version 0.0.50
+### Summary
+#### AuthenticationProvider
+#### the graph 
+```
+AuthenticationManager (ProviderManager)
+├── DaoAuthenticationProvider (implements AuthenticationProvider)
+│    ├── UserDetailsService (JdbcUserDetailsManager)
+│    └── PasswordEncoder
+└── JwtAuthenticationProvider (implements AuthenticationProvider)
+└── JwtDecoder
+```
+#### description
+AuthenticationManager can have multiple AuthenticationProviders because it acts as a dispatcher that tries each provider in order and delegates authentication to the first one that supports the given Authentication type (Basic credentials vs JWT token)
+
+
 ## Version 0.0.49
 ### Added
 * Custom security filters demonstrating insertion before, after, and at a specific position in the Spring Security filter chain
