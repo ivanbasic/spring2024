@@ -3,6 +3,9 @@ package com.ivanbasic.learnspring.configuration;
 import com.ivanbasic.learnspring.filter.AfterBasicAuthFilter;
 import com.ivanbasic.learnspring.filter.AtRequestCacheFilter;
 import com.ivanbasic.learnspring.filter.BeforeBasicAuthFilter;
+import com.ivanbasic.learnspring.security.entrypoint.BasicAuthEntryPoint;
+import com.ivanbasic.learnspring.security.entrypoint.GlobalAuthEntryPoint;
+import com.ivanbasic.learnspring.security.entrypoint.JwtAuthEntryPoint;
 import com.nimbusds.jose.jwk.JWK;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
@@ -52,15 +55,27 @@ public class SecurityConfig {
         LOG.info("SecurityConfig.SecurityFilterChain created (JWT + HTTP Basic)");
 
         return http
+                // core behavior
                 .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests( auth -> auth
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+
+                //  authorization rules
+                .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/manage/health", "/manage/info").permitAll()
                         .anyRequest().authenticated()
                 )
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()))
-                .httpBasic(Customizer.withDefaults())
 
+                // authentication
+                .httpBasic(basic -> basic.authenticationEntryPoint(basicAuthEntryPoint()))
+                .oauth2ResourceServer(oauth2 -> oauth2
+                        .jwt(Customizer.withDefaults())
+                        .authenticationEntryPoint(jwtAuthEntryPoint())
+                )
+
+                // global authentication failure
+                .exceptionHandling(ex -> ex.authenticationEntryPoint(globalAuthEntryPoint()))
+
+                // custom filters
                 .addFilterBefore(new BeforeBasicAuthFilter(), BasicAuthenticationFilter.class)
                 .addFilterAfter(new AfterBasicAuthFilter(), BasicAuthenticationFilter.class)
                 .addFilterAt(new AtRequestCacheFilter(), RequestCacheAwareFilter.class)
@@ -100,5 +115,22 @@ public class SecurityConfig {
         JWKSource<SecurityContext> jwks = new ImmutableJWKSet<>(new JWKSet(jwk));
         return new NimbusJwtEncoder(jwks);
     }
+
+
+    @Bean
+    BasicAuthEntryPoint basicAuthEntryPoint() {
+        return new BasicAuthEntryPoint();
+    }
+
+    @Bean
+    JwtAuthEntryPoint jwtAuthEntryPoint() {
+        return new JwtAuthEntryPoint();
+    }
+
+    @Bean
+    GlobalAuthEntryPoint globalAuthEntryPoint() {
+        return new GlobalAuthEntryPoint();
+    }
+
 
 }

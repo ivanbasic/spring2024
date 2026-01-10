@@ -1,0 +1,102 @@
+
+23:17:10.559 [main] INFO com.ivanbasic.learnspring.LearnSpringApplication -- LearnSpringApplication.main() started
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+23:17:11.502 INFO  [main] c.i.l.LearnSpringApplication - Starting LearnSpringApplication using Java 21.0.3 with PID 14456 (C:\Users\ivan\jspring2024\spring2024\target\classes started by ivan in C:\Users\ivan\jspring2024\spring2024)
+23:17:11.509 INFO  [main] c.i.l.LearnSpringApplication - No active profile set, falling back to 1 default profile: "default"
+23:17:14.698 INFO  [main] c.i.l.c.Db1AutoConfiguration - Creating DB1 DataSource
+23:17:16.890 INFO  [main] c.i.l.c.Db2AutoConfiguration - Creating DB2 DataSource
+23:17:17.100 INFO  [main] c.i.l.c.Db3AutoConfiguration - Creating DB3 DataSource
+23:17:17.765 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig initialized
+23:17:17.768 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.JwtEncoder created
+23:17:20.235 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.UserDetailsService created with DB3 datasource
+23:17:20.244 INFO  [main] o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+23:17:20.245 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.PasswordEncoder created (default=bcrypt)
+23:17:20.261 INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+23:17:20.325 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.SecurityFilterChain created (JWT + HTTP Basic)
+23:17:20.364 INFO  [main] c.i.l.configuration.SecurityConfig - SecurityConfig.JwtDecoder created
+
+23:17:20.443 DEBUG [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters:
+DisableEncodeUrlFilter,
+WebAsyncManagerIntegrationFilter,
+SecurityContextHolderFilter,
+HeaderWriterFilter,
+LogoutFilter,
+BearerTokenAuthenticationFilter,
+BeforeBasicAuthFilter,
+BasicAuthenticationFilter,
+AfterBasicAuthFilter,
+AuthenticationFilter,
+AtRequestCacheFilter,
+RequestCacheAwareFilter,
+SecurityContextHolderAwareRequestFilter,
+AnonymousAuthenticationFilter,
+SessionManagementFilter,
+ExceptionTranslationFilter,
+AuthorizationFilter
+
+23:17:20.949 INFO  [main] c.i.l.LearnSpringApplication - Started LearnSpringApplication in 10.209 seconds (process running for 10.777)
+...
+...
+
+
+
+BASIC, OK 200
+    there is no any AuthEntryPoint
+**************
+23:18:43.696 DEBUG [https-jsse-nio-8443-exec-3] o.s.security.web.FilterChainProxy - Securing GET /greeting?name=You
+23:18:43.717 DEBUG [https-jsse-nio-8443-exec-3] o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+23:18:43.718 DEBUG [https-jsse-nio-8443-exec-3] o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter - Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@59a6ed8d, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[SCOPE_read]]
+23:18:43.718 INFO  [https-jsse-nio-8443-exec-3] c.i.l.filter.BeforeBasicAuthFilter - [Filter-BEFORE-BasicAuthFilter] method=GET uri=/greeting
+23:18:43.719 INFO  [https-jsse-nio-8443-exec-3] c.i.l.filter.AfterBasicAuthFilter - [Filter-AFTER-BasicAuthFilter] method=GET uri=/greeting
+23:18:43.719 INFO  [https-jsse-nio-8443-exec-3] c.i.l.filter.AtRequestCacheFilter - [Filter-AT-RequestCacheAwareFilter] method=GET uri=/greeting
+23:18:43.720 DEBUG [https-jsse-nio-8443-exec-3] o.s.security.web.FilterChainProxy - Secured GET /greeting?name=You
+23:18:43.723 DEBUG [https-jsse-nio-8443-exec-3] o.s.web.servlet.DispatcherServlet - GET "/greeting?name=You", parameters={masked}
+23:18:43.743 INFO  [https-jsse-nio-8443-exec-3] c.i.l.controller.GreetingController - Controller Greeting.greeting() started, for name You
+23:18:43.809 DEBUG [https-jsse-nio-8443-exec-3] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+
+
+
+BASIC, FAILED
+    BasicAuthEntryPoint
+    GlobalAuthEntryPoint
+******************
+23:19:00.619 DEBUG [https-jsse-nio-8443-exec-5] o.s.security.web.FilterChainProxy - Securing POST /token
+23:19:00.620 INFO  [https-jsse-nio-8443-exec-5] c.i.l.filter.BeforeBasicAuthFilter - [Filter-BEFORE-BasicAuthFilter] method=POST uri=/token
+23:19:00.630 DEBUG [https-jsse-nio-8443-exec-5] o.s.s.a.d.DaoAuthenticationProvider - Failed to authenticate since password does not match stored value
+23:19:00.633 DEBUG [https-jsse-nio-8443-exec-5] o.s.s.authentication.ProviderManager - Authentication failed with provider DaoAuthenticationProvider since Bad credentials
+23:19:00.633 DEBUG [https-jsse-nio-8443-exec-5] o.s.s.authentication.ProviderManager - Denying authentication since all attempted providers failed
+23:19:00.633 DEBUG [https-jsse-nio-8443-exec-5] o.s.s.w.a.w.BasicAuthenticationFilter - Failed to process authentication request
+org.springframework.security.authentication.BadCredentialsException: Bad credentials
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.additionalAuthenticationChecks(DaoAuthenticationProvider.java:107)
+	...
+	...
+23:19:00.640 INFO  [https-jsse-nio-8443-exec-5] c.i.l.s.e.BasicAuthEntryPoint - BASIC auth failed for POST /token
+23:19:00.647 DEBUG [https-jsse-nio-8443-exec-5] o.s.security.web.FilterChainProxy - Securing POST /error
+23:19:00.648 DEBUG [https-jsse-nio-8443-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+23:19:00.650 INFO  [https-jsse-nio-8443-exec-5] c.i.l.s.e.GlobalAuthEntryPoint - GLOBAL auth failed for POST /error
+
+
+
+
+
+JWT, FAILED
+    JwtAuthEntryPoint
+    GlobalAuthEntryPoint
+**************
+23:19:57.872 DEBUG [https-jsse-nio-8443-exec-6] o.s.security.web.FilterChainProxy - Securing GET /greeting?name=You
+23:19:57.873 DEBUG [https-jsse-nio-8443-exec-6] o.s.s.o.s.r.a.JwtAuthenticationProvider - Failed to authenticate since the JWT was invalid
+23:19:57.874 DEBUG [https-jsse-nio-8443-exec-6] o.s.s.authentication.ProviderManager - Authentication failed with provider JwtAuthenticationProvider since An error occurred while attempting to decode the Jwt: Malformed token
+23:19:57.875 DEBUG [https-jsse-nio-8443-exec-6] o.s.s.authentication.ProviderManager - Denying authentication since all attempted providers failed
+23:19:57.876 INFO  [https-jsse-nio-8443-exec-6] c.i.l.s.entrypoint.JwtAuthEntryPoint - JWT auth failed for GET /greeting
+23:19:57.880 DEBUG [https-jsse-nio-8443-exec-6] o.s.security.web.FilterChainProxy - Securing GET /error?name=You
+23:19:57.881 DEBUG [https-jsse-nio-8443-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+23:19:57.882 INFO  [https-jsse-nio-8443-exec-6] c.i.l.s.e.GlobalAuthEntryPoint - GLOBAL auth failed for GET /error

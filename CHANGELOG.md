@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 0.0.51
+### Added
+* Custom AuthenticationEntryPoint implementations for:
+  * HTTP Basic authentication failures
+  * JWT authentication failures
+  * Global authentication fallback
+### Updated
+* security configuration updated accordingly 
+### Note 
+* Filters are part of the security filter chain and are usually instantiated directly, while...  
+* AuthenticationEntryPoints are reusable strategy components and are best managed as Spring beans.
+
 
 ## Version 0.0.50
 ### Summary
