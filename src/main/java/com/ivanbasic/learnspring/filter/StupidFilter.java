@@ -21,12 +21,12 @@ public class StupidFilter extends OncePerRequestFilter {
             FilterChain filterChain
     ) throws ServletException, IOException {
 
-        LOG.debug("StupidFilter invoked for {} {}", request.getMethod(), request.getRequestURI());
+        LOG.info("StupidFilter invoked for {} {}", request.getMethod(), request.getRequestURI());
 
         String stupidKey = request.getHeader("StupidKey");
 
         if (stupidKey != null) {
-            LOG.warn("StupidKey detected -> rejecting request. StupidKey='{}'", stupidKey);
+            LOG.info("StupidKey detected -> rejecting request. StupidKey='{}'", stupidKey);
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "StupidKey is not allowed");
             return; // breaks the filter chain
         }
