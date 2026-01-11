@@ -1,0 +1,24 @@
+GET / header as before
+************************
+18:52:55.665 DEBUG [https-jsse-nio-8443-exec-7] o.s.security.web.FilterChainProxy - Securing GET /
+18:52:55.668 DEBUG [https-jsse-nio-8443-exec-7] o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+18:52:55.669 DEBUG [https-jsse-nio-8443-exec-7] o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter - Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@83aee239, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[SCOPE_read]]
+18:52:55.669 INFO  [https-jsse-nio-8443-exec-7] c.i.l.filter.BeforeBasicAuthFilter - [Filter-BEFORE-BasicAuthFilter] method=GET uri=/
+18:52:55.669 INFO  [https-jsse-nio-8443-exec-7] c.i.l.filter.AfterBasicAuthFilter - [Filter-AFTER-BasicAuthFilter] method=GET uri=/
+18:52:55.670 INFO  [https-jsse-nio-8443-exec-7] c.i.l.filter.AtRequestCacheFilter - [Filter-AT-RequestCacheAwareFilter] method=GET uri=/
+18:52:55.671 DEBUG [https-jsse-nio-8443-exec-7] o.s.security.web.FilterChainProxy - Secured GET /
+18:52:55.671 DEBUG [https-jsse-nio-8443-exec-7] o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+18:52:55.672 INFO  [https-jsse-nio-8443-exec-7] c.i.l.controller.HomeController - Controller Home.home() started
+18:52:55.674 DEBUG [https-jsse-nio-8443-exec-7] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+
+
+GET / when header contains StupidKey
+************************
+18:53:05.640 DEBUG [https-jsse-nio-8443-exec-8] o.s.security.web.FilterChainProxy - Securing GET /
+18:53:05.642 DEBUG [https-jsse-nio-8443-exec-8] o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+18:53:05.643 DEBUG [https-jsse-nio-8443-exec-8] o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter - Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@83aee239, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[SCOPE_read]]
+18:53:05.643 WARN  [https-jsse-nio-8443-exec-8] c.i.learnspring.filter.StupidFilter - StupidKey detected -> rejecting request. StupidKey='Bendy and the Ink Machine'
+18:53:05.655 DEBUG [https-jsse-nio-8443-exec-8] o.s.security.web.FilterChainProxy - Securing GET /error
+18:53:05.656 DEBUG [https-jsse-nio-8443-exec-8] o.s.security.web.FilterChainProxy - Secured GET /error
+18:53:05.657 DEBUG [https-jsse-nio-8443-exec-8] o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+18:53:05.739 DEBUG [https-jsse-nio-8443-exec-8] o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400

@@ -1,5 +1,24 @@
 # Changelog
 
+## Version 0.0.52
+### Added
+* Introduced new filter as an early-exit security filter
+### Updated
+* security configuration updated accordingly
+### Note
+* filter behavior:
+```
+if (everythingIsOk) {
+    filterChain.doFilter(request, response); // continue
+} else {
+   response.sendError(400);
+   return; // stop chain
+}
+```
+
+
+
+
 ## Version 0.0.51
 ### Added
 * Custom AuthenticationEntryPoint implementations for:

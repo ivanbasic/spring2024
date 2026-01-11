@@ -3,6 +3,7 @@ package com.ivanbasic.learnspring.configuration;
 import com.ivanbasic.learnspring.filter.AfterBasicAuthFilter;
 import com.ivanbasic.learnspring.filter.AtRequestCacheFilter;
 import com.ivanbasic.learnspring.filter.BeforeBasicAuthFilter;
+import com.ivanbasic.learnspring.filter.StupidFilter;
 import com.ivanbasic.learnspring.security.entrypoint.BasicAuthEntryPoint;
 import com.ivanbasic.learnspring.security.entrypoint.GlobalAuthEntryPoint;
 import com.ivanbasic.learnspring.security.entrypoint.JwtAuthEntryPoint;
@@ -75,6 +76,9 @@ public class SecurityConfig {
                 // global authentication failure
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(globalAuthEntryPoint()))
 
+
+                // very early filter
+                .addFilterBefore(new StupidFilter(), BasicAuthenticationFilter.class)
                 // custom filters
                 .addFilterBefore(new BeforeBasicAuthFilter(), BasicAuthenticationFilter.class)
                 .addFilterAfter(new AfterBasicAuthFilter(), BasicAuthenticationFilter.class)
