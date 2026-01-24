@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -40,6 +41,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 public class SecurityConfig {
     private static final Logger LOG = LoggerFactory.getLogger(SecurityConfig.class);
 
@@ -63,6 +65,7 @@ public class SecurityConfig {
                 //  authorization rules
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/manage/health", "/manage/info").permitAll()
+                        .requestMatchers("/admin/**").hasAuthority("SCOPE_ADMIN")
                         .anyRequest().authenticated()
                 )
 

@@ -1,0 +1,30 @@
+22:27:38.742 DEBUG [https-jsse-nio-8443-exec-8] o.s.security.web.FilterChainProxy - Securing GET /admin/data
+22:27:38.744 DEBUG [https-jsse-nio-8443-exec-8] o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+22:27:38.744 DEBUG [https-jsse-nio-8443-exec-8] o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter -
+    Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@3c2c2dc2, Credentials=[PROTECTED],
+    Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null],
+    Granted Authorities=[SCOPE_ADMIN, SCOPE_ROLE_JOKER, SCOPE_read]]
+22:27:38.744 INFO  [https-jsse-nio-8443-exec-8] c.i.learnspring.filter.StupidFilter - StupidFilter invoked for GET /admin/data
+22:27:38.745 INFO  [https-jsse-nio-8443-exec-8] c.i.l.filter.BeforeBasicAuthFilter - [Filter-BEFORE-BasicAuthFilter] method=GET uri=/admin/data
+22:27:38.745 INFO  [https-jsse-nio-8443-exec-8] c.i.l.filter.AfterBasicAuthFilter - [Filter-AFTER-BasicAuthFilter] method=GET uri=/admin/data
+22:27:38.745 INFO  [https-jsse-nio-8443-exec-8] c.i.l.filter.AtRequestCacheFilter - [Filter-AT-RequestCacheAwareFilter] method=GET uri=/admin/data
+22:27:38.746 DEBUG [https-jsse-nio-8443-exec-8] o.s.security.web.FilterChainProxy - Secured GET /admin/data
+22:27:38.746 DEBUG [https-jsse-nio-8443-exec-8] o.s.web.servlet.DispatcherServlet - GET "/admin/data", parameters={}
+22:27:38.749 DEBUG [https-jsse-nio-8443-exec-8] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+
+
+
+
+22:27:50.747 DEBUG [https-jsse-nio-8443-exec-9] o.s.security.web.FilterChainProxy - Securing GET /joker
+22:27:50.748 DEBUG [https-jsse-nio-8443-exec-9] o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+22:27:50.749 DEBUG [https-jsse-nio-8443-exec-9] o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter -
+    Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@3c2c2dc2, Credentials=[PROTECTED],
+    Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null],
+    Granted Authorities=[SCOPE_ADMIN, SCOPE_ROLE_JOKER, SCOPE_read]]
+22:27:50.749 INFO  [https-jsse-nio-8443-exec-9] c.i.learnspring.filter.StupidFilter - StupidFilter invoked for GET /joker
+22:27:50.749 INFO  [https-jsse-nio-8443-exec-9] c.i.l.filter.BeforeBasicAuthFilter - [Filter-BEFORE-BasicAuthFilter] method=GET uri=/joker
+22:27:50.749 INFO  [https-jsse-nio-8443-exec-9] c.i.l.filter.AfterBasicAuthFilter - [Filter-AFTER-BasicAuthFilter] method=GET uri=/joker
+22:27:50.749 INFO  [https-jsse-nio-8443-exec-9] c.i.l.filter.AtRequestCacheFilter - [Filter-AT-RequestCacheAwareFilter] method=GET uri=/joker
+22:27:50.750 DEBUG [https-jsse-nio-8443-exec-9] o.s.security.web.FilterChainProxy - Secured GET /joker
+22:27:50.750 DEBUG [https-jsse-nio-8443-exec-9] o.s.web.servlet.DispatcherServlet - GET "/joker", parameters={}
+22:27:50.752 DEBUG [https-jsse-nio-8443-exec-9] o.s.web.servlet.DispatcherServlet - Completed 200 OK

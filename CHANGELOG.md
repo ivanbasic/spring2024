@@ -1,5 +1,25 @@
 # Changelog
 
+## Version 0.0.53
+### Added
+* Authorization support using authorities and roles stored in DB3
+* New /admin/** endpoints protected by ADMIN authority
+* New /joker/** endpoint demonstrating method-level authorization
+* User ivan with authorities: 
+  * read, ADMIN, ROLE_JOKER
+* JWT authorization flow has by default SCOPE_ prefix:
+  * SCOPE_ADMIN, SCOPE_ROLE_JOKER, SCOPE_read
+### Updated
+* Security configuration updated accordingly
+## Notes
+* hasAuthority() works directly with JWT scopes and is the most flexible option
+* hasRole() is a specialization that expects a ROLE_ prefix
+* @EnableMethodSecurity not required in this setup
+* Authorization is demonstrated at two levels:
+  * Request matcher level (SecurityFilterChain, /admin/**)
+  * Method level (@PreAuthorize, /joker/**)
+
+  
 ## Version 0.0.52
 ### Added
 * Introduced new filter as an early-exit security filter

@@ -9,10 +9,11 @@ VALUES (
     true
 );
 INSERT INTO authorities (username, authority)
-VALUES (
-    'ivan',
-    'read'
-);
+VALUES
+  ('ivan', 'read'),
+  ('ivan', 'ADMIN'),
+  ('ivan', 'ROLE_JOKER');
+
 
 -- bcrypt
 INSERT INTO users (username, password, enabled)
