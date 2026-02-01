@@ -1,5 +1,15 @@
 # Changelog
 
+## Version 0.0.54
+### Added
+* Claude Desktop setup guide for Windows with MCP file sharing
+* Documentation on installing and configuring Windows-MCP extension
+* Troubleshooting steps for common MCP connection issues
+### Notes
+* This version focuses on tooling and development environment setup
+* No Java code changes in this version
+* See CHANGELOG_DETAILS/0.0.54a_Claude_desktop_Windows.md for detailed setup instructions
+
 ## Version 0.0.53
 ### Added
 * Authorization support using authorities and roles stored in DB3
@@ -612,3 +622,4 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
   1. save them somewhere else and remove them
   2. add them to .gitignore
   3. bring them back
+
