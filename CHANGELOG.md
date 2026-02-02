@@ -15,7 +15,7 @@
 * EmployeeController - added endpoint for team visibility
 ### Notes
 * No custom security classes needed (unlike lesson 055)
-* Simpler implementation: bb2.employees.username instead of db3.user.employee_id
+* Simpler implementation: db2.employees.username instead of db3.user.employee_id
 * See CHANGELOG_DETAILS/0.0.56a_Username_Based_Filtering.md
 
 
@@ -38,7 +38,7 @@
 ### Notes
 * Demonstrates proper extension of JdbcUserDetailsManager
 * Shows SQL-based filtering (better performance than @PostFilter)
-* See .CHANGELOG_DETAILS/0.0.55x.....
+* See CHANGELOG_DETAILS/0.0.55a_EmployeeId_Based_Filtering.md
 
 
 ## Version 0.0.54
