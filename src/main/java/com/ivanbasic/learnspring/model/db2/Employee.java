@@ -35,24 +35,17 @@ public class Employee {
         this.department = department;
     }
 
-    // Getters
     public int getEmployeeId() {
         return employeeId;
     }
-
     public String getFirstName() {
         return firstName;
     }
-
     public LocalDateTime getHireDate() {
         return hireDate;
     }
-
     public String getUsername() {
         return username;
     }
-
-    public Department getDepartment() {
-        return department;
-    }
+    public Department getDepartment() { return department; }
 }

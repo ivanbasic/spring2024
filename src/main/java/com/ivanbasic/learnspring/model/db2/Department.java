@@ -22,11 +22,9 @@ public class Department {
         this.departmentName = departmentName;
     }
 
-    // Getters
     public int getDepartmentId() {
         return departmentId;
     }
-
     public String getDepartmentName() {
         return departmentName;
     }
