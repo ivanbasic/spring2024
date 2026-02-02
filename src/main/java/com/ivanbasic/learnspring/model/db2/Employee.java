@@ -17,6 +17,8 @@ public class Employee {
     @Column(name = "hire_date")
     private LocalDateTime hireDate;
 
+    @Column(name = "username")
+    private String username;
 
     @ManyToOne()
     @JoinColumn(name = "department_id")
@@ -33,4 +35,24 @@ public class Employee {
         this.department = department;
     }
 
+    // Getters
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public LocalDateTime getHireDate() {
+        return hireDate;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
 }

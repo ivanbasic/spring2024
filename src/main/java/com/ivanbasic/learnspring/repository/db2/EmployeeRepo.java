@@ -56,6 +56,13 @@ public interface EmployeeRepo extends JpaRepository<Employee, Integer> {
     @Query("SELECT new com.ivanbasic.learnspring.dto.EmployeeDto(e.employeeId, e.firstName) FROM Employee e")
     List<EmployeeDto> getEmployeeDtos();
 
+
+
+    // Lesson 056: Find employee by username (links to DB3 users)
+    Employee findByUsername(String username);
+
+    // Lesson 056: Find all employees in a department
+    List<Employee> findByDepartmentDepartmentId(Integer departmentId);
 }
 
 

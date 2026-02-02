@@ -2,11 +2,12 @@
 INSERT INTO schema2.departments (department_id,department_name)  VALUES (1,'IT');
 INSERT INTO schema2.departments (department_id,department_name)  VALUES (2,'HR');
 
-INSERT INTO schema2.employees (employee_id,first_name, hire_date, department_id)
-       VALUES (1, 'Ada', '2015-11-21 14:30:15',1);
+-- Lesson 056: Added username to link employees to DB3 users
+INSERT INTO schema2.employees (employee_id,first_name, hire_date, department_id, username)
+       VALUES (1, 'Ada', '2015-11-21 14:30:15',1, 'ada');
 
-INSERT INTO schema2.employees (employee_id,first_name, hire_date, department_id)
-       VALUES (2, 'Niklaus', '2016-11-21 14:30:15',1);
+INSERT INTO schema2.employees (employee_id,first_name, hire_date, department_id, username)
+       VALUES (2, 'Niklaus', '2016-11-21 14:30:15',1, 'ivan');
 
-INSERT INTO schema2.employees (employee_id,first_name, hire_date, department_id)
-       VALUES (3, 'Karl', '2016-11-21 14:30:15',2);
+INSERT INTO schema2.employees (employee_id,first_name, hire_date, department_id, username)
+       VALUES (3, 'Karl', '2016-11-21 14:30:15',2, 'karl');

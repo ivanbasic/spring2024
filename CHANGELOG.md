@@ -1,5 +1,26 @@
 # Changelog
 
+## Version 0.0.56
+### Added
+* Username-based employee linking (simpler than employee_id approach)
+* username column in DB2 employees table
+* Direct lookup: auth.getName() → employee → department → team
+* New endpoint /db2/employees/my-team for viewing department colleagues
+### Modified
+* Employee entity - added username field and getters
+* EmployeeRepo - added findByUsername() and findByDepartmentDepartmentId()
+* EmployeeService - added getMyTeam() method with simplified logic
+* EmployeeController - added endpoint for team visibility
+### Notes
+* No custom security classes needed (unlike lesson 055)
+* Simpler implementation: username link instead of employee_id
+* Business rules:
+  * ADMIN users see all employees
+  * Employees see colleagues in their department
+  * Non-employees see nothing
+* See CHANGELOG_DETAILS/0.0.56a_Username_Based_Filtering.md
+# Changelog
+
 ## Version 0.0.54
 ### Added
 * Claude Desktop setup guide for Windows with MCP file sharing
@@ -68,11 +89,11 @@ if (everythingIsOk) {
 #### the graph 
 ```
 AuthenticationManager (ProviderManager)
-├── DaoAuthenticationProvider (implements AuthenticationProvider)
-│    ├── UserDetailsService (JdbcUserDetailsManager)
-│    └── PasswordEncoder
-└── JwtAuthenticationProvider (implements AuthenticationProvider)
-└── JwtDecoder
+â”œâ”€â”€ DaoAuthenticationProvider (implements AuthenticationProvider)
+â”‚    â”œâ”€â”€ UserDetailsService (JdbcUserDetailsManager)
+â”‚    â””â”€â”€ PasswordEncoder
+â””â”€â”€ JwtAuthenticationProvider (implements AuthenticationProvider)
+â””â”€â”€ JwtDecoder
 ```
 #### description
 AuthenticationManager can have multiple AuthenticationProviders because it acts as a dispatcher that tries each provider in order and delegates authentication to the first one that supports the given Authentication type (Basic credentials vs JWT token)
@@ -178,13 +199,13 @@ AuthenticationManager can have multiple AuthenticationProviders because it acts 
 ### Notes:
 Location of UserDetails could be:
 * Local to SecurityFilterChain. The problems:
-  * No Spring bean — so you can’t inject or autowire it elsewhere.
+  * No Spring bean â€” so you canâ€™t inject or autowire it elsewhere.
   * No access from tests to inspect or override the users.
-  * Harder to debug — can’t retrieve it from ApplicationContext.
+  * Harder to debug â€” canâ€™t retrieve it from ApplicationContext.
 * Defined as a separate Spring bean: The benefits:
   * You can inject it anywhere with @Autowired
   * In tests: var uds = context.getBean(UserDetailsService.class);
-  * In logs, debug tools, and even actuator endpoints — it's visible.
+  * In logs, debug tools, and even actuator endpoints â€” it's visible.
 ### Final Thought about Notes:
 * When it is a bean, it seems easier to get info about users.
 * Because then Spring manages it, and you get all the goodies of injection, testing, and observability.
@@ -279,7 +300,7 @@ Location of UserDetails could be:
 ### Resources 
 * [Amigoscode - Spring Security Tutorial](https://youtu.be/b9O9NI-RJ3o?t=908)
 ### IntelliJ navigation methods (best practices):
-* Quick navigation: `Ctrl+Shift+N` → type `SecurityFilterChain`.
+* Quick navigation: `Ctrl+Shift+N` â†’ type `SecurityFilterChain`.
 * Direct class inspection: `SecurityFilterChainConfiguration` in `SpringBootWebSecurityConfiguration`.
 
 ## Version 0.0.29 
@@ -347,7 +368,7 @@ Location of UserDetails could be:
 * [nikola stankovic 2/3 enabling https](https://medium.com/viascom/enabling-https-in-spring-boot-3-c94095389842)
 
 * [how to connect to https](https://stackoverflow.com/questions/75794674/java-spring-boot-how-to-connect-with-server-using-https)
-  * ⚠️ Warning: misleading advice in top answers. Baeldung trap for 2K+ developers 
+  * âš ï¸ Warning: misleading advice in top answers. Baeldung trap for 2K+ developers 
 
 * [this step is missing: how to get .crt from browser](TODO)
 
@@ -387,7 +408,7 @@ Location of UserDetails could be:
 * Added repository tests to verify each query type.
 
 ### Resources
-* [Baeldung – JPA with Java Records](https://www.baeldung.com/spring-jpa-java-records)
+* [Baeldung â€“ JPA with Java Records](https://www.baeldung.com/spring-jpa-java-records)
 
 
 ## Version 0.0.20
@@ -434,16 +455,16 @@ Location of UserDetails could be:
 
 ## Version 0.0.16
 ### New
-* Introduced multiple datasource support — initial setup includes `db1`.
+* Introduced multiple datasource support â€” initial setup includes `db1`.
 * Verified all tests still pass with the updated configuration.
 
 ### Notes:
-* Early research into multi-database setup — most tutorials were either outdated or unhelpful.
+* Early research into multi-database setup â€” most tutorials were either outdated or unhelpful.
 * Identified good naming practices in [AshokIT multi-db tutorial](https://www.youtube.com/watch?v=mIFIb_JE47U&ab_channel=AshokIT).
 
 ### Common Issues & References:
-* Dialect error when DB is inaccessible – [StackOverflow](https://stackoverflow.com/questions/78036592/why-cant-spring-boot-deduce-hibernate-dialect)
-* `url` vs `jdbcUrl` confusion in config – [StackOverflow](https://stackoverflow.com/questions/49088847/after-spring-boot-2-0-migration-jdbcurl-is-required-with-driverclassname)
+* Dialect error when DB is inaccessible â€“ [StackOverflow](https://stackoverflow.com/questions/78036592/why-cant-spring-boot-deduce-hibernate-dialect)
+* `url` vs `jdbcUrl` confusion in config â€“ [StackOverflow](https://stackoverflow.com/questions/49088847/after-spring-boot-2-0-migration-jdbcurl-is-required-with-driverclassname)
 
 ### Prepared for Future Expansion:
 * PostgreSQL containers for `db2` and `db3` created and ready:
@@ -563,10 +584,10 @@ docker run --ulimit memlock=-1:-1 -it --rm=true --memory-swappiness=0  ^
   4. body
 
 ### Resources
-* [REST API Parameters – I’d Rather Be Writing](https://idratherbewriting.com/learnapidoc/docapis_doc_parameters.html)
-* [URI Naming Conventions – restfulapi.net](https://restfulapi.net/resource-naming/)
+* [REST API Parameters â€“ Iâ€™d Rather Be Writing](https://idratherbewriting.com/learnapidoc/docapis_doc_parameters.html)
+* [URI Naming Conventions â€“ restfulapi.net](https://restfulapi.net/resource-naming/)
 ### Misc Notes
-* JVM warning about boot loader classes – annoying but harmless:  
+* JVM warning about boot loader classes â€“ annoying but harmless:  
   [StackOverflow](https://stackoverflow.com/questions/54205486/how-to-avoid-sharing-is-only-supported-for-boot-loader-classes-because-bootstra)
 ```
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended

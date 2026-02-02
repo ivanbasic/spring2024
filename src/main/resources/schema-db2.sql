@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS schema2.employees
    , commission_pct NUMERIC(2,2)
    , manager_id NUMERIC(6)
    , department_id NUMERIC(4)
+   , username VARCHAR(50)
    ) ;
 
 DROP TABLE IF EXISTS schema2.departments;
