@@ -1,0 +1,130 @@
+
+=============
+look at:
+C:\Users\ivan\jspring2024
+
+1) spring2024 this is the main java project. its my demo project for learning java spring boot
+2) spring-security-in-action and spring-security-in-action-2nd-Ed are examples from books spring security 1st and 2nd edition.
+3) ssiaBooks foler are books, and in txt format.
+3) spring2024client is used just for one lesson related to ssl and ssl handshake
+
+
+About CSRF lesson (feature/055-custom-users-and-filters):
+CSRF. but don't change repo without asking me. lets just prepare plan what to do.
+1) tell me, is csrf is used just for NON-GET endpoints?
+2) can we use it in this application?  it is full backend app, you get token once and after that can hit what you wont.
+
+if for 1 and 2 answer is yes, is this good plan:
+3) we can add one fake PUT method. AdminController is good place, all methods there are fake
+we can add @PutMapping("/put") public string putInLogs()
+{ LOG.info("Controller Admin.put called to put this in logs"
+
+
+=============
+you:
+NEW PROPOSAL for Lesson 55:
+PROPOSAL A: Method-Level Filtering (@PreFilter / @PostFilter) ⭐ RECOMMENDED
+What it is:
+
+You already have @PreAuthorize for method security
+@PreFilter and @PostFilter filter collections based on security rules
+Works perfectly with your existing JWT setup
+============
+let play a bit with this PostFilter. How to create correlation with employess/departments and current users? at least there is no correlation  until now?
+====
+it is ok to change schemas. i looked at tables, employees and departments and only tables with meaning. what do you think?
+
+only clear approach  is to update user, and add column employee_id
+
+CREATE TABLE users (
+    username VARCHAR(50) NOT NULL PRIMARY KEY,
+    password VARCHAR(500) NOT NULL,
+    enabled BOOLEAN NOT NULL,
+    employee_id BIGINT NULL
+);
+employee_id IS NOT MANTADORY
+in EmployeeController we need new method to get all employees, but  we can add filter that way that only menager can see something.
+Ada and Karl are menager, thay can see employees in theirs departments.
+(these employees are already in table)
+
+we need to change some things in security, how to have that employee_id  as part of
+Authentication or Principal
+====================
+DB3 (MySQL) - Users table:
+CREATE TABLE IF NOT EXISTS users (
+    username VARCHAR(50) NOT NULL PRIMARY KEY,
+    password VARCHAR(500) NOT NULL,
+    enabled BOOLEAN NOT NULL,
+    employee_id INT NULL  -- Link to employee in DB2
+);
+
+DB3 - Sample Data:
+
+-- New manager users (they ARE employees)
+INSERT INTO users (username, password, enabled, employee_id)
+VALUES ('ada', '{noop}ada', true, 1);  -- Employee 100 in DB2
+
+INSERT INTO users (username, password, enabled, employee_id)
+VALUES ('karl', '{noop}karl', true, 2);  -- Employee 103 in DB2
+
+-- Authorities
+INSERT INTO authorities (username, authority) VALUES ('ada', 'ROLE_MANAGER');
+INSERT INTO authorities (username, authority) VALUES ('karl', 'ROLE_MANAGER');
+
+
+DB2 (PostgreSQL) - Employees table:
+my update: we have that employees already.
+=======================
+great lesson. i learned a lot, thank, but would not like to put it in this demo app.
+q1) to add one filed in users we need all that work? UserDetailsService and you said this is Note: This is a simplified approach you'd want to override the proper methods in JdbcUserDetailsManager
+show me that version
+
+2) about filtering in method. am i wrong, the service will call all employees, and filter after that. could be demanding
+
+======================
+
+Q1: The "Proper" Way to Extend JdbcUserDetailsManager
+You're right - what I showed was a hack. Here's the proper production approach:
+Option A: Extend JdbcUserDetailsManager Properly
+public class CustomJdbcUserDetailsManager extends JdbcUserDetailsManager { .....
+In SecurityConfig: ....
+
+
+Better Alternatives:
+Option 1: Use Repository Query Methods ⭐ BEST for production
+public List<Employee> getEmployeesForManager ...
+
+
+====
+last version looks great, you resolved all my questions. because your can access  repo, we can create branch55, demonstrate there all this work but not merging it to the main.
+the plan:
+1) do nothing, we will continue tomorrow
+2) i will move app to new branch feature/055-custom-users-and-filters
+3) you will do your magic, and if works, great. if not, we can try to fix it or just leave it there
+===========
+
+Claude! This is almost perfect job. some problems, details:
+1) no need for curl, but ok, will keep it. i created new endpoint in my postman collection
+2) somehow, you removed all old changes from my root file CHANGELOG.md except last tree
+(55 54 53) all from 01 to 52 is missing
+3) when i logged as ada, i authenticated by /token
+https://localhost:8443/db2/employees/my-team i got empty list.  no errors, the log is clean:...
+
+============
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
