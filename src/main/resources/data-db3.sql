@@ -64,3 +64,10 @@ VALUES (
 );
 INSERT INTO authorities (username, authority)
 VALUES ('ldapuser', 'read');
+
+-- Lesson 056: Employee user (links to DB2 via username)
+INSERT INTO users (username, password, enabled)
+VALUES ('ada', '{noop}ada', true);
+
+INSERT INTO authorities (username, authority)
+VALUES ('ada', 'read');
