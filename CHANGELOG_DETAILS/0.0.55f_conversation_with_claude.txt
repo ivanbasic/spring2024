@@ -111,6 +111,18 @@ Claude! This is almost perfect job. some problems, details:
 https://localhost:8443/db2/employees/my-team i got empty list.  no errors, the log is clean:...
 
 ============
+that was great job claude.
+
+the current status:
+i committed all you work under the branch feature/055-custom-users-and-filters-by-claude
+we are back on  feature/055-custom-users-and-filters, where i added some documents.
+the plan:
+
+1) from now (only for this chat) all changes will be done by me.
+2) i would like to make getEmployeesForManager simple. i now you fixed it becouse of error, but (i think) something is odd. it is too big.
+3) name Custom... is so common that I usually miss that this is custom update (i know, I am weird)  give me suggestion for customjdbcuserdetailsmanager and  customuserdetails. to note that this is with extra employee id? UserDetailsWithEmployee ?
+4) let work on point 2 and when we finish, start with 3
+
 
 
 
