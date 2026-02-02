@@ -57,7 +57,8 @@ public interface EmployeeRepo extends JpaRepository<Employee, Integer> {
     List<EmployeeDto> getEmployeeDtos();
 
     // Added for lesson 055 - find employees by department
-    List<Employee> findByDepartment_DepartmentId(Integer departmentId);
+    // works both ways: findByDepartmentDepartmentId
+    List<Employee> findByDepartmentDepartmentId(Integer departmentId);
 
 }
 

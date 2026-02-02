@@ -30,7 +30,7 @@ import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
-import com.ivanbasic.learnspring.security.CustomJdbcUserDetailsManager;
+import com.ivanbasic.learnspring.security.EmployeeLinkedUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.savedrequest.RequestCacheAwareFilter;
@@ -96,7 +96,7 @@ public class SecurityConfig {
 
         LOG.info("SecurityConfig.UserDetailsService created with DB3 datasource");
 
-        return new CustomJdbcUserDetailsManager(dataSource);
+        return new EmployeeLinkedUserDetailsManager(dataSource);
     }
 
     @Bean

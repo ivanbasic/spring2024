@@ -13,11 +13,11 @@ import java.util.List;
 
 /**
  * Custom implementation of JdbcUserDetailsManager that loads employee_id
- * from the users table and creates CustomUserDetails objects.
+ * from the users table and creates EmployeeLinkedUserDetails objects.
  */
-public class CustomJdbcUserDetailsManager extends JdbcUserDetailsManager {
+public class EmployeeLinkedUserDetailsManager extends JdbcUserDetailsManager {
 
-    public CustomJdbcUserDetailsManager(DataSource dataSource) {
+    public EmployeeLinkedUserDetailsManager(DataSource dataSource) {
         super(dataSource);
         // Override the default query to include employee_id
         setUsersByUsernameQuery(
@@ -33,7 +33,7 @@ public class CustomJdbcUserDetailsManager extends JdbcUserDetailsManager {
             throw new UsernameNotFoundException("User '" + username + "' not found");
         }
         
-        return users.get(0); // Contains CustomUserDetails
+        return users.get(0); // Contains EmployeeLinkedUserDetails
     }
 
     @Override
@@ -55,7 +55,7 @@ public class CustomJdbcUserDetailsManager extends JdbcUserDetailsManager {
             
             List<GrantedAuthority> authorities = loadUserAuthorities(username);
             
-            return new CustomUserDetails(
+            return new EmployeeLinkedUserDetails(
                 username, 
                 password, 
                 enabled, 
