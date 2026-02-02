@@ -33,4 +33,20 @@ public class Employee {
         this.department = department;
     }
 
+    // Getters added for lesson 055
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public LocalDateTime getHireDate() {
+        return hireDate;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
 }

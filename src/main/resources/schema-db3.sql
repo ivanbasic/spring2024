@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE users (
     username VARCHAR(50) NOT NULL PRIMARY KEY,
     password VARCHAR(500) NOT NULL,
-    enabled BOOLEAN NOT NULL
+    enabled BOOLEAN NOT NULL,
+    employee_id INT NULL
 );
 
 CREATE TABLE authorities (

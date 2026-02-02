@@ -64,3 +64,10 @@ VALUES (
 );
 INSERT INTO authorities (username, authority)
 VALUES ('ldapuser', 'read');
+
+-- Manager users (linked to employees in DB2)
+INSERT INTO users (username, password, enabled, employee_id) VALUES ('ada', '{noop}ada', true, 1);
+INSERT INTO users (username, password, enabled, employee_id) VALUES ('karl', '{noop}karl', true, 2);
+
+INSERT INTO authorities (username, authority) VALUES ('ada', 'ROLE_MANAGER');
+INSERT INTO authorities (username, authority) VALUES ('karl', 'ROLE_MANAGER');
