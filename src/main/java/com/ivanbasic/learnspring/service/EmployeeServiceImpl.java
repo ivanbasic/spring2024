@@ -48,7 +48,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         // Get username from auth (works for both JWT and Basic)
         String username = auth.getName();
 
-        // Load CustomUserDetails
+        // Load EmployeeLinkedUserDetails
         EmployeeLinkedUserDetails user = (EmployeeLinkedUserDetails) userDetailsService.loadUserByUsername(username);
 
         // No employee_id? No employees

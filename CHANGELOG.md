@@ -2,8 +2,8 @@
 
 ## Version 0.0.55 - EXPERIMENTAL (Not Merged to Main)
 ### Added
-* Custom UserDetails implementation (CustomUserDetails) with employee_id field
-* Custom JdbcUserDetailsManager (CustomJdbcUserDetailsManager) that loads employee_id
+* Custom UserDetails implementation (EmployeeLinkedUserDetails) with employee_id field
+* Custom JdbcUserDetailsManager (EmployeeLinkedUserDetailsManager) that loads employee_id
 * New manager users: ada and karl with ROLE_MANAGER
 * SQL-based filtering in EmployeeService for role-based data access
 * New endpoint /db2/employees/my-team for managers to see their team
@@ -11,7 +11,7 @@
 ### Modified
 * Employee and Department entities - added getters
 * EmployeeRepo - added findByDepartment_DepartmentId() method
-* SecurityConfig - uses CustomJdbcUserDetailsManager
+* SecurityConfig - uses EmployeeLinkedUserDetailsManager
 ### Notes
 * **This is a learning experiment branch - NOT merged to main**
 * Demonstrates proper extension of JdbcUserDetailsManager

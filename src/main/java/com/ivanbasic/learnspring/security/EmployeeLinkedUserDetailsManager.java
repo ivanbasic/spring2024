@@ -41,11 +41,11 @@ public class EmployeeLinkedUserDetailsManager extends JdbcUserDetailsManager {
         return getJdbcTemplate().query(
             getUsersByUsernameQuery(),
             new String[]{username},
-            new CustomUserDetailsRowMapper()
+            new EmployeeLinkedUserDetailsRowMapper()
         );
     }
 
-    private class CustomUserDetailsRowMapper implements RowMapper<UserDetails> {
+    private class EmployeeLinkedUserDetailsRowMapper implements RowMapper<UserDetails> {
         @Override
         public UserDetails mapRow(ResultSet rs, int rowNum) throws SQLException {
             String username = rs.getString(1);
