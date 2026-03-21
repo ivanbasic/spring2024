@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 0.0.56
+## v56 ssia-ch12 FILTERING AT THE METHOD LEVEL
 ### Added
 * spring security, filtering by method, simpler than employee_id approach
 * db2.employees linked with db3.user via new db2.employees.username
@@ -19,7 +19,7 @@
 * See CHANGELOG_DETAILS/0.0.56a_Username_Based_Filtering.md
 
 
-## Version 0.0.55  (Not Merged to Main)
+## v55 ssia-ch12 FILTERING AT THE METHOD LEVEL (NOT MERGED)
 ### Added
 * spring security, filtering by method
 * db2.employees linked with db3.user via new db3.user.employee_id
@@ -41,7 +41,7 @@
 * See CHANGELOG_DETAILS/0.0.55a_EmployeeId_Based_Filtering.md
 
 
-## Version 0.0.54
+## v54 CLAUDE DESKTOP SETUP
 ### Added
 * Claude Desktop setup guide for Windows with MCP file sharing
 * Documentation on installing and configuring Windows-MCP extension
@@ -51,7 +51,7 @@
 * No Java code changes in this version
 * See CHANGELOG_DETAILS/0.0.54a_Claude_desktop_Windows.md for detailed setup instructions
 
-## Version 0.0.53
+## v53 ssia-ch7 AUTHORITIES AND ROLES IN DATABASE
 ### Added
 * Authorization support using authorities and roles stored in DB3
 * New /admin/** endpoints protected by ADMIN authority
@@ -62,7 +62,7 @@
   * SCOPE_ADMIN, SCOPE_ROLE_JOKER, SCOPE_read
 ### Updated
 * Security configuration updated accordingly
-## Notes
+### Notes
 * hasAuthority() works directly with JWT scopes and is the most flexible option
 * hasRole() is a specialization that expects a ROLE_ prefix
 * @EnableMethodSecurity not required in this setup
@@ -71,7 +71,7 @@
   * Method level (@PreAuthorize, /joker/**)
 
   
-## Version 0.0.52
+## v52 ssia-ch5 CUSTOM EARLY-EXIT FILTER
 ### Added
 * Introduced new filter as an early-exit security filter
 ### Updated
@@ -90,7 +90,7 @@ if (everythingIsOk) {
 
 
 
-## Version 0.0.51
+## v51 ssia-ch6 AUTHENTICATION ENTRY POINTS
 ### Added
 * Custom AuthenticationEntryPoint implementations for:
   * HTTP Basic authentication failures
@@ -103,7 +103,7 @@ if (everythingIsOk) {
 * AuthenticationEntryPoints are reusable strategy components and are best managed as Spring beans.
 
 
-## Version 0.0.50
+## v50 ssia-ch6 AUTHENTICATION PROVIDER
 ### Summary
 #### AuthenticationProvider
 #### the graph 
@@ -119,7 +119,7 @@ AuthenticationManager (ProviderManager)
 AuthenticationManager can have multiple AuthenticationProviders because it acts as a dispatcher that tries each provider in order and delegates authentication to the first one that supports the given Authentication type (Basic credentials vs JWT token)
 
 
-## Version 0.0.49
+## v49 ssia-ch5 CUSTOM SECURITY FILTERS
 ### Added
 * Custom security filters demonstrating insertion before, after, and at a specific position in the Spring Security filter chain
 * DEBUG logging for Spring Security filters
@@ -127,14 +127,14 @@ AuthenticationManager can have multiple AuthenticationProviders because it acts 
 * Security configuration updated to register and order custom filters
 
 
-## Version 0.0.48
+## v48 LOGGING CONFIGURATION
 ### Added
 * INFO logs (configuration and controllers) 
 ### Updated
 * log configuration
 
  
-## Version 0.0.47
+## v47 ssia-ch4 DELEGATING PASSWORD ENCODER
 ### Added
 * Support for multiple password encoders using `DelegatingPasswordEncoder`
 * Users authenticated with `{bcrypt}`, `{argon2}`, `{pbkdf2}`, `{sha256}`, `{ldap}`, and `{noop}`
@@ -148,7 +148,7 @@ AuthenticationManager can have multiple AuthenticationProviders because it acts 
 * Confirms that legacy and modern encoders can coexist safely
 
 
-## Version 0.0.46
+## v46 ssia-ch4 BCRYPT PASSWORD ENCODER
 ### Added
 * BCrypt password support for JDBC-backed users
 * New DB3 user (`bcryptuser`) with `{bcrypt}`-encoded password
@@ -160,7 +160,7 @@ AuthenticationManager can have multiple AuthenticationProviders because it acts 
 * Security documentation to explain password encoding and verification flow
 
 
-## Version 0.0.45
+## v45 ssia-ch3 JDBC USER DETAILS MANAGER
 ### Added
 * DB-backed user management using DB3 (`JdbcUserDetailsManager`)
 * DB3 user schema/data initialization scripts (`schema-db3.sql`, `data-db3.sql`)
@@ -176,7 +176,7 @@ AuthenticationManager can have multiple AuthenticationProviders because it acts 
 * It works because both implement UserDetailsService 
 
 
-## Version 0.0.44
+## v44 sp-boot THIRD DATASOURCE DB3 CONFIGURATION
 ### Added
 * Added third datasource (DB3) with full JPA configuration
 * Introduced `Db3AutoConfiguration` mirroring DB1 and DB2 setup
@@ -184,14 +184,14 @@ AuthenticationManager can have multiple AuthenticationProviders because it acts 
 * Added MySQL JDBC driver (`mysql-connector-j`) to `pom.xml`
 
 
-## Version 0.0.43
+## v43 sp-boot MYSQL DB3 DOCKER
 ### Added
 * Added third MySQL database (DB3) as a standalone Docker container
 * Extended `startup-DB.bat` with DB3 startup command
 * Added manual DB3 verification via MySQL command-line client
 
 
-## Version 0.0.42
+## v42 sp-boot UPGRADE 3.3.6 TO 3.5.4
 ### Updated
 * Spring Boot upgraded from 3.3.6 to 3.5.4
 * Security configuration migrated from `authorizeRequests` to `authorizeHttpRequests` (Spring Security 6.3+)
@@ -201,7 +201,7 @@ AuthenticationManager can have multiple AuthenticationProviders because it acts 
 * Custom `maven-surefire-plugin` configuration (now using Spring Boot's managed version)
 
 
-## Version 0.0.41
+## v41 sp-boot ACTUATOR PART 4
 ### Updated
 * Spring Boot Actuator part 4:
   * health group(s)
@@ -209,7 +209,7 @@ AuthenticationManager can have multiple AuthenticationProviders because it acts 
 ### Resources
   * see note in CHANGELOG_DETAILS/0.0.41_a_actuator_notes.md
 
-## Version 0.0.40
+## v40 ssia-ch2 CONFIGURING USER DETAILS (NOT MERGED)
 ### Not merged in main
 ### New
 * Spring Boot Security: user, Configuring in different ways
@@ -232,20 +232,20 @@ Location of UserDetails could be:
 * The inline SecurityFilterChain version is great for demos or self-contained examples...
 * but for real-world work, making UserDetailsService a bean is better practice.
 
-## Version 0.0.39
+## v39 sp-boot ACTUATOR PART 3
 ### Updated
 * Spring Boot Actuator part 3: Tests
   * ActuatorResponseTest: tests content + behavior
   * ActuatorSecurityTest: confirms access rules and protection 
 
-## Version 0.0.38
+## v38 sp-boot ACTUATOR PART 2
 ### Updated
 * Spring Boot Actuator part 2
   * a) list of beans
   * b) metrics: requests statistics
 
 
-## Version 0.0.37
+## v37 sp-boot ACTUATOR PART 1
 ### New
 * Spring Boot Actuator
   * Added Spring Boot Actuator with /manage base path
@@ -253,17 +253,17 @@ Location of UserDetails could be:
   * metrics: need authorization
 
 
-## Version 0.0.36
+## v36 CHANGELOG UPDATE
 ### Updated
 * Update this file for lessons 0.0.1 until now
 
 
-## Version 0.0.35
+## v35 CHANGELOG UPDATE
 ### Updated 
 * Update this changelog related to lessons 0.0.30 and 0.0.29
 
 
-## Version 0.0.34
+## v34 sp-sec AUTOMATED TESTING
 ### New
 * Spring Boot Security: Automated Testing.
 ### Resources
@@ -274,7 +274,7 @@ Location of UserDetails could be:
 * [restrict basic auth only to /token](https://github.com/danvega/jwt/blob/master/src/main/java/dev/danvega/jwt/config/SecurityConfig.java#L69)
 
 
-## Version 0.0.33
+## v33 sp-sec JWT LAMBDA CONFIGURATION
 ### Updated
 * Removed deprecated JWT filter and replaced it with the recommended   Lambda configuration  
 ### Resources
@@ -282,12 +282,12 @@ Location of UserDetails could be:
 * [Spring Security Docs](https://docs.spring.io/spring-security/reference/migration-7/configuration.html#_use_the_lambda_dsl)
 
 
-## Version 0.0.32
+## v32 sp-sec DOCUMENTATION
 ### Updated
 * Updated documentation for Spring Boot Security.
 
 
-## Version 0.0.31
+## v31 sp-sec JWT WITH RSA KEYS
 ### New
 * Implemented JWT Authentication with RSA Keys
 
@@ -311,7 +311,7 @@ Location of UserDetails could be:
 * [OpenSSL for Windows](https://stackoverflow.com/questions/50625283/how-to-install-openssl-in-windows-10)
 
 
-## Version 0.0.30
+## v30 sp-sec INTELLIJ NAVIGATION
 ### New
 * Explored IntelliJ navigation techniques for locating Spring bean declarations `SecurityFilterChain`
   * SecurityFilterChain 
@@ -323,7 +323,7 @@ Location of UserDetails could be:
 * Quick navigation: `Ctrl+Shift+N` → type `SecurityFilterChain`.
 * Direct class inspection: `SecurityFilterChainConfiguration` in `SpringBootWebSecurityConfiguration`.
 
-## Version 0.0.29 
+## v29 ssia-ch2 BASIC AUTH AND POSTMAN
 ### New
 * Basic Authentication and Postman
 ### Postman Configuration:
@@ -338,7 +338,7 @@ Location of UserDetails could be:
     * You have to set the header `Accept` to `text/html` instead of `*/*`
 
 
-## Version 0.0.28 
+## v28 sp-sec TESTING FIXES
 ### New
 * Fixed tests when spring security is enabled
 ### Solutions
@@ -350,7 +350,7 @@ Location of UserDetails could be:
 * [StackOverflow: 401 Unauthorized in JUnit Test](https://stackoverflow.com/questions/78358519/401-unauthorized-junit-test)
 
 
-## Version 0.0.27 
+## v27 ssia-ch2 ENABLE SPRING SECURITY
 ### new
 * Enabled Spring Security in the application for the first time.
 ### Steps:
@@ -363,7 +363,7 @@ Location of UserDetails could be:
 ### Resources
 * [Spring Security Architecture Overview](https://docs.spring.io/spring-security/reference/servlet/architecture.html)
 
-## Version 0.0.26 
+## v26 ENABLE HTTPS
 ### New
 * HTTPS support enabled for the application using a self-signed certificate.
 ### Steps:
@@ -397,7 +397,7 @@ Location of UserDetails could be:
   * When you generate certificate, on question "What is your first and last name?" answer : localhost
 
 
-## Version 0.0.25
+## v25 TRANSACTIONAL TESTS
 ### New
 * Added support for transactional tests for both primary and secondary data sources.
   * `@Transactional` used for `db1` (default datasource).
@@ -407,19 +407,19 @@ Location of UserDetails could be:
 * [pg sequence 2](https://stackoverflow.com/questions/60687826/the-increment-size-of-the-sequence-is-set-to-50-in-the-entity-mapping-while-th)
 
 
-## Version 0.0.23
+## v23 DATABASE REFACTORING
 ### Updated
 * refactoring database structure (model and repo folders)
 * documentation, clean up
 
-## Version 0.0.22
+## v22 README AND CLEANUP
 ### New
 * `README.md` with project overview and setup instructions.
 ### Updated
 * clean up
 
 
-## Version 0.0.21
+## v21 sp-jpa REPOSITORY RETURN TYPES
 ### Updated
 * Extended `EmployeeRepo` with various return types:
   * `int` for count queries (e.g., `countXYZ`),
@@ -431,12 +431,12 @@ Location of UserDetails could be:
 * [Baeldung – JPA with Java Records](https://www.baeldung.com/spring-jpa-java-records)
 
 
-## Version 0.0.20
+## v20 sp-jpa REPOSITORIES RENAME
 ### Updated
 * Repositories. Names of entities changed
 
 
-## Version 0.0.19
+## v19 sp-jpa REPOSITORIES
 ### New
 * Repositories. Derived Query, JPQL, and Native for EmployeeRepo.
 ### Resources
@@ -447,14 +447,14 @@ Location of UserDetails could be:
 * [5 error Not a Managed Type](https://www.baeldung.com/spring-data-jpa-not-managed-type-exception)
 
 
-## Version 0.0.18
+## v18 sp-jpa SCHEMA SQL INIT
 ### New
 * Execute schema-db2.sql for database db2 on startup
   * [using DataSourceInitializer](https://stackoverflow.com/questions/39280340/how-to-run-sql-scripts-and-get-data-on-application-startup)
 * controller test for db2
 
  
-## Version 0.0.17
+## v17 sp-boot MULTIPLE DATASOURCES
 ### Updated
 * multiple datasource's. databases db1 and db2
 * db2 works, db2 controller/service/repo/table works
@@ -466,14 +466,14 @@ Location of UserDetails could be:
 * Automate execution of `schema-db2.sql` on application startup.
 
 
-## Version 0.0.16.1
+## v16.1 sp-boot DATASOURCE FIX
 ### Updated
 * all tests are actually not working. somehow, h2 is replaced with postgres. hm?
 * fixed. just wrong setup in application-test.yml for db1
   * db1 and jdbcUrl instead of url
 
 
-## Version 0.0.16
+## v16 sp-boot MULTIPLE DATASOURCE SETUP
 ### New
 * Introduced multiple datasource support — initial setup includes `db1`.
 * Verified all tests still pass with the updated configuration.
@@ -493,7 +493,7 @@ Location of UserDetails could be:
   docker run --name db3 -e POSTGRES_USER=db3 -e POSTGRES_PASSWORD=db3 -e POSTGRES_DB=db3 -e PGPORT=5003 -p 5003:5003 postgres:13.1
 
 
-## Version 0.0.15
+## v15 sp-boot SCHEMA SQL INIT
 ### New & Update
 #### MAIN section update
 * on startup, create schema schema1 in postgres database (call schema.sql) 
@@ -514,7 +514,7 @@ Location of UserDetails could be:
   * data-custom.sql script for one test is now part of transaction (it will be rolled back after test)
 
   
-## Version 0.0.14
+## v14 sp-boot YAML PROPERTIES
 ### Updated
 * Using yaml format for the properties
 * [yml for the tests](https://stackoverflow.com/questions/21271468/spring-propertysource-using-yaml)
@@ -523,7 +523,7 @@ Location of UserDetails could be:
 * clean up
 
 
-## Version 0.0.11
+## v11 sp-boot BEAN READER
 ### Updated
 * BeanReader and RepoDemo removed from spring main class
 * BeanReader separate 
@@ -532,7 +532,7 @@ Location of UserDetails could be:
 * clean up  
 
 
-## Version 0.0.10
+## v10 sp-boot CONTROLLER SERVICE REPO
 ### New
 #### 1. Controller - Service - Impl - Repo. Postgres database
 * Run application with postgres database 
@@ -562,7 +562,7 @@ SELECT COUNT(*) from customer;
 ```
 
 
-## Version 0.0.9
+## v9 sp-boot POSTGRES DATABASE
 ### Updated
 * Replace H2 with postgres
   1. configuration properties for postgres 
@@ -582,12 +582,12 @@ docker run --ulimit memlock=-1:-1 -it --rm=true --memory-swappiness=0  ^
 ```
 
 
-## Version 0.0.8
+## v8 CHANGELOG DETAILS FOLDER
 ### Updated
 * CHANGELOG_DETAILS folder added, in order to have more files attached to single change.
 
 
-## Version 0.0.7
+## v7 sp-jpa INTRO
 ### New
 * First integration of Spring Data JPA using an in-memory H2 database.
 * Followed the official Spring guide to set up a basic entity, repository, and data access flow.
@@ -595,7 +595,7 @@ docker run --ulimit memlock=-1:-1 -it --rm=true --memory-swappiness=0  ^
 * [Spring Guide: Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
 
 
-## Version 0.0.6
+## v6 sp-boot REST API PARAMETERS
 ### New
 * REST API parameters (according to Ivan Basic):
   1. path
@@ -614,19 +614,19 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 ```
 
 
-## Version 0.0.5
+## v5 sp-boot UNIT TESTS
 ### Updated
 * unit test (MockMvc) analyzed a bit
 * GreetingControllerAnalyzedAgainTest, GreetingControllerTest 
 
 
-## Version 0.0.4
+## v4 sp-boot INTEGRATION TESTS
 ### Updated 
 * integration test analyzed a bit
 * GreetingControllerITest, GreetingControllerAnalyzedAgainITest
 
 
-## Version 0.0.3
+## v3 sp-boot FIRST TESTS
 ### New
 * [Building an Application with Spring Boot](https://spring.io/guides/gs/spring-boot)
 * First unit test for controller
@@ -634,12 +634,12 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 * Spring boot `bean-list`. The list is much bigger (155) than in the guide (34). See CH folder 
 
 
-## Version 0.0.2
+## v2 sp-boot RESTFUL SERVICE
 ### New
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service)
 
 
-## Version 0.0.1 
+## v1.1 sp-boot TEST ERROR FIX
 ### Updated
 * test error fixed 
 * [stackoverflow](https://stackoverflow.com/questions/77951485/getting-a-java-agent-has-been-loaded-warning-in-intellij-after-upgrading-jdk-17)
@@ -652,7 +652,7 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 ```
 
 
-## Version 0.0.1  2024-08-23
+## v1 sp-boot FIRST APPLICATION
 ### New 
 * [quickstart](https://spring.io/quickstart)
 * pom.xml 
