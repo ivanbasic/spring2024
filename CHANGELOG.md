@@ -1,5 +1,9 @@
 # Changelog
 
+## v57 CHANGELOG UPDATED
+### Modified
+* CHANGELOG.md 
+
 ## v56 ssia-ch12 FILTERING AT THE METHOD LEVEL
 ### Added
 * spring security, filtering by method, simpler than employee_id approach
