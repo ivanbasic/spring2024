@@ -32,6 +32,9 @@ build/
 ### VS Code ###
 .vscode/
 
+### Claude ###
+.claude/
+
 ### Maven files ###
 .mvn
 mvnw

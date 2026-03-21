@@ -109,11 +109,11 @@ if (everythingIsOk) {
 #### the graph 
 ```
 AuthenticationManager (ProviderManager)
-â”œâ”€â”€ DaoAuthenticationProvider (implements AuthenticationProvider)
-â”‚    â”œâ”€â”€ UserDetailsService (JdbcUserDetailsManager)
-â”‚    â””â”€â”€ PasswordEncoder
-â””â”€â”€ JwtAuthenticationProvider (implements AuthenticationProvider)
-â””â”€â”€ JwtDecoder
+├── DaoAuthenticationProvider (implements AuthenticationProvider)
+│    ├── UserDetailsService (JdbcUserDetailsManager)
+│    └── PasswordEncoder
+└── JwtAuthenticationProvider (implements AuthenticationProvider)
+└── JwtDecoder
 ```
 #### description
 AuthenticationManager can have multiple AuthenticationProviders because it acts as a dispatcher that tries each provider in order and delegates authentication to the first one that supports the given Authentication type (Basic credentials vs JWT token)
@@ -219,13 +219,13 @@ AuthenticationManager can have multiple AuthenticationProviders because it acts 
 ### Notes:
 Location of UserDetails could be:
 * Local to SecurityFilterChain. The problems:
-  * No Spring bean â€” so you canâ€™t inject or autowire it elsewhere.
+  * No Spring bean — so you can't inject or autowire it elsewhere.
   * No access from tests to inspect or override the users.
-  * Harder to debug â€” canâ€™t retrieve it from ApplicationContext.
+  * Harder to debug — can't retrieve it from ApplicationContext.
 * Defined as a separate Spring bean: The benefits:
   * You can inject it anywhere with @Autowired
   * In tests: var uds = context.getBean(UserDetailsService.class);
-  * In logs, debug tools, and even actuator endpoints â€” it's visible.
+  * In logs, debug tools, and even actuator endpoints — it's visible.
 ### Final Thought about Notes:
 * When it is a bean, it seems easier to get info about users.
 * Because then Spring manages it, and you get all the goodies of injection, testing, and observability.
@@ -320,7 +320,7 @@ Location of UserDetails could be:
 ### Resources 
 * [Amigoscode - Spring Security Tutorial](https://youtu.be/b9O9NI-RJ3o?t=908)
 ### IntelliJ navigation methods (best practices):
-* Quick navigation: `Ctrl+Shift+N` â†’ type `SecurityFilterChain`.
+* Quick navigation: `Ctrl+Shift+N` → type `SecurityFilterChain`.
 * Direct class inspection: `SecurityFilterChainConfiguration` in `SpringBootWebSecurityConfiguration`.
 
 ## Version 0.0.29 
@@ -388,7 +388,7 @@ Location of UserDetails could be:
 * [nikola stankovic 2/3 enabling https](https://medium.com/viascom/enabling-https-in-spring-boot-3-c94095389842)
 
 * [how to connect to https](https://stackoverflow.com/questions/75794674/java-spring-boot-how-to-connect-with-server-using-https)
-  * âš ï¸ Warning: misleading advice in top answers. Baeldung trap for 2K+ developers 
+  * ⚠️ Warning: misleading advice in top answers. Baeldung trap for 2K+ developers 
 
 * [this step is missing: how to get .crt from browser](TODO)
 
@@ -428,7 +428,7 @@ Location of UserDetails could be:
 * Added repository tests to verify each query type.
 
 ### Resources
-* [Baeldung â€“ JPA with Java Records](https://www.baeldung.com/spring-jpa-java-records)
+* [Baeldung – JPA with Java Records](https://www.baeldung.com/spring-jpa-java-records)
 
 
 ## Version 0.0.20
@@ -475,16 +475,16 @@ Location of UserDetails could be:
 
 ## Version 0.0.16
 ### New
-* Introduced multiple datasource support â€” initial setup includes `db1`.
+* Introduced multiple datasource support — initial setup includes `db1`.
 * Verified all tests still pass with the updated configuration.
 
 ### Notes:
-* Early research into multi-database setup â€” most tutorials were either outdated or unhelpful.
+* Early research into multi-database setup — most tutorials were either outdated or unhelpful.
 * Identified good naming practices in [AshokIT multi-db tutorial](https://www.youtube.com/watch?v=mIFIb_JE47U&ab_channel=AshokIT).
 
 ### Common Issues & References:
-* Dialect error when DB is inaccessible â€“ [StackOverflow](https://stackoverflow.com/questions/78036592/why-cant-spring-boot-deduce-hibernate-dialect)
-* `url` vs `jdbcUrl` confusion in config â€“ [StackOverflow](https://stackoverflow.com/questions/49088847/after-spring-boot-2-0-migration-jdbcurl-is-required-with-driverclassname)
+* Dialect error when DB is inaccessible – [StackOverflow](https://stackoverflow.com/questions/78036592/why-cant-spring-boot-deduce-hibernate-dialect)
+* `url` vs `jdbcUrl` confusion in config – [StackOverflow](https://stackoverflow.com/questions/49088847/after-spring-boot-2-0-migration-jdbcurl-is-required-with-driverclassname)
 
 ### Prepared for Future Expansion:
 * PostgreSQL containers for `db2` and `db3` created and ready:
@@ -604,10 +604,10 @@ docker run --ulimit memlock=-1:-1 -it --rm=true --memory-swappiness=0  ^
   4. body
 
 ### Resources
-* [REST API Parameters â€“ Iâ€™d Rather Be Writing](https://idratherbewriting.com/learnapidoc/docapis_doc_parameters.html)
-* [URI Naming Conventions â€“ restfulapi.net](https://restfulapi.net/resource-naming/)
+* [REST API Parameters – I'd Rather Be Writing](https://idratherbewriting.com/learnapidoc/docapis_doc_parameters.html)
+* [URI Naming Conventions – restfulapi.net](https://restfulapi.net/resource-naming/)
 ### Misc Notes
-* JVM warning about boot loader classes â€“ annoying but harmless:  
+* JVM warning about boot loader classes – annoying but harmless:  
   [StackOverflow](https://stackoverflow.com/questions/54205486/how-to-avoid-sharing-is-only-supported-for-boot-loader-classes-because-bootstra)
 ```
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
@@ -663,4 +663,3 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
   1. save them somewhere else and remove them
   2. add them to .gitignore
   3. bring them back
-
