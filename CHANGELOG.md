@@ -107,6 +107,11 @@ if (everythingIsOk) {
 * Triggered by ExceptionTranslationFilter - the bridge between Java exceptions and HTTP responses
 * Filters are part of the security filter chain and are usually instantiated directly, while...  
 * AuthenticationEntryPoints are reusable strategy components and are best managed as Spring beans.
+* authenticationEntryPoint() appears 3 times in SecurityConfig - each on a different configurer class:
+  * httpBasic(basic -> basic.authenticationEntryPoint())        - HttpBasicConfigurer
+  * oauth2ResourceServer(oauth2 -> oauth2.authenticationEntryPoint()) - OAuth2ResourceServerConfigurer
+  * exceptionHandling(ex -> ex.authenticationEntryPoint())     - ExceptionHandlingConfigurer
+* same method name, but no shared interface - just reused independently
 
 
 ## v50 ssia-ch6 AUTHENTICATION PROVIDER
