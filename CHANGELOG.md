@@ -103,6 +103,8 @@ if (everythingIsOk) {
 ### Updated
 * security configuration updated accordingly 
 ### Note 
+* AuthenticationEntryPoint - customizes the HTTP response when authentication fails (status code, headers, body)
+* Triggered by ExceptionTranslationFilter - the bridge between Java exceptions and HTTP responses
 * Filters are part of the security filter chain and are usually instantiated directly, while...  
 * AuthenticationEntryPoints are reusable strategy components and are best managed as Spring beans.
 
@@ -121,6 +123,8 @@ AuthenticationManager (ProviderManager)
 ```
 #### description
 AuthenticationManager can have multiple AuthenticationProviders because it acts as a dispatcher that tries each provider in order and delegates authentication to the first one that supports the given Authentication type (Basic credentials vs JWT token)
+#### note
+Spring's default providers (DaoAuthenticationProvider + JwtAuthenticationProvider) already handle both auth types - no custom AuthenticationProvider needed
 
 
 ## v49 ssia-ch5 CUSTOM SECURITY FILTERS
