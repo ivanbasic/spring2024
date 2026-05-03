@@ -19,30 +19,27 @@
 * EmployeeController - added endpoint for team visibility
 ### Notes
 * No custom security classes needed (unlike lesson 055)
-* Simpler implementation: db2.employees.username instead of db3.user.employee_id
+* Simpler because link direction is correct - DB2 (business) knows about DB3 (users), not the other way
+* Security layer is not touched at all - only auth.getName() is used, which is just a String
+* auth.getName() works the same for both Basic Auth and JWT - no instanceof checks needed
 * See CHANGELOG_DETAILS/0.0.56a_Username_Based_Filtering.md
 
 
 ## v55 ssia-ch12 FILTERING AT THE METHOD LEVEL (NOT MERGED)
-### Added
-* spring security, filtering by method
-* db2.employees linked with db3.user via new db3.user.employee_id
-* /db2/employees/my-team, business rules:
-  * ADMIN users see all employees
-  * MANAGER users see only employees in their department
-  * Users without employee_id see nothing
-* Custom UserDetails implementation (EmployeeLinkedUserDetails) with employee_id field
-* Custom JdbcUserDetailsManager (EmployeeLinkedUserDetailsManager) that loads employee_id
-* New manager users: ada & karl with ROLE_MANAGER
-* SQL-based filtering in EmployeeService for role-based data access
-### Modified
-* Employee and Department entities - added getters
-* EmployeeRepo - added findByDepartment_DepartmentId() method
-* SecurityConfig - uses EmployeeLinkedUserDetailsManager
+### Summary
+* Learning exercise - not merged because it revealed a design problem
+* Idea: link db3.users to db2.employees via employee_id column in DB3 users table
+* Required: CustomUserDetails, CustomJdbcUserDetailsManager, SecurityConfig change
+### Why it was wrong
+* Business data (employee_id) was pushed into the security layer - wrong direction
+* Security layer should not know about business entities
+* JWT made it worse: principal is Jwt object, not UserDetails - required instanceof checks,
+  manual userDetailsService.loadUserByUsername() call on every request, extra DB hit
+* v56 solved all of this by flipping the link direction (relation between tables):
+  *  username column in db2.employees instead of employee_id in db3.users
 ### Notes
-* Demonstrates proper extension of JdbcUserDetailsManager
-* Shows SQL-based filtering (better performance than @PostFilter)
-* See CHANGELOG_DETAILS/0.0.55a_EmployeeId_Based_Filtering.md
+* SQL-based filtering is still the right approach (better than @PostFilter)
+* See CHANGELOG_DETAILS/0.0.55a_Method_Level_Filtering.md for full details
 
 
 ## v54 CLAUDE DESKTOP SETUP
