@@ -23,6 +23,11 @@
 * Security layer is not touched at all - only auth.getName() is used, which is just a String
 * auth.getName() works the same for both Basic Auth and JWT - no instanceof checks needed
 * See CHANGELOG_DETAILS/0.0.56a_Username_Based_Filtering.md
+### Resources
+* Spring security in action 2E chapter 12
+* [Spring Security UserDetails javadoc - non-security fields are allowed](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/core/userdetails/UserDetails.html)
+* [Spring Security architecture - GrantedAuthority should not reference domain objects](https://docs.spring.io/spring-security/site/docs/5.2.11.RELEASE/reference/html/overall-architecture.html)
+* [UserDetailsService - should not contain business logic](https://www.javathinking.com/spring-security/implementing-custom-user-details-service-in-spring-security/)
 
 
 ## v55 ssia-ch12 FILTERING AT THE METHOD LEVEL (NOT MERGED)
@@ -40,6 +45,8 @@
 ### Notes
 * SQL-based filtering is still the right approach (better than @PostFilter)
 * See CHANGELOG_DETAILS/0.0.55a_Method_Level_Filtering.md for full details
+### Resources
+* Spring security in action 2E chapter 12
 
 
 ## v54 CLAUDE DESKTOP SETUP
@@ -70,6 +77,8 @@
 * Authorization is demonstrated at two levels:
   * Request matcher level (SecurityFilterChain, /admin/**)
   * Method level (@PreAuthorize, /joker/**)
+### Resources
+* Spring security in action 2E chapter 7
 
   
 ## v52 ssia-ch5 CUSTOM EARLY-EXIT FILTER
@@ -87,8 +96,8 @@ if (everythingIsOk) {
    return; // stop chain
 }
 ```
-
-
+### Resources
+* Spring security in action 2E chapter 5
 
 
 ## v51 ssia-ch6 AUTHENTICATION ENTRY POINTS
@@ -109,6 +118,8 @@ if (everythingIsOk) {
   * oauth2ResourceServer(oauth2 -> oauth2.authenticationEntryPoint()) - OAuth2ResourceServerConfigurer
   * exceptionHandling(ex -> ex.authenticationEntryPoint())     - ExceptionHandlingConfigurer
 * same method name, but no shared interface - just reused independently
+### Resources
+* Spring security in action 2E chapter 6
 
 
 ## v50 ssia-ch6 AUTHENTICATION PROVIDER
@@ -127,6 +138,8 @@ AuthenticationManager (ProviderManager)
 AuthenticationManager can have multiple AuthenticationProviders because it acts as a dispatcher that tries each provider in order and delegates authentication to the first one that supports the given Authentication type (Basic credentials vs JWT token)
 #### note
 Spring's default providers (DaoAuthenticationProvider + JwtAuthenticationProvider) already handle both auth types - no custom AuthenticationProvider needed
+### Resources
+* Spring security in action 2E chapter 6
 
 
 ## v49 ssia-ch5 CUSTOM SECURITY FILTERS
@@ -135,6 +148,8 @@ Spring's default providers (DaoAuthenticationProvider + JwtAuthenticationProvide
 * DEBUG logging for Spring Security filters
 ### Updated
 * Security configuration updated to register and order custom filters
+### Resources
+* Spring security in action 2E chapter 5
 
 
 ## v48 LOGGING CONFIGURATION
@@ -156,6 +171,8 @@ Spring's default providers (DaoAuthenticationProvider + JwtAuthenticationProvide
 ### Summary
 * Demonstrates how Spring Security selects a `PasswordEncoder` based on password prefix
 * Confirms that legacy and modern encoders can coexist safely
+### Resources
+* Spring security in action 2E chapter 4
 
 
 ## v46 ssia-ch4 BCRYPT PASSWORD ENCODER
@@ -168,6 +185,8 @@ Spring's default providers (DaoAuthenticationProvider + JwtAuthenticationProvide
 ### Updated
 * DB3 initialization scripts to include BCrypt-based user
 * Security documentation to explain password encoding and verification flow
+### Resources
+* Spring security in action 2E chapter 4
 
 
 ## v45 ssia-ch3 JDBC USER DETAILS MANAGER
@@ -184,6 +203,8 @@ Spring's default providers (DaoAuthenticationProvider + JwtAuthenticationProvide
 * InMemoryUserDetailsManager is replaced with...
 * JdbcUserDetailsManager 
 * It works because both implement UserDetailsService 
+### Resources
+* Spring security in action 2E chapter 3
 
 
 ## v44 sp-boot THIRD DATASOURCE DB3 CONFIGURATION
@@ -224,10 +245,8 @@ Spring's default providers (DaoAuthenticationProvider + JwtAuthenticationProvide
 ### New
 * Spring Boot Security: user, Configuring in different ways
 ### Resources
-* Spring security in action: 2.3.3 Configuring in different ways
-  * [ssia-ch2-ex3](https://github.com/ivanbasic/spring-security-in-action-2nd-Ed/blob/master/ssia-ch11-ex3/src/main/java/com/laurentiuspilca/ssia/config/ProjectConfig.java)
+* Spring security in action 2E chapter 2
 ### Notes:
-Location of UserDetails could be:
 * Local to SecurityFilterChain. The problems:
   * No Spring bean — so you can't inject or autowire it elsewhere.
   * No access from tests to inspect or override the users.
@@ -346,6 +365,8 @@ Location of UserDetails could be:
 * Endpoint returns `302` in browser, but `401` in Postman.
   * https://github.com/spring-projects/spring-boot/issues/30155
     * You have to set the header `Accept` to `text/html` instead of `*/*`
+### Resources
+* Spring security in action 2E chapter 2
 
 
 ## v28 sp-sec TESTING FIXES
@@ -372,6 +393,7 @@ Location of UserDetails could be:
 * 5 `Using generated security password: ...` from app startup log
 ### Resources
 * [Spring Security Architecture Overview](https://docs.spring.io/spring-security/reference/servlet/architecture.html)
+* Spring security in action 2E chapter 2
 
 ## v26 ENABLE HTTPS
 ### New
