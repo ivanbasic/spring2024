@@ -80,6 +80,12 @@
   * Method level (@PreAuthorize, /joker/**)
 ### Resources
 * Spring security in action 2E chapter 7
+* Postman collection: spring2024ver053-JWT-SCOPE.postman_collection.json
+  * /token (Basic) -> JWT
+  * GET /joker with JWT -> 200
+  * GET /joker with Basic -> 403
+* See CHANGELOG_DETAILS/0.0.53a_Authorization_Logs.txt
+* See CHANGELOG_DETAILS/0.0.53b_SCOPE_Logs.txt for the JWT vs Basic asymmetry on /joker
 
   
 ## v52 ssia-ch5 CUSTOM EARLY-EXIT FILTER
