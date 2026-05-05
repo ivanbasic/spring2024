@@ -3,6 +3,7 @@
 ## v57 CHANGELOG UPDATED
 ### Modified
 * CHANGELOG.md 
+* application.yml : datasource's changed to H2
 
 ## v56 ssia-ch12 FILTERING AT THE METHOD LEVEL
 ### Added

@@ -3,8 +3,8 @@ spring:
   jpa:
     open-in-view: false
 
-  # database configuration
-  datasource:
+  # database configuration with 3 X real db (postgres, mysql)
+  datasource-DBX:
     db1:
       jdbc-url: jdbc:postgresql://localhost:5432/ivan
       username: ivan
@@ -17,6 +17,15 @@ spring:
       jdbc-url: jdbc:mysql://localhost:3308/db3
       username: db3
       password: db3
+
+  # database configuration with 3 X H2
+  datasource:
+    db1:
+      jdbcUrl: jdbc:h2:mem:DB1
+    db2:
+      jdbcUrl: jdbc:h2:mem:DB2
+    db3:
+      jdbcUrl: jdbc:h2:mem:DB3
 
 
   # this one executed schema.sql
